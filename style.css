@@ -10,7 +10,6 @@ body {
   fill: lightblue;
   /* stroke: red; */
   stroke: white;
-  transition-duration: 300ms;
 }
 
 #combined path:hover {
@@ -138,7 +137,6 @@ body {
   /* fill: lightblue; */
   /* stroke: red; */
   stroke: white;
-  transition-duration: 300ms;
   display: none;
   fill: #6fa22c;
   fill-opacity: 1;
