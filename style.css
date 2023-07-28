@@ -1,3 +1,21 @@
+:root {
+  --bg_color: white;
+  --primary_color: rgb(34, 34, 34);
+  --link_color: navy;
+
+  --map_bg_color: #a4d1db;
+  --land_fill_color: #1e8346;
+  --land_hightlight_color: #3b965f;
+  --land_non_selectable_color: #166c38;
+  --land_tan_color: #f1e9d7;
+}
+
+[data-theme="dark"] {
+  --bg_color: #292c32;
+  --primary_color: #c5cfd8;
+  --link_color: cyan;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -7,16 +25,18 @@ body {
 }
 #combined path {
   stroke-width: 2;
-  fill: lightblue;
-  /* stroke: red; */
-  stroke: white;
+  fill: var(--land_fill_color);
+  stroke: var(--map_bg_color);
+  /* transition: fill 0.2s ease; */
 }
 
 #combined path:hover {
-  fill: blue;
+  fill: var(--land_hightlight_color);
 }
 .mapsContainer {
-  /* background-color: pink; */
+  /* background-color: var(--map_bg_color); */
+  /* background: linear-gradient(var(--map_bg_color) 0 0) top/100% 92.5% no-repeat; */
+
   display: grid;
   /* justify-content: center; */
   position: relative;
@@ -27,7 +47,10 @@ body {
   width: 90vw;
   aspect-ratio: 600/616;
 }
-
+.mapForegroundContainer {
+  /* background-color: red; */
+  /* display: none; */
+}
 .map1Container {
   /* z-index: 1; */
   /* display: none; */
@@ -35,7 +58,11 @@ body {
   left: 0px;
   right: 0px;
 }
-.map2Container {
+.mapBackgroundContainer {
+  /* background-color: blue; */
+  /* display: none; */
+}
+#mapToAdjust {
   pointer-events: none;
   position: absolute;
   left: 0px;
@@ -45,12 +72,12 @@ body {
 
 #map1 {
   /* display: none; */
-
   z-index: 0;
 }
 
 [inkscape\:label="small streets"] {
   display: none;
+  stroke: var(--map_bg_color);
 }
 
 [inkscape\:label="main roads"] {
@@ -61,9 +88,47 @@ body {
   display: none;
 }
 
+/* land  train */
+#path15668 {
+  stroke: white;
+  /* stroke-width: 0.47999999; */
+  stroke-width: 1.5;
+  display: none;
+}
+/* duplicate land train */
+#path5300 {
+  stroke: red;
+  /* stroke-width: 0.40000001; */
+  stroke-width: 1.5;
+  display: none;
+}
+
+/* boat or underground */
+#path13560 {
+  stroke: white;
+  /* stroke-width: 0.23999999; */
+  stroke-width: 1;
+  display: none;
+}
+/* idk south transit something */
+#path15440 {
+  stroke: white;
+  /* stroke-width: 1.20000005; */
+  stroke-width: 1.5;
+  display: none;
+}
+/* duplicate south transit */
+#path5302 {
+  stroke: white;
+  /* stroke-width: 0.73728001; */
+  stroke-width: 1.5;
+  display: none;
+}
+
 [inkscape\:label="freeways"] {
   display: none;
-  /* stroke: white; */
+  stroke: white;
+  /* opacity: 0.74112555; */
 }
 [inkscape\:label="inset"] {
   display: none;
@@ -84,6 +149,7 @@ body {
   display: none;
 }
 
+/* weird black box */
 [inkscape\:label="frame"] {
   display: none;
 }
@@ -91,27 +157,36 @@ body {
 [inkscape\:label="foreground"] {
   /* display: none; */
 }
+
 /* Ocean vector */
 #rect32634 {
-  display: none;
+  /* display: none; */
+  fill: var(--map_bg_color);
 }
 /* Ocean */
 #rect218 {
   display: none;
 }
 #path3648 {
-  display: none;
+  /* display: none; */
 }
 
 /* sf filler */
 #path28764 {
-  display: none;
+  /* display: none; */
+  fill: var(--map_bg_color);
+  stroke: var(--map_bg_color);
+  /* stroke-width: 0.47999999; */
+  stroke-width: 1;
 }
 
+/* all land */
 #path1760 {
-  fill: blue;
-
-  display: none;
+  fill: var(--land_non_selectable_color);
+  /* display: none; */
+  stroke: none;
+  /* stroke-width: 0.47999999; */
+  stroke-width: 1;
 }
 
 [inkscape\:label="districts"] path {
@@ -123,7 +198,7 @@ body {
 
 [inkscape\:label="geography"] {
   /* has outline and parks */
-  /* display: none; */
+  display: none;
 }
 
 /* city outline */
@@ -136,9 +211,9 @@ body {
   stroke-width: 0.5;
   /* fill: lightblue; */
   /* stroke: red; */
-  stroke: white;
+  /* stroke: white; */
   display: none;
-  fill: #6fa22c;
+  fill: var(--land_hightlight_color);
   fill-opacity: 1;
   fill-rule: nonzero;
   /* stroke: none; */
