@@ -1,30 +1,51 @@
-svg path {
-  stroke-width: 1;
-  fill: #04aa6d;
-
+body {
+  display: flex;
+  justify-content: center;
+  background-color: pink;
+}
+#combined path {
+  stroke-width: 2;
+  fill: lightblue;
+  /* stroke: red; */
+  stroke: white;
   transition-duration: 300ms;
 }
 
 .mapsContainer {
+  background-color: pink;
   display: grid;
-  justify-content: center;
+  /* justify-content: center; */
+  position: relative;
+  /* height: 100vh; */
+  max-width: 700px;
+  height: 100%;
+
+  width: 90vw;
+  aspect-ratio: 600/616;
 }
 
-svg {
-  grid-column: 1;
-  grid-row: 1;
+.map1Container {
+  /* z-index: 1; */
+  /* display: none; */
+  position: absolute;
+  left: 0px;
+  right: 0px;
+}
+.map2Container {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  transform: translate(-0.5%, 0.6%) scale(0.945);
 }
 
 #map1 {
   /* display: none; */
-  position: relative;
-  left: 8px;
-  top: -80px;
-  z-index: 1;
+
+  z-index: 0;
 }
 
 [inkscape\:label="small streets"] {
-  display: none;
+  /* display: none; */
 }
 
 [inkscape\:label="main roads"] {
@@ -62,14 +83,36 @@ svg {
 }
 
 [inkscape\:label="foreground"] {
+  /* display: none; */
+}
+/* Ocean vector */
+#rect32634 {
   display: none;
 }
+/* Ocean */
+#rect218 {
+  display: none;
+}
+#path3648 {
+  display: none;
+}
+
+/* sf filler */
+#path28764 {
+  display: none;
+}
+
+#path1760 {
+  fill: blue;
+
+  display: none;
+}
+
 [inkscape\:label="districts"] path {
   fill: lightblue;
-  stroke: 1;
-  color: white;
+  stroke: white;
+  stroke-width: 1;
   display: none;
-  /* fill-opacity: 1;s */
 }
 
 [inkscape\:label="geography"] {
@@ -77,26 +120,26 @@ svg {
   /* display: none; */
 }
 
-[inkscape\:label=""] {
+/* city outline */
+#path5296 {
   display: none;
 }
 
-[inkscape\:label=""] {
-  display: none;
+/* parks */
+#path32636 {
+  stroke-width: 0.5;
+  /* fill: lightblue; */
+  /* stroke: red; */
+  stroke: white;
+  transition-duration: 300ms;
+  /* display: none; */
+  fill: #6fa22c;
+  fill-opacity: 1;
+  fill-rule: nonzero;
+  /* stroke: none; */
 }
 
-[inkscape\:label=""] {
-  display: none;
-}
-
-[inkscape\:label=""] {
-  display: none;
-}
-
-[inkscape\:label=""] {
-  display: none;
-}
-
-[inkscape\:label=""] {
+/* park fillers */
+#path322 {
   display: none;
 }
