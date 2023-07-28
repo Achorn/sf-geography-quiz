@@ -305,3 +305,16 @@ input:checked + .slider:before {
   transform: translate(-50%, -150%);
   display: none;
 }
+
+#answerTooltip {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  font-size: 14px;
+  text-align: center;
+  z-index: 5;
+  height: auto;
+  line-height: 30px;
+  margin: 0 auto;
+  color: #313131;
+}

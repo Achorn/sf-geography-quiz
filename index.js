@@ -49,18 +49,38 @@ function guessNeighborhood(event, neighborhood, id) {
     removeAnswerFromGuesses(answer);
     answer = getNewAnswer();
     showTooltip(event);
+    document.getElementById(
+      "neighborhoodCounter"
+    ).innerHTML = `${allNeighborhoods.length} neighborhoods left`;
     tries = 3;
   } else {
+    //wrong answer
     tries -= 1;
+    // showSelectedNeighborhoodName(event, neighborhood);
     if (tries == 0) {
       document.getElementById(nameToIdMap.get(answer)).style.fill = "red";
       removeAnswerFromGuesses(answer);
       answer = getNewAnswer();
       showTooltip(event);
       tries = 3;
+      document.getElementById(
+        "neighborhoodCounter"
+      ).innerHTML = `${allNeighborhoods.length} neighborhoods left`;
     }
   }
 }
+// let showSelectedNeighborhoodName = (event, neighborhood) => {
+//   let tooltip = document.getElementById("answerTooltip");
+//   tooltip.style.display = "block";
+//   tooltip.innerHTML = neighborhood.getAttribute("name");
+
+//   const pathBBox = neighborhood.getBBox();
+//   let [x, y] = SVGToScreen(pathBBox.x, pathBBox.y);
+//   console.log(x, y);
+//   console.log(event.pageX, event.pageY);
+//   tooltip.style.left = pathBBox.x + "px";
+//   tooltip.style.top = pathBBox.y + "px";
+// };
 
 let removeAnswerFromGuesses = (name) => {
   allNeighborhoods = allNeighborhoods.filter((e) => e !== name);
