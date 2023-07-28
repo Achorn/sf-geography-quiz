@@ -1,3 +1,4 @@
-paths = document.getElementsByTagName(path);
+// paths = document.getElementsByTagName(path);
 
-console.log(paths);
+// console.log(paths);
+//
