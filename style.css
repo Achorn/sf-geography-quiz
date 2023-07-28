@@ -17,6 +17,7 @@
 }
 
 body {
+  color: var(--primary_color);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -32,6 +33,7 @@ body {
 
 #combined path:hover {
   fill: var(--land_hightlight_color);
+  cursor: pointer;
 }
 .mapsContainer {
   /* background-color: var(--map_bg_color); */
@@ -50,6 +52,7 @@ body {
 .mapForegroundContainer {
   /* background-color: red; */
   /* display: none; */
+  pointer-events: none;
 }
 .map1Container {
   /* z-index: 1; */
@@ -63,7 +66,6 @@ body {
   /* display: none; */
 }
 #mapToAdjust {
-  pointer-events: none;
   position: absolute;
   left: 0px;
   right: 0px;
@@ -283,4 +285,23 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+#tooltip {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  font-size: 14px;
+  text-align: center;
+  background: white;
+  padding: 10px 15px;
+  z-index: 5;
+  height: auto;
+  line-height: 30px;
+  margin: 0 auto;
+  color: #313131;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #eee;
+  transform: translate(-50%, -150%);
+  display: none;
 }
