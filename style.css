@@ -1,0 +1,102 @@
+svg path {
+  stroke-width: 1;
+  fill: #04aa6d;
+
+  transition-duration: 300ms;
+}
+
+.mapsContainer {
+  display: grid;
+  justify-content: center;
+}
+
+svg {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#map1 {
+  /* display: none; */
+  position: relative;
+  left: 8px;
+  top: -80px;
+  z-index: 1;
+}
+
+[inkscape\:label="small streets"] {
+  display: none;
+}
+
+[inkscape\:label="main roads"] {
+  display: none;
+}
+
+[inkscape\:label="rail"] {
+  display: none;
+}
+
+[inkscape\:label="freeways"] {
+  display: none;
+}
+[inkscape\:label="inset"] {
+  display: none;
+}
+
+[inkscape\:label="road names"] {
+  display: none;
+}
+
+[inkscape\:label="route shields"] {
+  display: none;
+}
+[inkscape\:label="region names"] {
+  display: none;
+}
+
+[inkscape\:label="key"] {
+  display: none;
+}
+
+[inkscape\:label="frame"] {
+  display: none;
+}
+
+[inkscape\:label="foreground"] {
+  display: none;
+}
+[inkscape\:label="districts"] path {
+  fill: lightblue;
+  stroke: 1;
+  color: white;
+  display: none;
+  /* fill-opacity: 1;s */
+}
+
+[inkscape\:label="geography"] {
+  /* has outline and parks */
+  /* display: none; */
+}
+
+[inkscape\:label=""] {
+  display: none;
+}
+
+[inkscape\:label=""] {
+  display: none;
+}
+
+[inkscape\:label=""] {
+  display: none;
+}
+
+[inkscape\:label=""] {
+  display: none;
+}
+
+[inkscape\:label=""] {
+  display: none;
+}
+
+[inkscape\:label=""] {
+  display: none;
+}
