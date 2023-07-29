@@ -1,6 +1,6 @@
 const streetToggle = document.getElementById("smallStreetSelector");
 const result = document.querySelector(".result");
-
+const dataDisplay = document.getElementById("dataDisplay");
 streetToggle.addEventListener("change", (event) => {
   let display = document.getElementById("layer2");
   display.style.display = display.style.display == "inline" ? "none" : "inline";
@@ -49,6 +49,7 @@ function guessNeighborhood(event, neighborhood, id) {
     removeAnswerFromGuesses(answer);
     answer = getNewAnswer();
     showTooltip(event);
+    updateDataDisplay();
     document.getElementById(
       "neighborhoodCounter"
     ).innerHTML = `${allNeighborhoods.length} neighborhoods left`;
@@ -56,12 +57,13 @@ function guessNeighborhood(event, neighborhood, id) {
   } else {
     //wrong answer
     tries -= 1;
-    // showSelectedNeighborhoodName(event, neighborhood);
+    showSelectedNeighborhoodName(event, neighborhood);
     if (tries == 0) {
       document.getElementById(nameToIdMap.get(answer)).style.fill = "red";
       removeAnswerFromGuesses(answer);
       answer = getNewAnswer();
       showTooltip(event);
+      updateDataDisplay();
       tries = 3;
       document.getElementById(
         "neighborhoodCounter"
@@ -69,18 +71,19 @@ function guessNeighborhood(event, neighborhood, id) {
     }
   }
 }
-// let showSelectedNeighborhoodName = (event, neighborhood) => {
-//   let tooltip = document.getElementById("answerTooltip");
-//   tooltip.style.display = "block";
-//   tooltip.innerHTML = neighborhood.getAttribute("name");
+let showSelectedNeighborhoodName = (event, neighborhood) => {
+  let tooltip = document.getElementById("answerTooltip");
+  tooltip.style.display = "block";
+  tooltip.innerHTML = neighborhood.getAttribute("name");
 
-//   const pathBBox = neighborhood.getBBox();
-//   let [x, y] = SVGToScreen(pathBBox.x, pathBBox.y);
-//   console.log(x, y);
-//   console.log(event.pageX, event.pageY);
-//   tooltip.style.left = pathBBox.x + "px";
-//   tooltip.style.top = pathBBox.y + "px";
-// };
+  const pathBBox = neighborhood.getBBox();
+  console.log(event.pageX, event.pageY);
+  tooltip.style.left = event.pageX - 40 + "px";
+  tooltip.style.top = event.pageY + -30 + "px";
+  setTimeout(() => {
+    tooltip.style.display = "none";
+  }, "2000");
+};
 
 let removeAnswerFromGuesses = (name) => {
   allNeighborhoods = allNeighborhoods.filter((e) => e !== name);
@@ -92,4 +95,11 @@ let getNewAnswer = () => {
 let allNeighborhoods = [...neighborhoodNames];
 let guessedNeighborhoods = [];
 let answer = getNewAnswer();
+dataDisplay.innerHTML = `0/${allNeighborhoods.length} | Click on ${answer}`;
 let tries = 3;
+
+let updateDataDisplay = () => {
+  dataDisplay.innerHTML = `${
+    neighborhoodNames.length - allNeighborhoods.length
+  }/${neighborhoodNames.length} | Click on ${answer}`;
+};

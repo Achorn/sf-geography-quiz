@@ -33,7 +33,7 @@ body {
 
 #combined path:hover {
   fill: var(--land_hightlight_color);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .mapsContainer {
   /* background-color: var(--map_bg_color); */
@@ -48,6 +48,14 @@ body {
 
   width: 90vw;
   aspect-ratio: 600/616;
+}
+#dataDisplay {
+  padding: 10px;
+  z-index: 160;
+  font-size: 12;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .mapForegroundContainer {
   /* background-color: red; */
@@ -302,7 +310,7 @@ input:checked + .slider:before {
   color: #313131;
   border-radius: 5px;
   box-shadow: 0 0 0 1px #eee;
-  transform: translate(-50%, -150%);
+  transform: translate(-50%, 60%);
   display: none;
 }
 
