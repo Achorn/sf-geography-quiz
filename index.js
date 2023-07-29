@@ -80,6 +80,7 @@ let showSelectedNeighborhoodName = (event, neighborhood) => {
   console.log(event.pageX, event.pageY);
   tooltip.style.left = event.pageX - 40 + "px";
   tooltip.style.top = event.pageY + -30 + "px";
+
   setTimeout(() => {
     tooltip.style.display = "none";
   }, "2000");

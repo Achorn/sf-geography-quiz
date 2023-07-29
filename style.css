@@ -315,6 +315,10 @@ input:checked + .slider:before {
 }
 
 #answerTooltip {
+  background-color: red;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
   display: none;
   pointer-events: none;
   position: absolute;
@@ -324,5 +328,4 @@ input:checked + .slider:before {
   height: auto;
   line-height: 30px;
   margin: 0 auto;
-  color: #313131;
 }
