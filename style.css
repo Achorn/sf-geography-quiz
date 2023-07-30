@@ -320,6 +320,7 @@ input:checked + .slider:before {
   padding-right: 5px;
   color: white;
   display: none;
+  border-radius: 5px;
   pointer-events: none;
   position: absolute;
   font-size: 14px;
