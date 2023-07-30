@@ -48,7 +48,7 @@ function guessNeighborhood(event, neighborhood, id) {
     neighborhood.style.fill = color;
     removeAnswerFromGuesses(answer);
     answer = getNewAnswer();
-    showTooltip(event);
+    document.getElementById("tooltip").innerHTML = `Find: ${answer}`;
     updateDataDisplay();
     document.getElementById(
       "neighborhoodCounter"
