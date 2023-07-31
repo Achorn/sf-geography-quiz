@@ -83,7 +83,7 @@ let showSelectedNeighborhoodName = (event, neighborhood) => {
 
   setTimeout(() => {
     answerBox.remove();
-  }, "2000");
+  }, "1200");
   // answerBox.addEventListener("transitionend", () => {
   //   answerBox.remove();
   // });
