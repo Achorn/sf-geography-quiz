@@ -31,22 +31,34 @@ body {
   /* transition: fill 0.2s ease; */
 }
 
+.map-question_blink {
+  animation-duration: 1.5s;
+  animation-fill-mode: forward;
+  animation-iteration-count: infinite;
+  animation-name: map-question_blinkHint__QZHLA;
+}
+
+@keyframes map-question_blinkHint__QZHLA {
+  0%,
+  49% {
+    fill: red;
+  }
+
+  50%,
+  to {
+    fill: #ddd;
+  }
+}
+
 #combined path:hover {
   fill: var(--land_hightlight_color);
   /* cursor: pointer; */
 }
 .mapsContainer {
-  /* background-color: var(--map_bg_color); */
-  /* background: linear-gradient(var(--map_bg_color) 0 0) top/100% 92.5% no-repeat; */
-  /* transition: fill 0.2s ease; */
-
   display: grid;
-  /* justify-content: center; */
   position: relative;
-  /* height: 100vh; */
   max-width: 700px;
   height: 100%;
-
   width: 90vw;
   aspect-ratio: 600/616;
 }

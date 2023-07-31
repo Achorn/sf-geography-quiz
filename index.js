@@ -44,8 +44,14 @@ Array.from(neighborhoods).forEach((neighborhood) => {
 function guessNeighborhood(event, neighborhood, id) {
   let guess = neighborhood.getAttribute("name");
   if (guess === answer) {
-    let color = "white";
-    if (tries != 3) color = "yellow";
+    let color;
+    if (tries == 3) color = "white";
+    else if (tries <= 0) {
+      color = "red";
+      document.getElementById(nameToIdMap.get(answer));
+      answerPath.classList.remove("map-question_blink");
+    } else color = "yellow";
+
     neighborhood.style.fill = color;
     removeAnswerFromGuesses(answer);
     answer = getNewAnswer();
@@ -57,11 +63,8 @@ function guessNeighborhood(event, neighborhood, id) {
     tries -= 1;
     showSelectedNeighborhoodName(event, neighborhood);
     if (tries == 0) {
-      document.getElementById(nameToIdMap.get(answer)).style.fill = "red";
-      removeAnswerFromGuesses(answer);
-      answer = getNewAnswer();
-      updateDataDisplay();
-      tries = 3;
+      answerPath = document.getElementById(nameToIdMap.get(answer));
+      answerPath.classList.add("map-question_blink");
     }
   }
 }
