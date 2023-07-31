@@ -32,13 +32,14 @@ Array.from(neighborhoods).forEach((neighborhood) => {
   });
 });
 
-entireMap = document.getElementsByClassName("mapsContainer")[0];
-entireMap.addEventListener("mousemove", function (event) {
-  showTooltip(event);
-});
-entireMap.addEventListener("mouseout", function (event) {
-  hideTooltip();
-});
+// entireMap = document.getElementsByClassName("mapsContainer")[0];
+// entireMap.addEventListener("mousemove", function (event) {
+//   console.log("mousemove?");
+//   showTooltip(event);
+// });
+// entireMap.addEventListener("mouseout", function (event) {
+//   hideTooltip();
+// });
 
 function guessNeighborhood(event, neighborhood, id) {
   let guess = neighborhood.getAttribute("name");
@@ -50,9 +51,6 @@ function guessNeighborhood(event, neighborhood, id) {
     answer = getNewAnswer();
     document.getElementById("tooltip").innerHTML = `Find: ${answer}`;
     updateDataDisplay();
-    document.getElementById(
-      "neighborhoodCounter"
-    ).innerHTML = `${allNeighborhoods.length} neighborhoods left`;
     tries = 3;
   } else {
     //wrong answer
@@ -62,28 +60,42 @@ function guessNeighborhood(event, neighborhood, id) {
       document.getElementById(nameToIdMap.get(answer)).style.fill = "red";
       removeAnswerFromGuesses(answer);
       answer = getNewAnswer();
-      showTooltip(event);
       updateDataDisplay();
       tries = 3;
-      document.getElementById(
-        "neighborhoodCounter"
-      ).innerHTML = `${allNeighborhoods.length} neighborhoods left`;
     }
   }
 }
 let showSelectedNeighborhoodName = (event, neighborhood) => {
-  let tooltip = document.getElementById("answerTooltip");
-  tooltip.style.display = "block";
-  tooltip.innerHTML = neighborhood.getAttribute("name");
-
-  const pathBBox = neighborhood.getBBox();
-  console.log(event.pageX, event.pageY);
-  tooltip.style.left = event.pageX - 40 + "px";
-  tooltip.style.top = event.pageY + -30 + "px";
+  var duplicate = document.getElementById(
+    "answer-" + neighborhood.getAttribute("name")
+  );
+  if (duplicate) duplicate.remove();
+  const answerBox = document.createElement("div");
+  answerBox.id = "answer-" + neighborhood.getAttribute("name");
+  answerBox.className = "answerTooltip";
+  document.body.appendChild(answerBox);
+  answerBox.innerHTML = neighborhood.getAttribute("name");
+  answerBox.style.left = event.pageX - 40 + "px";
+  answerBox.style.top = event.pageY + -30 + "px";
 
   setTimeout(() => {
-    tooltip.style.display = "none";
+    answerBox.remove();
   }, "2000");
+  // answerBox.addEventListener("transitionend", () => {
+  //   answerBox.remove();
+  // });
+  // let answerTooltip = document.getElementById("answerTooltip");
+  // answerTooltip.style.display = "block";
+  // answerTooltip.innerHTML = neighborhood.getAttribute("name");
+
+  // const pathBBox = neighborhood.getBBox();
+  // answerTooltip.style.left = event.pageX - 40 + "px";
+  // answerTooltip.style.top = event.pageY + -30 + "px";
+
+  // setTimeout(() => {
+  //   console.log("end");
+  //   answerTooltip.style.display = "none";
+  // }, "3000");
 };
 
 let removeAnswerFromGuesses = (name) => {
