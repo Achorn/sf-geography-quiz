@@ -8,6 +8,10 @@
   --land_hightlight_color: #3b965f;
   --land_non_selectable_color: #166c38;
   --land_tan_color: #f1e9d7;
+
+  --answer_correct: white;
+  --answer_almost: yellow;
+  --answer_wrong: red;
 }
 
 [data-theme="dark"] {
@@ -33,20 +37,19 @@ body {
 
 .map-question_blink {
   animation-duration: 1.5s;
-  animation-fill-mode: forward;
+  animation-fill-mode: forwards;
   animation-iteration-count: infinite;
-  animation-name: map-question_blinkHint__QZHLA;
+  animation-name: answer_hint;
 }
 
-@keyframes map-question_blinkHint__QZHLA {
+@keyframes answer_hint {
   0%,
-  49% {
-    fill: red;
+  50% {
+    fill: white;
   }
-
-  50%,
-  to {
-    fill: #ddd;
+  51%,
+  100% {
+    fill: red;
   }
 }
 
