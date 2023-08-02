@@ -59,10 +59,10 @@ d3.json("./maps/sf_neighborhoods.geojson")
         .attr("name", (d) => {
           return d.properties["NAME"].replace(/ /g, "");
         })
-        .attr("class", (d) => {
+        .attr("id", (d) => {
           return d.properties["NAME"].replace(/ /g, "");
         })
-        .attr("id", "ferryRoute")
+        .attr("class", "ferryRoute")
         .attr("stroke-width", 1);
     });
 

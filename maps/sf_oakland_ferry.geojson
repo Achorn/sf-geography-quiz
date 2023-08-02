@@ -9,142 +9,6 @@
     {
       "type": "Feature",
       "properties": {
-        "OBJECTID": 131,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0019389130212959355
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.390216, 37.798014],
-            [-122.392068000999984, 37.79744]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 150,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.014046041638167694
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.376159, 37.799885],
-            [-122.376326, 37.799878],
-            [-122.379638, 37.799666],
-            [-122.385418, 37.799102],
-            [-122.390216, 37.798014]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 152,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0065168735993399191
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.369646, 37.799666],
-            [-122.371902, 37.799718001000031],
-            [-122.376159, 37.799885]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 47,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0041095249075706556
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.314104, 37.794952999000031],
-            [-122.318091000999971, 37.795949]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 52,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.023082856515188752
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.318091000999971, 37.795949],
-            [-122.324791, 37.797586],
-            [-122.340558, 37.801244001000043]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 48,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.020440832490568113
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.293848, 37.79365800100004],
-            [-122.297585, 37.793036],
-            [-122.305228998999951, 37.793501],
-            [-122.311951998999973, 37.794553999000073],
-            [-122.31383, 37.794884],
-            [-122.314104, 37.794952999000031]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "OBJECTID": 74,
         "NAME": "Oakland-San Francisco",
         "STATUS": " ",
@@ -204,113 +68,27 @@
             [-122.290885410999977, 37.793823369000052],
             [-122.291678542999989, 37.793783122000036],
             [-122.292763462999972, 37.793723123000063],
-            [-122.293848, 37.79365800100004]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 114,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0074059186201044618
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
+            [-122.293848, 37.79365800100004],
+            [-122.297585, 37.793036],
+            [-122.305228998999951, 37.793501],
+            [-122.311951998999973, 37.794553999000073],
+            [-122.31383, 37.794884],
+            [-122.314104, 37.794952999000031],
+            [-122.318091000999971, 37.795949],
+            [-122.324791, 37.797586],
             [-122.340558, 37.801244001000043],
-            [-122.347953, 37.800841999000056]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 115,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0072401687405722242
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
             [-122.347953, 37.800841999000056],
-            [-122.355182, 37.800440001000027]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 133,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0072445581970442272
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.362410998999962, 37.800038],
-            [-122.369646, 37.799666]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 126,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0021509002422233137
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.394142, 37.79687],
-            [-122.392068000999984, 37.79744]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 116,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0072401679086941473
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
             [-122.355182, 37.800440001000027],
-            [-122.362410998999962, 37.800038]
+            [-122.362410998999962, 37.800038],
+            [-122.369646, 37.799666],
+            [-122.371902, 37.799718001000031],
+            [-122.376159, 37.799885],
+            [-122.376326, 37.799878],
+            [-122.379638, 37.799666],
+            [-122.385418, 37.799102],
+            [-122.390216, 37.798014],
+            [-122.392068000999984, 37.79744],
+            [-122.394142, 37.79687]
           ]
         ]
       }
