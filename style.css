@@ -13,14 +13,24 @@
   --answer_almost: yellow;
   --answer_wrong: red;
 }
-
 [data-theme="dark"] {
   --bg_color: #292c32;
   --primary_color: #c5cfd8;
   --link_color: cyan;
+
+  --map_bg_color: #406975;
+  --land_fill_color: #18282c;
+  --land_hightlight_color: #3c616b;
+  --land_non_selectable_color: #101b1e;
+  --land_tan_color: #f1e9d7;
+
+  --answer_correct: rgb(173, 201, 211);
+  --answer_almost: rgb(121, 98, 184);
+  --answer_wrong: rgb(67, 20, 184);
 }
 
 body {
+  background-color: var(--bg_color);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -29,7 +39,7 @@ body {
 
 .mapsContainer {
   position: relative;
-  background-color: #a4d1db;
+  background-color: var(--map_bg_color);
   aspect-ratio: 600/656;
   max-width: 700px;
   height: auto;
@@ -66,11 +76,11 @@ body {
 @keyframes answer_hint {
   0%,
   50% {
-    fill: white;
+    fill: var(--answer_correct);
   }
   51%,
   100% {
-    fill: red;
+    fill: var(--answer_wrong);
   }
 }
 #district {
@@ -100,12 +110,13 @@ body {
 #freeways {
   display: none;
 }
+
 #freeway {
   pointer-events: none;
 
   /* stroke: var(--map_bg_color); */
   /* stroke: orange; */
-  stroke: rgb(207, 232, 229);
+  stroke: var(--bg_color);
   /* opacity: 0.54112555; */
   fill: none;
   /* stroke-width: 0.31999999; */
@@ -117,6 +128,24 @@ body {
   stroke-dasharray: none;
 }
 
+#ferryRoute {
+  /* pointer-events: none; */
+  /* stroke: var(--map_bg_color); */
+  /* stroke: orange; */
+  stroke: #5facbd;
+  /* opacity: 0.54112555; */
+  fill: none;
+  /* stroke-width: 0.31999999; */
+  stroke-width: 1;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+  stroke-opacity: 1;
+  stroke-dasharray: none;
+}
+#ferryRoute:hover {
+  stroke: red;
+}
 .switchWithTitle {
   display: flex;
   justify-content: center;
@@ -185,7 +214,7 @@ input:checked + .slider:before {
 }
 
 .answerTooltip {
-  background-color: rgba(255, 68, 68, 0.8);
+  background-color: rgba(214, 58, 19, 0.8);
   padding-left: 5px;
   padding-right: 5px;
   color: white;

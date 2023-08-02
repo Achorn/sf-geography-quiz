@@ -2,61 +2,82 @@ let projection = d3.geoMercator();
 let geoGenerator = d3.geoPath().projection(projection);
 let svg = d3.select("svg");
 
-d3.json("./sf_neighborhoods.geojson").then(function (neighborhoods) {
-  projection.fitSize([325, 334], neighborhoods);
-  svg
-    .append("g")
-    .attr("id", "neighborhoods")
-    .selectAll("path")
-    .data(neighborhoods.features)
-    .join("path")
-    .attr("d", geoGenerator)
-    .attr("name", (d) => {
-      return d.properties.name;
-    })
-    .attr("id", (d) => {
-      return d.properties.name.replace(/ /g, "");
-    })
-    .attr("class", "neighborhood")
-    .attr("stroke", "#a4d1db")
-    .attr("stroke-width", 1);
-  playGame();
-});
+d3.json("./maps/sf_neighborhoods.geojson")
+  .then(function (neighborhoods) {
+    projection.fitSize([325, 334], neighborhoods);
+    svg
+      .append("g")
+      .attr("id", "neighborhoods")
+      .selectAll("path")
+      .data(neighborhoods.features)
+      .join("path")
+      .attr("d", geoGenerator)
+      .attr("name", (d) => {
+        return d.properties.name;
+      })
+      .attr("id", (d) => {
+        return d.properties.name.replace(/ /g, "");
+      })
+      .attr("class", "neighborhood")
+      .attr("stroke", "#a4d1db")
+      .attr("stroke-width", 1);
+    playGame();
+  })
+  .then(() => {
+    d3.json("./maps/bay_area_counties.geojson").then(function (districts) {
+      console.log("hello???");
+      svg
+        .append("g")
+        .selectAll("path")
+        .data(districts.features)
+        .join("path")
+        .attr("d", geoGenerator)
+        .attr("id", "district")
+        .attr("stroke-width", 1);
+    });
 
-d3.json("./bay_area_counties.geojson").then(function (districts) {
-  svg
-    .append("g")
-    .selectAll("path")
-    .data(districts.features)
-    .join("path")
-    .attr("d", geoGenerator)
-    .attr("id", "district")
-    .attr("stroke-width", 1);
-});
+    d3.json("./maps/streets_of_sf.geojson").then(function (streets) {
+      svg
+        .append("g")
+        .attr("id", "streets")
+        .selectAll("path")
+        .data(streets.features)
+        .join("path")
+        .attr("d", geoGenerator)
+        .attr("id", "street")
+        .attr("stroke-width", 1);
+    });
+    d3.json("./maps/sf_oakland_ferry.geojson").then(function (ferryRoute) {
+      console.log("ferries???");
+      svg
+        .append("g")
+        .attr("id", "ferryRoutes")
+        .selectAll("path")
+        .data(ferryRoute.features)
+        .join("path")
+        .attr("d", geoGenerator)
+        .attr("name", (d) => {
+          return d.properties["NAME"].replace(/ /g, "");
+        })
+        .attr("class", (d) => {
+          return d.properties["NAME"].replace(/ /g, "");
+        })
+        .attr("id", "ferryRoute")
+        .attr("stroke-width", 1);
+    });
 
-d3.json("./streets_of_sf.geojson").then(function (districts) {
-  svg
-    .append("g")
-    .attr("id", "streets")
-    .selectAll("path")
-    .data(districts.features)
-    .join("path")
-    .attr("d", geoGenerator)
-    .attr("id", "street")
-    .attr("stroke-width", 1);
-});
-
-d3.json("./freeways.json").then(function (districts) {
-  svg
-    .append("g")
-    .attr("id", "freeways")
-    .selectAll("path")
-    .data(districts.features)
-    .join("path")
-    .attr("d", geoGenerator)
-    .attr("id", "freeway")
-    .attr("stroke-width", 1);
-});
+    d3.json("./maps/freeways.json").then(function (freeway) {
+      svg
+        .append("g")
+        .attr("id", "freeways")
+        .selectAll("path")
+        .data(freeway.features)
+        .join("path")
+        .attr("d", geoGenerator)
+        .attr("id", "freeway")
+        .attr("stroke-width", 1);
+    });
+  });
 
 document.getElementById("streetToggle").addEventListener("change", (e) => {
   let display = document.getElementById("streets");
@@ -89,12 +110,12 @@ let playGame = () => {
     let guess = neighborhood.getAttribute("name");
     if (guess === answer) {
       let color;
-      if (tries == 3) color = "white";
+      if (tries == 3) color = "var(--answer_correct)";
       else if (tries <= 0) {
-        color = "red";
+        color = "var(--answer_wrong)";
         document.getElementById(nameToIdMap.get(answer));
         answerPath.classList.remove("map-question_blink");
-      } else color = "yellow";
+      } else color = "var(--answer_almost)";
 
       neighborhood.style.fill = color;
       removeAnswerFromGuesses(answer);
