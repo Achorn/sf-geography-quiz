@@ -21,18 +21,38 @@
 }
 
 body {
-  color: var(--primary_color);
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* background-color: pink; */
 }
-#combined path {
-  stroke-width: 2;
+
+.mapsContainer {
+  position: relative;
+  background-color: #a4d1db;
+  aspect-ratio: 600/656;
+  max-width: 700px;
+  height: auto;
+  width: 90vw;
+}
+#dataDisplay {
+  pointer-events: none;
+
+  padding: 10px;
+  z-index: 160;
+  font-size: 1.3em;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.neighborhood {
+  stroke-width: 0.8;
   fill: var(--land_fill_color);
+
   stroke: var(--map_bg_color);
-  /* transition: fill 0.2s ease; */
+}
+.neighborhood:hover {
+  fill: var(--land_hightlight_color);
 }
 
 .map-question_blink {
@@ -52,204 +72,55 @@ body {
     fill: red;
   }
 }
-
-#combined path:hover {
-  fill: var(--land_hightlight_color);
-  /* cursor: pointer; */
-}
-.mapsContainer {
-  display: grid;
-  position: relative;
-  max-width: 700px;
-  height: 100%;
-  width: 90vw;
-  aspect-ratio: 600/616;
-}
-#dataDisplay {
-  padding: 10px;
-  z-index: 160;
-  font-size: 12;
-  position: absolute;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-.mapForegroundContainer {
-  /* background-color: red; */
-  /* display: none; */
+#district {
   pointer-events: none;
-}
-.map1Container {
-  /* z-index: 1; */
-  /* display: none; */
-  position: absolute;
-  left: 0px;
-  right: 0px;
-}
-.mapBackgroundContainer {
-  /* background-color: blue; */
-  /* display: none; */
-}
-#mapToAdjust {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  transform: translate(-0.5%, 0.6%) scale(0.945);
-}
 
-#map1 {
-  /* display: none; */
-  z-index: 0;
-}
-
-[inkscape\:label="small streets"] {
-  display: none;
-  stroke: var(--map_bg_color);
-}
-
-[inkscape\:label="main roads"] {
-  display: none;
-}
-
-[inkscape\:label="rail"] {
-  display: none;
-}
-
-/* land  train */
-#path15668 {
-  stroke: white;
-  /* stroke-width: 0.47999999; */
-  stroke-width: 1.5;
-  display: none;
-}
-/* duplicate land train */
-#path5300 {
-  stroke: red;
-  /* stroke-width: 0.40000001; */
-  stroke-width: 1.5;
-  display: none;
-}
-
-/* boat or underground */
-#path13560 {
-  stroke: white;
-  /* stroke-width: 0.23999999; */
-  stroke-width: 1;
-  display: none;
-}
-/* idk south transit something */
-#path15440 {
-  stroke: white;
-  /* stroke-width: 1.20000005; */
-  stroke-width: 1.5;
-  display: none;
-}
-/* duplicate south transit */
-#path5302 {
-  stroke: white;
-  /* stroke-width: 0.73728001; */
-  stroke-width: 1.5;
-  display: none;
-}
-
-[inkscape\:label="freeways"] {
-  display: none;
-  stroke: white;
-  /* opacity: 0.74112555; */
-}
-[inkscape\:label="inset"] {
-  display: none;
-}
-
-[inkscape\:label="road names"] {
-  display: none;
-}
-
-[inkscape\:label="route shields"] {
-  display: none;
-}
-[inkscape\:label="region names"] {
-  display: none;
-}
-
-[inkscape\:label="key"] {
-  display: none;
-}
-
-/* weird black box */
-[inkscape\:label="frame"] {
-  display: none;
-}
-
-[inkscape\:label="foreground"] {
-  /* display: none; */
-}
-
-/* Ocean vector */
-#rect32634 {
-  /* display: none; */
-  fill: var(--map_bg_color);
-}
-/* Ocean */
-#rect218 {
-  display: none;
-}
-#path3648 {
-  /* display: none; */
-}
-
-/* sf filler */
-#path28764 {
-  /* display: none; */
-  fill: var(--map_bg_color);
-  stroke: var(--map_bg_color);
-  /* stroke-width: 0.47999999; */
-  stroke-width: 1;
-}
-
-/* all land */
-#path1760 {
   fill: var(--land_non_selectable_color);
-  /* display: none; */
-  stroke: none;
-  /* stroke-width: 0.47999999; */
+  stroke: var(--map_bg_color);
+}
+
+#streets {
+  display: none;
+}
+#street {
+  pointer-events: none;
+
+  stroke: var(--map_bg_color);
+  opacity: 0.54112555;
+  fill: none;
+  stroke-width: 0.31999999;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+  stroke-opacity: 1;
+  stroke-dasharray: none;
+}
+
+#freeways {
+  display: none;
+}
+#freeway {
+  pointer-events: none;
+
+  /* stroke: var(--map_bg_color); */
+  stroke: orange;
+  /* opacity: 0.54112555; */
+  fill: none;
+  /* stroke-width: 0.31999999; */
   stroke-width: 1;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+  stroke-opacity: 1;
+  stroke-dasharray: none;
 }
 
-[inkscape\:label="districts"] path {
-  fill: lightblue;
-  stroke: white;
-  stroke-width: 1;
-  display: none;
+.switchWithTitle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
-
-[inkscape\:label="geography"] {
-  /* has outline and parks */
-  display: none;
-}
-
-/* city outline */
-#path5296 {
-  display: none;
-}
-
-/* parks */
-#path32636 {
-  stroke-width: 0.5;
-  /* fill: lightblue; */
-  /* stroke: red; */
-  /* stroke: white; */
-  display: none;
-  fill: var(--land_hightlight_color);
-  fill-opacity: 1;
-  fill-rule: nonzero;
-  /* stroke: none; */
-}
-
-/* park fillers */
-#path322 {
-  display: none;
-}
-
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -309,25 +180,6 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-#tooltip {
-  display: none;
-  pointer-events: none;
-  position: absolute;
-  font-size: 14px;
-  text-align: center;
-  background: white;
-  padding: 10px 15px;
-  z-index: 5;
-  height: auto;
-  line-height: 30px;
-  margin: 0 auto;
-  color: #313131;
-  border-radius: 5px;
-  box-shadow: 0 0 0 1px #eee;
-  transform: translate(-50%, 60%);
-  display: none;
 }
 
 .answerTooltip {
