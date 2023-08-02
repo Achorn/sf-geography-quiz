@@ -46,8 +46,9 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
 }
 .neighborhood {
-  stroke-width: 0.8;
+  stroke-width: 0.6;
   fill: var(--land_fill_color);
+  stroke-linejoin: round;
 
   stroke: var(--map_bg_color);
 }
@@ -86,7 +87,7 @@ body {
   pointer-events: none;
 
   stroke: var(--map_bg_color);
-  opacity: 0.54112555;
+  opacity: 0.4;
   fill: none;
   stroke-width: 0.31999999;
   stroke-linecap: butt;
@@ -103,7 +104,8 @@ body {
   pointer-events: none;
 
   /* stroke: var(--map_bg_color); */
-  stroke: orange;
+  /* stroke: orange; */
+  stroke: rgb(207, 232, 229);
   /* opacity: 0.54112555; */
   fill: none;
   /* stroke-width: 0.31999999; */
