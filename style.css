@@ -49,8 +49,8 @@ body {
   stroke-width: 0.6;
   fill: var(--land_fill_color);
   stroke-linejoin: round;
-
   stroke: var(--map_bg_color);
+  transition: fill 0.2s ease;
 }
 .neighborhood:hover {
   fill: var(--land_hightlight_color);
