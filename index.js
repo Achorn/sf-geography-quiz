@@ -1,6 +1,7 @@
 let projection = d3.geoMercator();
 let geoGenerator = d3.geoPath().projection(projection);
 let svg = d3.select("svg");
+svg.attr("display", "none");
 
 d3.json("./maps/sf_neighborhoods.geojson")
   .then(function (neighborhoods) {
@@ -21,20 +22,24 @@ d3.json("./maps/sf_neighborhoods.geojson")
       .attr("class", "neighborhood")
       .attr("stroke", "#a4d1db")
       .attr("stroke-width", 1);
-    playGame();
   })
   .then(() => {
-    d3.json("./maps/bay_area_counties.geojson").then(function (districts) {
-      console.log("hello???");
-      svg
-        .append("g")
-        .selectAll("path")
-        .data(districts.features)
-        .join("path")
-        .attr("d", geoGenerator)
-        .attr("id", "district")
-        .attr("stroke-width", 1);
-    });
+    d3.json("./maps/bay_area_counties.geojson")
+      .then(function (districts) {
+        svg
+          .append("g")
+          .selectAll("path")
+          .data(districts.features)
+          .join("path")
+          .attr("d", geoGenerator)
+          .attr("id", "district")
+          .attr("stroke-width", 1);
+      })
+      .then(() => {
+        svg.attr("display", "inline");
+
+        playGame();
+      });
 
     d3.json("./maps/streets_of_sf.geojson").then(function (streets) {
       svg
@@ -48,7 +53,6 @@ d3.json("./maps/sf_neighborhoods.geojson")
         .attr("stroke-width", 1);
     });
     d3.json("./maps/sf_oakland_ferry.geojson").then(function (ferryRoute) {
-      console.log("ferries???");
       svg
         .append("g")
         .attr("id", "ferryRoutes")
@@ -171,3 +175,35 @@ let playGame = () => {
     }/${neighborhoodNames.length} | Click on ${answer}`;
   };
 };
+
+//TODO: animate boat on Ferry paths
+// let createBoat = () => {
+//   console.log("hello boats?");
+//   let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+//   document.getElementById("mapSVG").appendChild(circle);
+//   circle.setAttribute("id", "boatCircle");
+//   circle.setAttribute("r", "5");
+//   circle.setAttribute("fill", "purple");
+
+//   const path = document.getElementById("Oakland-SanFrancisco");
+
+//   // Create an object that gsap can animate
+//   const val = { distance: 0 };
+//   // Create a tween
+//   gsap.to(val, {
+//     // Animate from distance 0 to the total distance
+//     distance: path.getTotalLength(),
+//     // Loop the animation
+//     repeat: -1,
+//     // Make the animation lasts 5 seconds
+//     duration: 5,
+//     // Function call on each frame of the animation
+//     onUpdate: () => {
+//       // Query a point at the new distance value
+//       const point = path.getPointAtLength(val.distance);
+//       // Update the circle coordinates
+//       circle.setAttribute("cx", point.x);
+//       circle.setAttribute("cy", point.y);
+//     },
+//   });
+// };
