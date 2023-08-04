@@ -16,7 +16,7 @@
     <div class="mapsContainer">
       <div id="dataDisplay">loading...</div>
 
-      <svg viewBox="0 0 325 334" width="100%" height="100%"></svg>
+      <svg id="mapSVG" viewBox="0 0 325 334" width="100%" height="100%"></svg>
     </div>
 
     <div>
@@ -30,6 +30,13 @@
       <div class="switchWithTitle">
         <p>Freeways</p>
         <label class="switch" id="freewayToggle">
+          <input type="checkbox" />
+          <span class="slider round"> </span>
+        </label>
+      </div>
+      <div class="switchWithTitle">
+        <p>Ferries</p>
+        <label class="switch" id="ferryToggle">
           <input type="checkbox" />
           <span class="slider round"> </span>
         </label>
