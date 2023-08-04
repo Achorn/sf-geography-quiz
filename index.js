@@ -3,6 +3,13 @@ let geoGenerator = d3.geoPath().projection(projection);
 let svg = d3.select("svg");
 svg.attr("display", "none");
 
+// state = playing, reviewing, finished, loading
+let gameState = "playing";
+let gameTimer;
+let neighborhoodNames = [];
+let nameToIdMap = new Map();
+
+//LOAD GEOJSON MAPS
 d3.json("./maps/sf_neighborhoods.geojson")
   .then(function (neighborhoods) {
     projection.fitSize([325, 334], neighborhoods);
@@ -38,7 +45,15 @@ d3.json("./maps/sf_neighborhoods.geojson")
       .then(() => {
         svg.attr("display", "inline");
 
-        playGame();
+        Array.from(
+          document.getElementById("neighborhoods").getElementsByTagName("path")
+        ).forEach((neighborhood) => {
+          neighborhoodNames.push(neighborhood.getAttribute("name"));
+          nameToIdMap.set(neighborhood.getAttribute("name"), neighborhood.id);
+        });
+        // console.log(neighborhoodNames);
+        // console.log(nameToIdMap);
+        playGame([...neighborhoodNames]);
       });
 
     d3.json("./maps/streets_of_sf.geojson").then(function (streets) {
@@ -83,36 +98,18 @@ d3.json("./maps/sf_neighborhoods.geojson")
     });
   });
 
-document.getElementById("streetToggle").addEventListener("change", (e) => {
-  let display = document.getElementById("streets");
-  display.style.display = display.style.display == "inline" ? "none" : "inline";
-});
-
-document.getElementById("freewayToggle").addEventListener("change", (e) => {
-  let display = document.getElementById("freeways");
-  display.style.display = display.style.display == "inline" ? "none" : "inline";
-});
-
-document.getElementById("ferryToggle").addEventListener("change", (e) => {
-  let display = document.getElementById("ferries");
-  display.style.display = display.style.display == "inline" ? "none" : "inline";
-});
 // GAME
 
-let playGame = () => {
+let playGame = (selectedNeighborhoodsNames) => {
   // const result = document.querySelector(".result");
   const dataDisplay = document.getElementById("dataDisplay");
   let answerPath;
-  let neighborhoodNames = [];
-  let nameToIdMap = new Map();
-  let neighborhoods = document
-    .getElementById("neighborhoods")
-    .getElementsByTagName("path");
-  Array.from(neighborhoods).forEach((neighborhood) => {
-    neighborhoodNames.push(neighborhood.getAttribute("name"));
-    nameToIdMap.set(neighborhood.getAttribute("name"), neighborhood.id);
-    neighborhood.addEventListener("click", function (event) {
-      guessNeighborhood(event, neighborhood, neighborhood.id);
+
+  selectedNeighborhoodsNames.forEach((neighborhoodName) => {
+    let nbhID = nameToIdMap.get(neighborhoodName);
+    let selectedNeighborhoodElement = document.getElementById(nbhID);
+    selectedNeighborhoodElement.addEventListener("click", function (event) {
+      guessNeighborhood(event, selectedNeighborhoodElement, nbhID);
     });
   });
 
@@ -181,6 +178,22 @@ let playGame = () => {
     }/${neighborhoodNames.length} | Click on ${answer}`;
   };
 };
+
+// SVG MAP FEATURES TOGGLE
+document.getElementById("streetToggle").addEventListener("change", (e) => {
+  let display = document.getElementById("streets");
+  display.style.display = display.style.display == "inline" ? "none" : "inline";
+});
+
+document.getElementById("freewayToggle").addEventListener("change", (e) => {
+  let display = document.getElementById("freeways");
+  display.style.display = display.style.display == "inline" ? "none" : "inline";
+});
+
+document.getElementById("ferryToggle").addEventListener("change", (e) => {
+  let display = document.getElementById("ferries");
+  display.style.display = display.style.display == "inline" ? "none" : "inline";
+});
 
 //TODO: animate boat on Ferry paths
 // let createBoat = () => {
