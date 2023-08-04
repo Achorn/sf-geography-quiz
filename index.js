@@ -98,6 +98,7 @@ document.getElementById("ferryToggle").addEventListener("change", (e) => {
   display.style.display = display.style.display == "inline" ? "none" : "inline";
 });
 // GAME
+
 let playGame = () => {
   // const result = document.querySelector(".result");
   const dataDisplay = document.getElementById("dataDisplay");
@@ -114,6 +115,7 @@ let playGame = () => {
       guessNeighborhood(event, neighborhood, neighborhood.id);
     });
   });
+
   function guessNeighborhood(event, neighborhood) {
     let guess = neighborhood.getAttribute("name");
     if (guess === answer) {
