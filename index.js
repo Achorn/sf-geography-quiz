@@ -7,7 +7,7 @@ svg.attr("display", "none");
 let gameTimer;
 let allNeighborhoodNames = [];
 let nameToIdMap = new Map();
-
+let selectedMap = [...allNeighborhoodNames];
 //LOAD GEOJSON MAPS
 d3.json("./maps/sf_neighborhoods.geojson")
   .then(function (neighborhoods) {
@@ -51,7 +51,7 @@ d3.json("./maps/sf_neighborhoods.geojson")
           nameToIdMap.set(neighborhood.getAttribute("name"), neighborhood.id);
         });
         // playGame([...allNeighborhoodNames]);
-        playGame([...allNeighborhoodNames.slice(0, 6)]);
+        playGame(allNeighborhoodNames.slice(0, 20));
       });
 
     d3.json("./maps/streets_of_sf.geojson").then(function (streets) {
@@ -97,6 +97,55 @@ d3.json("./maps/sf_neighborhoods.geojson")
   });
 
 // GAME
+let setMap = (e) => {
+  let value = e.target.value;
+  let [centerX, centerY] = getCenterOfNeighborhood("Eureka Valley");
+  let newMap = [];
+
+  if (value == "all") selectedMap = [allNeighborhoodNames];
+  if (value == "top-left") {
+    newMap = allNeighborhoodNames.filter((neighborhood) => {
+      let [x, y] = getCenterOfNeighborhood(neighborhood);
+      if (x < centerX && y < centerY) return true;
+      else return false;
+    });
+    console.log(newMap);
+  }
+  if (value == "top-right") {
+    newMap = allNeighborhoodNames.filter((neighborhood) => {
+      let [x, y] = getCenterOfNeighborhood(neighborhood);
+      if (x >= centerX && y >= centerY) return true;
+      else return false;
+    });
+    console.log(newMap);
+  }
+  if (value == "bottom-left") {
+    newMap = allNeighborhoodNames.filter((neighborhood) => {
+      let [x, y] = getCenterOfNeighborhood(neighborhood);
+      if (x < centerX && y >= centerY) return true;
+      else return false;
+    });
+    console.log(newMap);
+  }
+  if (value == "bottom-right") {
+    newMap = allNeighborhoodNames.filter((neighborhood) => {
+      let [x, y] = getCenterOfNeighborhood(neighborhood);
+      if (x >= centerX && y < centerY) return true;
+      else return false;
+    });
+    console.log(newMap);
+  }
+};
+
+let getCenterOfNeighborhood = (nName) => {
+  let element = document.getElementById(nameToIdMap.get(nName));
+  let { x, y, width, height } = element.getBoundingClientRect();
+  let cx = width / 2 + x;
+  let cy = height / 2 + y;
+  return [cx, cy];
+};
+var mapSelection = document.getElementById("mapSelect");
+mapSelection.addEventListener("change", (event) => setMap(event));
 
 let resetBoard = (allPiecesNames, selectedPiecesNames) => {
   allPiecesNames.forEach((piece) => {
@@ -181,21 +230,21 @@ let playGame = (selectedNeighborhoodsNames) => {
   function guessNeighborhood(event, neighborhood) {
     let guess = neighborhood.getAttribute("name");
     if (guess === answer) {
-      let color;
+      let answerElement = document.getElementById(nameToIdMap.get(answer));
+
+      // let color;
       if (tries == 3) {
         correctAnswers.push(answer);
-        color = "var(--answer_correct)";
+        answerElement.setAttribute("class", "correctGuess");
       } else if (tries <= 0) {
         wrongAnswers.push(answer);
-        color = "var(--answer_wrong)";
+        answerElement.setAttribute("class", "wrongGuess");
         document.getElementById(nameToIdMap.get(answer));
         answerPath.classList.remove("map-question_blink");
       } else {
         maybeAnswers.push(answer);
-        color = "var(--answer_almost)";
+        answerElement.setAttribute("class", "almostGuess");
       }
-
-      neighborhood.style.fill = color;
       allPlayablePieces = removeAnswerFromGuesses(answer, allPlayablePieces);
 
       //gameOver
@@ -241,6 +290,12 @@ document.getElementById("ferryToggle").addEventListener("change", (e) => {
   let display = document.getElementById("ferries");
   display.style.display = display.style.display == "inline" ? "none" : "inline";
 });
+
+class Game {
+  constructor(gamePieces) {
+    this.gamePieces = gamePieces;
+  }
+}
 
 //TODO: animate boat on Ferry paths
 // let createBoat = () => {

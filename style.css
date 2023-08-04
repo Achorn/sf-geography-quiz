@@ -36,7 +36,12 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
+#mapSelection {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
 .mapsContainer {
   position: relative;
   background-color: var(--map_bg_color);
@@ -59,7 +64,7 @@ body {
 }
 .neighborhood {
   stroke-width: 0.8;
-  fill: var(--land_fill_color);
+  /* fill: var(--land_fill_color); */
   stroke-linejoin: round;
   stroke: var(--map_bg_color);
   transition: fill 0.2s ease;
@@ -70,18 +75,17 @@ body {
 .playable {
   fill: var(--land_fill_color);
 }
+.playable:hover {
+  fill: var(--land_hightlight_color);
+}
 .wrongGuess {
   fill: var(--answer_wrong);
 }
 .almostGuess {
-  fill: var(--answer_correct);
+  fill: var(--answer_almost);
 }
 .correctGuess {
   fill: var(--answer_correct);
-}
-
-.neighborhood:hover {
-  fill: var(--land_hightlight_color);
 }
 
 .map-question_blink {
