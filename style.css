@@ -134,7 +134,7 @@ body {
 }
 
 .ferry {
-  /* pointer-events: none; */
+  pointer-events: none;
   /* stroke: var(--map_bg_color); */
   /* stroke: orange; */
   stroke: #5facbd;
@@ -147,9 +147,6 @@ body {
   stroke-miterlimit: 4;
   stroke-opacity: 1;
   stroke-dasharray: 2 4;
-}
-.ferryRoute:hover {
-  stroke: red;
 }
 
 .switchWithTitle {
