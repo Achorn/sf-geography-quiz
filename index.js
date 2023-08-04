@@ -3,8 +3,7 @@ let geoGenerator = d3.geoPath().projection(projection);
 let svg = d3.select("svg");
 svg.attr("display", "none");
 
-// state = playing, reviewing, finished, loading
-let gameState = "playing";
+// state = PLAYING, REVIEWING, OVER, LOADING
 let gameTimer;
 let allNeighborhoodNames = [];
 let nameToIdMap = new Map();
@@ -152,8 +151,6 @@ let showSelectedNeighborhoodName = (event, neighborhood) => {
 };
 
 let playGame = (selectedNeighborhoodsNames) => {
-  // const result = document.querySelector(".result");
-
   let allPlayablePieces = [...selectedNeighborhoodsNames];
   let correctAnswers = [];
   let maybeAnswers = [];
@@ -169,23 +166,43 @@ let playGame = (selectedNeighborhoodsNames) => {
   resetBoard(allNeighborhoodNames, selectedNeighborhoodsNames);
   addSelectorToSelectableGamePieces(allPlayablePieces, guessNeighborhood);
 
+  let getGamePercentage = () => {
+    let percentage = 0;
+    percentage += correctAnswers.length;
+    if (maybeAnswers.length != 0) percentage += maybeAnswers.length / 2;
+
+    if (percentage != 0) {
+      percentage = percentage / selectedNeighborhoodsNames.length;
+      percentage = percentage * 100;
+    }
+    percentage = Math.floor(percentage);
+    return percentage + "%";
+  };
   function guessNeighborhood(event, neighborhood) {
     let guess = neighborhood.getAttribute("name");
     if (guess === answer) {
       let color;
-      if (tries == 3) color = "var(--answer_correct)";
-      else if (tries <= 0) {
+      if (tries == 3) {
+        correctAnswers.push(answer);
+        color = "var(--answer_correct)";
+      } else if (tries <= 0) {
+        wrongAnswers.push(answer);
         color = "var(--answer_wrong)";
         document.getElementById(nameToIdMap.get(answer));
         answerPath.classList.remove("map-question_blink");
-      } else color = "var(--answer_almost)";
+      } else {
+        maybeAnswers.push(answer);
+        color = "var(--answer_almost)";
+      }
 
       neighborhood.style.fill = color;
       allPlayablePieces = removeAnswerFromGuesses(answer, allPlayablePieces);
 
       //gameOver
       if (allPlayablePieces.length == 0) {
-        console.log("yay game happened");
+        let gameScore = getGamePercentage();
+        console.log(`You got ${gameScore}%`);
+
         return;
       }
 
