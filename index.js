@@ -6,7 +6,7 @@ svg.attr("display", "none");
 // state = playing, reviewing, finished, loading
 let gameState = "playing";
 let gameTimer;
-let neighborhoodNames = [];
+let allNeighborhoodNames = [];
 let nameToIdMap = new Map();
 
 //LOAD GEOJSON MAPS
@@ -48,12 +48,10 @@ d3.json("./maps/sf_neighborhoods.geojson")
         Array.from(
           document.getElementById("neighborhoods").getElementsByTagName("path")
         ).forEach((neighborhood) => {
-          neighborhoodNames.push(neighborhood.getAttribute("name"));
+          allNeighborhoodNames.push(neighborhood.getAttribute("name"));
           nameToIdMap.set(neighborhood.getAttribute("name"), neighborhood.id);
         });
-        // console.log(neighborhoodNames);
-        // console.log(nameToIdMap);
-        playGame([...neighborhoodNames]);
+        playGame([...allNeighborhoodNames]);
       });
 
     d3.json("./maps/streets_of_sf.geojson").then(function (streets) {
@@ -100,18 +98,78 @@ d3.json("./maps/sf_neighborhoods.geojson")
 
 // GAME
 
-let playGame = (selectedNeighborhoodsNames) => {
-  // const result = document.querySelector(".result");
-  const dataDisplay = document.getElementById("dataDisplay");
-  let answerPath;
-
+let resetBoard = (allPiecesNames, selectedPiecesNames) => {
+  allPiecesNames.forEach((piece) => {
+    let pieceElement = document.getElementById(nameToIdMap.get(piece));
+    pieceElement.setAttribute("class", "unplayable");
+  });
+  selectedPiecesNames.forEach((piece) => {
+    let pieceElement = document.getElementById(nameToIdMap.get(piece));
+    pieceElement.setAttribute("class", "playable");
+  });
+};
+let addSelectorToSelectableGamePieces = (
+  selectedNeighborhoodsNames,
+  method
+) => {
   selectedNeighborhoodsNames.forEach((neighborhoodName) => {
     let nbhID = nameToIdMap.get(neighborhoodName);
     let selectedNeighborhoodElement = document.getElementById(nbhID);
     selectedNeighborhoodElement.addEventListener("click", function (event) {
-      guessNeighborhood(event, selectedNeighborhoodElement, nbhID);
+      method(event, selectedNeighborhoodElement, nbhID);
     });
   });
+};
+
+let getNewAnswer = (selectedNeighborhoodsNames) => {
+  return selectedNeighborhoodsNames[
+    Math.floor(Math.random() * selectedNeighborhoodsNames.length)
+  ];
+};
+
+let removeAnswerFromGuesses = (name, allPiecesNames) => {
+  allPiecesNames = allPiecesNames.filter((e) => e !== name);
+  return allPiecesNames;
+};
+
+let showSelectedNeighborhoodName = (event, neighborhood) => {
+  var duplicate = document.getElementById(
+    "answer-" + neighborhood.getAttribute("name")
+  );
+  if (duplicate) duplicate.remove();
+  const answerBox = document.createElement("div");
+  answerBox.id = "answer-" + neighborhood.getAttribute("name");
+  answerBox.className = "answerTooltip";
+  document.body.appendChild(answerBox);
+  answerBox.innerHTML = neighborhood.getAttribute("name");
+  answerBox.style.left = event.pageX - 40 + "px";
+  answerBox.style.top = event.pageY + -30 + "px";
+
+  setTimeout(() => {
+    answerBox.remove();
+  }, "1200");
+};
+
+let playGame = (selectedNeighborhoodsNames) => {
+  // const result = document.querySelector(".result");
+
+  let allPlayablePieces = [...selectedNeighborhoodsNames];
+  let correctAnswers = [];
+  let maybeAnswers = [];
+  let wrongAnswers = [];
+
+  let tries = 3;
+
+  const dataDisplay = document.getElementById("dataDisplay");
+  let answerPath;
+  let answer = getNewAnswer(allPlayablePieces);
+  dataDisplay.innerHTML = `0/${selectedNeighborhoodsNames.length} | Click on ${answer}`;
+
+  //gameMethods
+
+  //set  up board///
+  resetBoard(allNeighborhoodNames, selectedNeighborhoodsNames);
+  addSelectorToSelectableGamePieces(allPlayablePieces, guessNeighborhood);
 
   function guessNeighborhood(event, neighborhood) {
     let guess = neighborhood.getAttribute("name");
@@ -125,8 +183,8 @@ let playGame = (selectedNeighborhoodsNames) => {
       } else color = "var(--answer_almost)";
 
       neighborhood.style.fill = color;
-      removeAnswerFromGuesses(answer);
-      answer = getNewAnswer();
+      allPlayablePieces = removeAnswerFromGuesses(answer, allPlayablePieces);
+      answer = getNewAnswer(allPlayablePieces);
       updateDataDisplay();
       tries = 3;
     } else {
@@ -139,46 +197,13 @@ let playGame = (selectedNeighborhoodsNames) => {
       }
     }
   }
-  let showSelectedNeighborhoodName = (event, neighborhood) => {
-    var duplicate = document.getElementById(
-      "answer-" + neighborhood.getAttribute("name")
-    );
-    if (duplicate) duplicate.remove();
-    const answerBox = document.createElement("div");
-    answerBox.id = "answer-" + neighborhood.getAttribute("name");
-    answerBox.className = "answerTooltip";
-    document.body.appendChild(answerBox);
-    answerBox.innerHTML = neighborhood.getAttribute("name");
-    answerBox.style.left = event.pageX - 40 + "px";
-    answerBox.style.top = event.pageY + -30 + "px";
-
-    setTimeout(() => {
-      answerBox.remove();
-    }, "1200");
-  };
-
-  let removeAnswerFromGuesses = (name) => {
-    allNeighborhoods = allNeighborhoods.filter((e) => e !== name);
-  };
-  let getNewAnswer = () => {
-    return allNeighborhoods[
-      Math.floor(Math.random() * allNeighborhoods.length)
-    ];
-  };
-
-  let allNeighborhoods = [...neighborhoodNames];
-  let guessedNeighborhoods = [];
-  let answer = getNewAnswer();
-  dataDisplay.innerHTML = `0/${allNeighborhoods.length} | Click on ${answer}`;
-  let tries = 3;
 
   let updateDataDisplay = () => {
     dataDisplay.innerHTML = `${
-      neighborhoodNames.length - allNeighborhoods.length
-    }/${neighborhoodNames.length} | Click on ${answer}`;
+      selectedNeighborhoodsNames.length - allPlayablePieces.length
+    }/${selectedNeighborhoodsNames.length} | Click on ${answer}`;
   };
 };
-
 // SVG MAP FEATURES TOGGLE
 document.getElementById("streetToggle").addEventListener("change", (e) => {
   let display = document.getElementById("streets");

@@ -64,6 +64,22 @@ body {
   stroke: var(--map_bg_color);
   transition: fill 0.2s ease;
 }
+.unplayable {
+  fill: var(--land_non_selectable_color);
+}
+.playable {
+  fill: var(--land_fill_color);
+}
+.wrongGuess {
+  fill: var(--answer_wrong);
+}
+.almostGuess {
+  fill: var(--answer_correct);
+}
+.correctGuess {
+  fill: var(--answer_correct);
+}
+
 .neighborhood:hover {
   fill: var(--land_hightlight_color);
 }
