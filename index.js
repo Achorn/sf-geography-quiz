@@ -51,7 +51,8 @@ d3.json("./maps/sf_neighborhoods.geojson")
           allNeighborhoodNames.push(neighborhood.getAttribute("name"));
           nameToIdMap.set(neighborhood.getAttribute("name"), neighborhood.id);
         });
-        playGame([...allNeighborhoodNames]);
+        // playGame([...allNeighborhoodNames]);
+        playGame([...allNeighborhoodNames.slice(0, 6)]);
       });
 
     d3.json("./maps/streets_of_sf.geojson").then(function (streets) {
@@ -165,9 +166,6 @@ let playGame = (selectedNeighborhoodsNames) => {
   let answer = getNewAnswer(allPlayablePieces);
   dataDisplay.innerHTML = `0/${selectedNeighborhoodsNames.length} | Click on ${answer}`;
 
-  //gameMethods
-
-  //set  up board///
   resetBoard(allNeighborhoodNames, selectedNeighborhoodsNames);
   addSelectorToSelectableGamePieces(allPlayablePieces, guessNeighborhood);
 
@@ -184,6 +182,13 @@ let playGame = (selectedNeighborhoodsNames) => {
 
       neighborhood.style.fill = color;
       allPlayablePieces = removeAnswerFromGuesses(answer, allPlayablePieces);
+
+      //gameOver
+      if (allPlayablePieces.length == 0) {
+        console.log("yay game happened");
+        return;
+      }
+
       answer = getNewAnswer(allPlayablePieces);
       updateDataDisplay();
       tries = 3;
