@@ -9,161 +9,6 @@
     {
       "type": "Feature",
       "properties": {
-        "OBJECTID": 131,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0019389130212959355
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.390216, 37.798014],
-            [-122.392068000999984, 37.79744]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 150,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.014046041638167694
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.376326, 37.799878],
-            [-122.379638, 37.799666],
-            [-122.385418, 37.799102],
-            [-122.390216, 37.798014]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 151,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00016714664218171535
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.376159, 37.799885],
-            [-122.376326, 37.799878]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 152,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0065168735993399191
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.369646, 37.799666],
-            [-122.371902, 37.799718001000031],
-            [-122.376159, 37.799885]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 47,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0041095249075706556
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.314104, 37.794952999000031],
-            [-122.318091000999971, 37.795949]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 52,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.023082856515188752
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.318091000999971, 37.795949],
-            [-122.324791, 37.797586],
-            [-122.340558, 37.801244001000043]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 48,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.020440832490568113
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.293848, 37.79365800100004],
-            [-122.297585, 37.793036],
-            [-122.305228998999951, 37.793501],
-            [-122.311951998999973, 37.794553999000073],
-            [-122.31383, 37.794884],
-            [-122.314104, 37.794952999000031]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "OBJECTID": 74,
         "NAME": "Oakland-San Francisco",
         "STATUS": " ",
@@ -223,3369 +68,27 @@
             [-122.290885410999977, 37.793823369000052],
             [-122.291678542999989, 37.793783122000036],
             [-122.292763462999972, 37.793723123000063],
-            [-122.293848, 37.79365800100004]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 114,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0074059186201044618
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
+            [-122.293848, 37.79365800100004],
+            [-122.297585, 37.793036],
+            [-122.305228998999951, 37.793501],
+            [-122.311951998999973, 37.794553999000073],
+            [-122.31383, 37.794884],
+            [-122.314104, 37.794952999000031],
+            [-122.318091000999971, 37.795949],
+            [-122.324791, 37.797586],
             [-122.340558, 37.801244001000043],
-            [-122.347953, 37.800841999000056]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 115,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0072401687405722242
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
             [-122.347953, 37.800841999000056],
-            [-122.355182, 37.800440001000027]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 133,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0072445581970442272
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.362410998999962, 37.800038],
-            [-122.369646, 37.799666]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 126,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0021509002422233137
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.394142, 37.79687],
-            [-122.392068000999984, 37.79744]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 116,
-        "NAME": "Oakland-San Francisco",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0072401679086941473
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
             [-122.355182, 37.800440001000027],
-            [-122.362410998999962, 37.800038]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 1,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00912813434203333
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.413642, 38.004484001000037],
-            [-122.407461, 38.011201]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 2,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0091012287415899781
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.407461, 38.011201],
-            [-122.401298, 38.01789799900007]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 3,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.012459013736078231
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.401298, 38.01789799900007],
-            [-122.392829, 38.027036]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 4,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0098553358405719851
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.427582, 37.904025],
-            [-122.425816998999949, 37.894329]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 5,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.011496702918637313
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.432252, 37.92973900100003],
-            [-122.430205, 37.918426001000057]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 6,
-        "NAME": "Tiburon-Angel",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.011155313858603324
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.434603, 37.868976001000078],
-            [-122.434568, 37.869081],
-            [-122.434595, 37.869172],
-            [-122.434737999, 37.869225],
-            [-122.434944, 37.86926],
-            [-122.445472, 37.870388]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 7,
-        "NAME": "San Francisco-Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0012012406678183695
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.452063, 37.868177],
-            [-122.452607, 37.869248001000074]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 8,
-        "NAME": "San Francisco-Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0004336196490041242
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.451898, 37.867776],
-            [-122.452063, 37.868177]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 9,
-        "NAME": "San Francisco-Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0058834360708731985
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.448133, 37.863446],
-            [-122.451237, 37.868444]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 10,
-        "NAME": "San Francisco-Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.01309503644280105
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.466466, 37.84728],
-            [-122.475685000999988, 37.85658]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 11,
-        "NAME": "San Francisco-Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.014874329598371216
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.454001, 37.839164],
-            [-122.466466, 37.84728]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 12,
-        "NAME": "San Francisco-Angel",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0043153222809215359
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.43948500099998, 37.84466],
-            [-122.441448, 37.848502999000061]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 13,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 7.8235426760139758e-5
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.433880998999939, 37.934303],
-            [-122.433836, 37.934239001000037]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 14,
-        "NAME": "Tiburon-Angel",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0063414099378637807
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.451754, 37.871254],
-            [-122.445472, 37.870388]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 15,
-        "NAME": "San Francisco-Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0020704018933212815
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.452477, 37.870102],
-            [-122.451237, 37.868444]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 16,
-        "NAME": "San Francisco-Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00051340687570103967
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.452607, 37.869248001000074],
-            [-122.452838999, 37.869706]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 17,
-        "NAME": "Tiburon-Angel",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0044596878533754141
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.455916998999953, 37.872732],
-            [-122.455692000999989, 37.872731],
-            [-122.453413000999944, 37.871666],
-            [-122.452603998999962, 37.871371],
-            [-122.451754, 37.871254]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 18,
-        "NAME": "San Francisco-Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0044582347287131716
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.455916998999953, 37.872732],
-            [-122.455742999, 37.872659],
-            [-122.45363, 37.87164400100005],
-            [-122.452477, 37.870102]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 19,
-        "NAME": "San Francisco-Angel",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.015625095291222899
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.434603, 37.868976001000078],
-            [-122.434713998999939, 37.868963999000073],
-            [-122.434890998999947, 37.868898],
-            [-122.435001, 37.868850001000055],
-            [-122.435191, 37.868817],
-            [-122.439992000999951, 37.869232],
-            [-122.440825998999969, 37.869090001000075],
-            [-122.442015998999977, 37.868544],
-            [-122.443292, 37.867929],
-            [-122.444663, 37.866823],
-            [-122.447403, 37.864365],
-            [-122.448088000999974, 37.863554],
-            [-122.448133, 37.863446]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 20,
-        "NAME": "San Francisco-Angel",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.016692600872046996
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.448133, 37.863446],
-            [-122.4485, 37.862565],
-            [-122.448368, 37.862153],
-            [-122.448205000999963, 37.861749],
-            [-122.445916, 37.857303],
-            [-122.443795, 37.853123],
-            [-122.441673, 37.848943],
-            [-122.441448, 37.848502999000061]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 21,
-        "NAME": "San Francisco-Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.021100183700350182
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.448133, 37.863446],
-            [-122.445218, 37.859043001000032],
-            [-122.44264, 37.854394],
-            [-122.439466, 37.85002399900003],
-            [-122.436511000999985, 37.845864]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 22,
-        "NAME": "San Francisco-Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0057752977729622129
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.440485, 37.844281],
-            [-122.442837, 37.84884],
-            [-122.44313, 37.849415]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 23,
-        "NAME": "San Francisco-Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.020359321762844218
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.44313, 37.849415],
-            [-122.445098, 37.85328],
-            [-122.447379, 37.857869],
-            [-122.44964, 37.862309],
-            [-122.451898, 37.867776]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 24,
-        "NAME": "San Francisco-Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0045372868587119468
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.452838999, 37.869706],
-            [-122.453812998999979, 37.871626],
-            [-122.455797998999969, 37.872616],
-            [-122.455916998999953, 37.872732]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 25,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0019484635285578235
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.434968, 37.936821],
-            [-122.43419599899994, 37.935031999000046]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 26,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00079414390508604125
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.43419599899994, 37.935031999000046],
-            [-122.433880998999939, 37.934303]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 27,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00039533657555302439
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.433836, 37.934239001000037],
-            [-122.433704998999985, 37.933866]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 28,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0043753087708780919
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.433704998999985, 37.933866],
-            [-122.432252, 37.92973900100003]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 29,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0011481114928446139
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.441521, 37.968011],
-            [-122.441537, 37.969159]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 30,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0016721591999884701
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.441537, 37.969159],
-            [-122.441560000999971, 37.970831001000079]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 31,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.014637928774322692
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.430205, 37.918426001000057],
-            [-122.427582, 37.904025]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 32,
-        "NAME": "San Francisco-Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.002830941028381672
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.478325999, 37.856381999000064],
-            [-122.478187, 37.856393],
-            [-122.478102000999968, 37.856421],
-            [-122.478035, 37.856499],
-            [-122.477727000999948, 37.856739],
-            [-122.477270998999984, 37.85690500100003],
-            [-122.476573, 37.856823001000066],
-            [-122.475685000999988, 37.85658]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 33,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.014637928774322692
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.430205, 37.918426001000057],
-            [-122.427582, 37.904025]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 34,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.011496702918637313
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.432252, 37.92973900100003],
-            [-122.430205, 37.918426001000057]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 35,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0058240647317518617
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.41130900099995, 37.824266],
-            [-122.412346000999946, 37.829997]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 36,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0058240645537554238
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.412346000999946, 37.829997],
-            [-122.413383, 37.835728]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 37,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00582308071382021
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.413383, 37.835728],
-            [-122.41442, 37.841458]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 38,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.005824064731807797
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.41442, 37.841458],
-            [-122.415457, 37.847189]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 39,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0058238867605441237
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.415457, 37.847189],
-            [-122.416493, 37.85292]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 40,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0058240649098704588
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.416493, 37.85292],
-            [-122.417530000999989, 37.858651]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 41,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0058240645536893672
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.417530000999989, 37.858651],
-            [-122.418567, 37.864382]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 42,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0058240647318179182
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.418567, 37.864382],
-            [-122.419604, 37.870113]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 43,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0060441536214333987
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.419604, 37.870113],
-            [-122.420861, 37.876025]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 44,
-        "NAME": "San Francisco-Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0022613919576329302
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.322796000999972, 37.796639],
-            [-122.325003, 37.797132]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 45,
-        "NAME": "San Francisco-Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0017359297974744062
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.295705000999988, 37.791401999000072],
-            [-122.296369, 37.791927],
-            [-122.297142, 37.792367]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 46,
-        "NAME": "San Francisco-Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0013256907905702733
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.294543, 37.790764],
-            [-122.295317, 37.791182],
-            [-122.295705000999988, 37.791401999000072]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 49,
-        "NAME": "San Francisco-Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.018243367283786689
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.297142, 37.792367],
-            [-122.299583, 37.792826],
-            [-122.305199000999949, 37.793126],
-            [-122.312073000999987, 37.794059],
-            [-122.315188998999986, 37.794781]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 50,
-        "NAME": "San Francisco-Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.007831408561114344
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.315188998999986, 37.794781],
-            [-122.319665, 37.795818001000043],
-            [-122.322796000999972, 37.796639]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 51,
-        "NAME": "San Francisco-Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6001,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.015541417661594361
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.325003, 37.797132],
-            [-122.340153, 37.800598001000026]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 53,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0032351700109886331
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.440984, 37.957424],
-            [-122.441473, 37.960622]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 54,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.010735365435383531
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.434968, 37.936821],
-            [-122.437984000999961, 37.947124]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 55,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.010728000466097266
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.437984000999961, 37.947124],
-            [-122.440984, 37.957424]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 56,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0058981098667302417
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.441509, 37.96652],
-            [-122.441473, 37.960622]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 57,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0014910482889439309
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.441521, 37.968011],
-            [-122.441509, 37.96652]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 58,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.011824640241971222
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.438394000999949, 37.977426],
-            [-122.430468, 37.986201]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 59,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.011824526797514147
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.430468, 37.986201],
-            [-122.422461000999988, 37.994902]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 60,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0021311048111647326
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.422461000999988, 37.994902],
-            [-122.421031998999979, 37.996483]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 61,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0046255481757301181
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.421031998999979, 37.996483],
-            [-122.417885, 37.999872999000047]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 62,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0062661302606706291
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.417885, 37.999872999000047],
-            [-122.413642, 38.004484001000037]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 63,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00912813434203333
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.413642, 38.004484001000037],
-            [-122.407461, 38.011201]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 64,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0091012287415899781
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.407461, 38.011201],
-            [-122.401298, 38.01789799900007]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 65,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.012459013736078231
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.401298, 38.01789799900007],
-            [-122.392829, 38.027036]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 66,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.012544189611119791
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.245483000999968, 38.063923],
-            [-122.257780000999958, 38.061445]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 67,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0070811691352421101
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.257780000999958, 38.061445],
-            [-122.264722, 38.060048001000041]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 68,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00063915833572642466
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.264722, 38.060048001000041],
-            [-122.264828998999974, 38.060025],
-            [-122.265348, 38.059919]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 69,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.011367583604255821
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.265348, 38.059919],
-            [-122.276114, 38.05627]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 70,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00241638473053324
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.278459, 38.055686999000045],
-            [-122.276114, 38.05627]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 71,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0068823544393079627
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.28509, 38.053844001000073],
-            [-122.278459, 38.055686999000045]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 72,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0070344501337599799
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.291879, 38.052002],
-            [-122.28509, 38.053844001000073]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 73,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00703541472236197
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.298669, 38.050160001000052],
-            [-122.291879, 38.052002]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 75,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0078299294701952901
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.441560000999971, 37.970831001000079],
-            [-122.441584, 37.973923],
-            [-122.438394000999949, 37.977426]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 76,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0070344498718536578
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.312247, 38.046476],
-            [-122.305458, 38.048318]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 77,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0070344501337599799
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.319036, 38.044633999000041],
-            [-122.312247, 38.046476]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 78,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0070344486448901651
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.325824998999963, 38.042792],
-            [-122.319036, 38.044633999000041]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 79,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0070344508370057696
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.332614, 38.04095],
-            [-122.325824998999963, 38.042792]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 80,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0072254417857984905
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.339549, 38.038922],
-            [-122.332614, 38.04095]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 81,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0089075599913540845
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.348342, 38.037498],
-            [-122.339549, 38.038922]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 82,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0068594463333809894
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.35499, 38.035808],
-            [-122.348342, 38.037498]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 83,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0066065280593822278
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.361448, 38.034415],
-            [-122.35499, 38.035808]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 84,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0066065270819181642
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.367905998999959, 38.033022],
-            [-122.361448, 38.034415]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 85,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0066067399612816822
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.374364, 38.031628],
-            [-122.367905998999959, 38.033022]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 86,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.006607716473949172
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.380823, 38.030234],
-            [-122.374364, 38.031628]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 87,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0071943834733588031
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.387809, 38.028515001000073],
-            [-122.380823, 38.030234]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 88,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0052333396562844747
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.392829, 38.027036],
-            [-122.387809, 38.028515001000073]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 89,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 7.8235426760139758e-5
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.433880998999939, 37.934303],
-            [-122.433836, 37.934239001000037]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 90,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0019484635285578235
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.434968, 37.936821],
-            [-122.43419599899994, 37.935031999000046]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 91,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00079414390508604125
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.43419599899994, 37.935031999000046],
-            [-122.433880998999939, 37.934303]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 92,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00039533657555302439
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.433836, 37.934239001000037],
-            [-122.433704998999985, 37.933866]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 93,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0043753087708780919
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.433704998999985, 37.933866],
-            [-122.432252, 37.92973900100003]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 94,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0011481114928446139
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.441521, 37.968011],
-            [-122.441537, 37.969159]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 95,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0016721591999884701
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.441537, 37.969159],
-            [-122.441560000999971, 37.970831001000079]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 96,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0032351700109886331
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.440984, 37.957424],
-            [-122.441473, 37.960622]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 97,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.010735365435383531
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.434968, 37.936821],
-            [-122.437984000999961, 37.947124]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 98,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.010728000466097266
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.437984000999961, 37.947124],
-            [-122.440984, 37.957424]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 99,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0058981098667302417
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.441509, 37.96652],
-            [-122.441473, 37.960622]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 100,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0014910482889439309
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.441521, 37.968011],
-            [-122.441509, 37.96652]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 101,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0078299294701952901
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.441560000999971, 37.970831001000079],
-            [-122.441584, 37.973923],
-            [-122.438394000999949, 37.977426]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 102,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.011824640241971222
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.438394000999949, 37.977426],
-            [-122.430468, 37.986201]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 103,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.011824526797514147
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.430468, 37.986201],
-            [-122.422461000999988, 37.994902]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 104,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0021311048111647326
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.422461000999988, 37.994902],
-            [-122.421031998999979, 37.996483]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 105,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0046255481757301181
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.421031998999979, 37.996483],
-            [-122.417885, 37.999872999000047]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 106,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6041,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0062661302606706291
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.417885, 37.999872999000047],
-            [-122.413642, 38.004484001000037]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 107,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0070344501337599799
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.305458, 38.048318],
-            [-122.298669, 38.050160001000052]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 108,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0057142635005854011
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.420861, 37.876025],
-            [-122.422183998999969, 37.881584]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 109,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.007459940778017691
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.423832, 37.887137999000061],
-            [-122.425816998999949, 37.894329]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 110,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0057933420568999344
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.422183998999969, 37.881584],
-            [-122.423832, 37.887137999000061]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 111,
-        "NAME": "San Francisco - Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.007557569445772014
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.340153, 37.800598001000026],
-            [-122.347699000999967, 37.80018]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 112,
-        "NAME": "San Francisco - Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0074368669574074705
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.347699000999967, 37.80018],
-            [-122.355128, 37.799838]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 113,
-        "NAME": "San Francisco - Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0074369150094580234
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.355128, 37.799838],
-            [-122.362557000999971, 37.799495]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 117,
-        "NAME": "San Francisco - Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0062067656166418274
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.420133998999972, 37.812927999000067],
-            [-122.425033, 37.816739]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 118,
-        "NAME": "San Francisco - Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0060998736585139244
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.425033, 37.816739],
-            [-122.429858000999957, 37.820471]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 119,
-        "NAME": "San Francisco - Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0060998720765304704
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.429858000999957, 37.820471],
-            [-122.434683, 37.824203]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 120,
-        "NAME": "San Francisco - Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00609987225567788
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.439508, 37.827936001000069],
-            [-122.444333, 37.831668]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 121,
-        "NAME": "San Francisco - Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0060998736585139244
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.444333, 37.831668],
-            [-122.449158000999944, 37.8354]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 122,
-        "NAME": "San Francisco - Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0061337048603569838
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.449158000999944, 37.8354],
-            [-122.454001, 37.839164]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 123,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00051724752297308896
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.411217000999955, 37.823757],
-            [-122.41130900099995, 37.824266]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 124,
-        "NAME": "San Francisco - Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0018492719242803274
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.392276, 37.797733],
-            [-122.391101000999981, 37.799161]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 125,
-        "NAME": "San Francisco - Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0022217335573925445
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.394142, 37.79687],
-            [-122.391942, 37.79718]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 127,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0098553358405719851
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.427582, 37.904025],
-            [-122.425816998999949, 37.894329]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 128,
-        "NAME": "San Francisco - Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0061004853467887992
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.434683, 37.824203],
-            [-122.439508, 37.827936001000069]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 129,
-        "NAME": "San Francisco - Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0020559000462067527
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.394142, 37.79687],
-            [-122.392276, 37.797733]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 130,
-        "NAME": "San Francisco - Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0020943583742850645
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.391942, 37.79718],
-            [-122.389886, 37.797579]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 132,
-        "NAME": "San Francisco - Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0074272974804896171
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.362557000999971, 37.799495],
-            [-122.369976, 37.79914399900008]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 134,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0018302021401894136
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.408192, 37.811292],
-            [-122.409292998999945, 37.812753999000051]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 135,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0046817678627001647
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.409003999, 37.808563],
-            [-122.408604, 37.808726001000025],
-            [-122.407308001, 37.808554],
-            [-122.407223, 37.808841],
-            [-122.407332, 37.809329],
-            [-122.408192, 37.811292]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 136,
-        "NAME": "San Francisco - Angel",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0019799660451594965
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.415146, 37.81113300100003],
-            [-122.416109, 37.812863]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 137,
-        "NAME": "San Francisco - Angel",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0013131671203502897
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.415283000999978, 37.809827],
-            [-122.415146, 37.81113300100003]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 138,
-        "NAME": "San Francisco - Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0021171333260258129
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.415836000999946, 37.811162],
-            [-122.417076, 37.812878]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 139,
-        "NAME": "San Francisco - Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0014450031141557576
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.415283000999978, 37.809827],
-            [-122.415836000999946, 37.811162]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 140,
-        "NAME": "San Francisco - Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0028176295207208422
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.415283000999978, 37.809827],
-            [-122.417545, 37.811506999000073]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 141,
-        "NAME": "San Francisco - Alcatraz",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0025269537676693953
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.412808, 37.810554],
-            [-122.413146, 37.811248],
-            [-122.41391, 37.812828001000071]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 142,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.011170128366537736
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.409292998999945, 37.812753999000051],
-            [-122.410272, 37.818535],
-            [-122.411217000999955, 37.823757]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 143,
-        "NAME": "San Francisco - Angel",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.039465030645517638
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.416109, 37.812863],
-            [-122.419463, 37.81744],
-            [-122.422814000999949, 37.822],
-            [-122.426165000999958, 37.82655999900004],
-            [-122.429516, 37.83112],
-            [-122.432867000999977, 37.83568],
-            [-122.436218, 37.84024],
-            [-122.43948500099998, 37.84466]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 144,
-        "NAME": "San Francisco - Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.039168255381270854
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.417076, 37.812878],
-            [-122.420403, 37.817428],
-            [-122.423759, 37.821918],
-            [-122.427115, 37.826408],
-            [-122.43047, 37.830899],
-            [-122.433825998999964, 37.835389],
-            [-122.437182, 37.839879],
-            [-122.440485, 37.844281]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 145,
-        "NAME": "San Francisco - Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.033620945181780132
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.436511000999985, 37.845864],
-            [-122.432528, 37.842212],
-            [-122.428161, 37.838155],
-            [-122.4236, 37.834452001000045],
-            [-122.419039, 37.830749],
-            [-122.414478, 37.827046001000042],
-            [-122.411217000999955, 37.823757]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 146,
-        "NAME": "San Francisco - Alcatraz",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.018061648573424013
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.41391, 37.812828001000071],
-            [-122.418128, 37.82315],
-            [-122.418223998999963, 37.825704999000038],
-            [-122.418548, 37.826439],
-            [-122.419608, 37.827117],
-            [-122.420501, 37.827276],
-            [-122.421063, 37.827384],
-            [-122.421496, 37.827303999000037],
-            [-122.421842, 37.827162]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 147,
-        "NAME": "San Francisco - Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.010803820649111697
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.389886, 37.797579],
-            [-122.385436, 37.797284],
-            [-122.379092, 37.797258]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 148,
-        "NAME": "San Francisco - Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00020082330543736056
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.378895, 37.797297],
-            [-122.379092, 37.797258]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 149,
-        "NAME": "San Francisco - Alameda",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0091096438110390872
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.369976, 37.79914399900008],
-            [-122.374827, 37.798058],
-            [-122.378895, 37.797297]
-          ]
-        ]
-      }
-    },
-
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 153,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.012544189611119791
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.245483000999968, 38.063923],
-            [-122.257780000999958, 38.061445]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 154,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0070811691352421101
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.257780000999958, 38.061445],
-            [-122.264722, 38.060048001000041]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 155,
-        "NAME": "San Francisco - Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6013,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.00063915833572642466
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.264722, 38.060048001000041],
-            [-122.264828998999974, 38.060025],
-            [-122.265348, 38.059919]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 156,
-        "NAME": "San Francisco-Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6095,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0070977042063040362
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.250922, 38.083707],
-            [-122.246533, 38.078129]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 157,
-        "NAME": "San Francisco-Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6095,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0038680117180249331
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.246533, 38.078129],
-            [-122.246367, 38.077943],
-            [-122.244956001, 38.076007],
-            [-122.24474, 38.075467],
-            [-122.244636, 38.074834]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 158,
-        "NAME": "San Francisco-Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6095,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.010943826190802161
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.244636, 38.074834],
-            [-122.245483000999968, 38.063923]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 159,
-        "NAME": "San Francisco - Sausalito",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0029533297855199327
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.417545, 37.811506999000073],
-            [-122.420133998999972, 37.812927999000067]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 160,
-        "NAME": "San Francisco - Tiburon",
-        "STATUS": " ",
-        "COUNTY_FIP": 6075,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.032728588696207976
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.411217000999955, 37.823757],
-            [-122.406968, 37.819443],
-            [-122.402742, 37.815023],
-            [-122.398515998999983, 37.810603],
-            [-122.39429, 37.806182999000043],
-            [-122.391675, 37.803378],
-            [-122.391143000999989, 37.802502],
-            [-122.390842998999972, 37.801807],
-            [-122.390704, 37.800876],
-            [-122.390853, 37.799834],
-            [-122.391101000999981, 37.799161]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 161,
-        "NAME": "San Francisco-Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6095,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.017551709771322754
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.262744998999949, 38.096639],
-            [-122.260018, 38.094201999000063],
-            [-122.256819, 38.090204],
-            [-122.250922, 38.083707]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 162,
-        "NAME": "San Francisco-Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6095,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0026995422656852985
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.264467, 38.098718],
-            [-122.262744998999949, 38.096639]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "OBJECTID": 163,
-        "NAME": "San Francisco-Vallejo",
-        "STATUS": " ",
-        "COUNTY_FIP": 6095,
-        "FUNC_CODE": "5A661",
-        "DESCRIPTIO": "Ferries",
-        "SHAPE_Length": 0.0023156112911930315
-      },
-      "geometry": {
-        "type": "MultiLineString",
-        "coordinates": [
-          [
-            [-122.262640998999984, 38.100142],
-            [-122.264467, 38.098718]
+            [-122.362410998999962, 37.800038],
+            [-122.369646, 37.799666],
+            [-122.371902, 37.799718001000031],
+            [-122.376159, 37.799885],
+            [-122.376326, 37.799878],
+            [-122.379638, 37.799666],
+            [-122.385418, 37.799102],
+            [-122.390216, 37.798014],
+            [-122.392068000999984, 37.79744],
+            [-122.394142, 37.79687]
           ]
         ]
       }
@@ -3594,7 +97,7 @@
       "type": "Feature",
       "properties": {
         "OBJECTID": 164,
-        "NAME": "San Francisco - Larkspur",
+        "NAME": "San Francisco-Larkspur",
         "STATUS": " ",
         "COUNTY_FIP": 6075,
         "FUNC_CODE": "5A661",
@@ -3793,8 +296,100 @@
     {
       "type": "Feature",
       "properties": {
+        "OBJECTID": 19,
+        "NAME": "San Francisco-Angel",
+        "STATUS": " ",
+        "COUNTY_FIP": 6041,
+        "FUNC_CODE": "5A661",
+        "DESCRIPTIO": "Ferries",
+        "SHAPE_Length": 0.015625095291222899
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [-122.434603, 37.868976001000078],
+            [-122.434713998999939, 37.868963999000073],
+            [-122.434890998999947, 37.868898],
+            [-122.435001, 37.868850001000055],
+            [-122.435191, 37.868817],
+            [-122.439992000999951, 37.869232],
+            [-122.440825998999969, 37.869090001000075],
+            [-122.442015998999977, 37.868544],
+            [-122.443292, 37.867929],
+            [-122.444663, 37.866823],
+            [-122.447403, 37.864365],
+            [-122.448088000999974, 37.863554],
+            [-122.448133, 37.863446],
+            [-122.4485, 37.862565],
+            [-122.448368, 37.862153],
+            [-122.448205000999963, 37.861749],
+            [-122.445916, 37.857303],
+            [-122.443795, 37.853123],
+            [-122.441673, 37.848943],
+            [-122.441448, 37.848502999000061],
+            [-122.43948500099998, 37.84466],
+            [-122.436218, 37.84024],
+            [-122.432867000999977, 37.83568],
+            [-122.429516, 37.83112],
+            [-122.426165000999958, 37.82655999900004],
+            [-122.422814000999949, 37.822],
+            [-122.419463, 37.81744],
+            [-122.416109, 37.812863],
+            [-122.415146, 37.81113300100003],
+            [-122.415283000999978, 37.809827]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 45,
+        "NAME": "San Francisco-Alameda",
+        "STATUS": " ",
+        "COUNTY_FIP": 6001,
+        "FUNC_CODE": "5A661",
+        "DESCRIPTIO": "Ferries",
+        "SHAPE_Length": 0.0017359297974744062
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [-122.294543, 37.790764],
+            [-122.295317, 37.791182],
+            [-122.295705000999988, 37.791401999000072],
+            [-122.296369, 37.791927],
+            [-122.297142, 37.792367],
+            [-122.299583, 37.792826],
+            [-122.305199000999949, 37.793126],
+            [-122.312073000999987, 37.794059],
+            [-122.315188998999986, 37.794781],
+            [-122.319665, 37.795818001000043],
+            [-122.322796000999972, 37.796639],
+            [-122.325003, 37.797132],
+            [-122.340153, 37.800598001000026],
+            [-122.347699000999967, 37.80018],
+            [-122.355128, 37.799838],
+            [-122.362557000999971, 37.799495],
+            [-122.369976, 37.79914399900008],
+            [-122.374827, 37.798058],
+            [-122.378895, 37.797297],
+            [-122.379092, 37.797258],
+            [-122.385436, 37.797284],
+            [-122.389886, 37.797579],
+            [-122.391942, 37.79718],
+            [-122.394142, 37.79687]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "OBJECTID": 165,
-        "NAME": "San Francisco - Alameda",
+        "NAME": "South San Francisco-Alameda",
         "STATUS": " ",
         "COUNTY_FIP": 6075,
         "FUNC_CODE": "5A661",
@@ -4043,6 +638,294 @@
             [-122.378042008999955, 37.797121386000072],
             [-122.378467671999942, 37.797210273000076],
             [-122.378895, 37.797297]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 23,
+        "NAME": "San Francisco-Tiburon",
+        "STATUS": " ",
+        "COUNTY_FIP": 6041,
+        "FUNC_CODE": "5A661",
+        "DESCRIPTIO": "Ferries",
+        "SHAPE_Length": 0.020359321762844218
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [-122.415283000999978, 37.809827],
+            [-122.415836000999946, 37.811162],
+            [-122.417076, 37.812878],
+            [-122.420403, 37.817428],
+            [-122.423759, 37.821918],
+            [-122.427115, 37.826408],
+            [-122.43047, 37.830899],
+            [-122.433825998999964, 37.835389],
+            [-122.437182, 37.839879],
+            [-122.440485, 37.844281],
+            [-122.442837, 37.84884],
+            [-122.44313, 37.849415],
+            [-122.445098, 37.85328],
+            [-122.447379, 37.857869],
+            [-122.44964, 37.862309],
+            [-122.451898, 37.867776],
+            [-122.452063, 37.868177],
+            [-122.452607, 37.869248001000074],
+            [-122.452838999, 37.869706],
+            [-122.453812998999979, 37.871626],
+            [-122.455797998999969, 37.872616],
+            [-122.455916998999953, 37.872732],
+            [-122.455742999, 37.872659],
+            [-122.45363, 37.87164400100005],
+            [-122.452477, 37.870102],
+            [-122.451237, 37.868444],
+            [-122.448133, 37.863446],
+            [-122.445218, 37.859043001000032],
+            [-122.44264, 37.854394],
+            [-122.439466, 37.85002399900003],
+            [-122.436511000999985, 37.845864],
+            [-122.432528, 37.842212],
+            [-122.428161, 37.838155],
+            [-122.4236, 37.834452001000045],
+            [-122.419039, 37.830749],
+            [-122.414478, 37.827046001000042],
+            [-122.411217000999955, 37.823757],
+            [-122.406968, 37.819443],
+            [-122.402742, 37.815023],
+            [-122.398515998999983, 37.810603],
+            [-122.39429, 37.806182999000043],
+            [-122.391675, 37.803378],
+            [-122.391143000999989, 37.802502],
+            [-122.390842998999972, 37.801807],
+            [-122.390704, 37.800876],
+            [-122.390853, 37.799834],
+            [-122.391101000999981, 37.799161],
+            [-122.392276, 37.797733],
+            [-122.394142, 37.79687]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 146,
+        "NAME": "San Francisco-Alcatraz",
+        "STATUS": " ",
+        "COUNTY_FIP": 6075,
+        "FUNC_CODE": "5A661",
+        "DESCRIPTIO": "Ferries",
+        "SHAPE_Length": 0.018061648573424013
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [-122.412808, 37.810554],
+            [-122.413146, 37.811248],
+            [-122.41391, 37.812828001000071],
+            [-122.418128, 37.82315],
+            [-122.418223998999963, 37.825704999000038],
+            [-122.418548, 37.826439],
+            [-122.419608, 37.827117],
+            [-122.420501, 37.827276],
+            [-122.421063, 37.827384],
+            [-122.421496, 37.827303999000037],
+            [-122.421842, 37.827162]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 117,
+        "NAME": "San Francisco-Sausalito",
+        "STATUS": " ",
+        "COUNTY_FIP": 6075,
+        "FUNC_CODE": "5A661",
+        "DESCRIPTIO": "Ferries",
+        "SHAPE_Length": 0.0062067656166418274
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [-122.415283000999978, 37.809827],
+            [-122.417545, 37.811506999000073],
+            [-122.420133998999972, 37.812927999000067],
+            [-122.425033, 37.816739],
+            [-122.429858000999957, 37.820471],
+            [-122.434683, 37.824203],
+            [-122.439508, 37.827936001000069],
+            [-122.444333, 37.831668],
+            [-122.449158000999944, 37.8354],
+            [-122.454001, 37.839164],
+            [-122.466466, 37.84728],
+            [-122.475685000999988, 37.85658],
+            [-122.476573, 37.856823001000066],
+            [-122.477270998999984, 37.85690500100003],
+            [-122.477727000999948, 37.856739],
+            [-122.478035, 37.856499],
+            [-122.478102000999968, 37.856421],
+            [-122.478187, 37.856393],
+            [-122.478325999, 37.856381999000064]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 6,
+        "NAME": "Tiburon-Angel",
+        "STATUS": " ",
+        "COUNTY_FIP": 6041,
+        "FUNC_CODE": "5A661",
+        "DESCRIPTIO": "Ferries",
+        "SHAPE_Length": 0.011155313858603324
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [-122.434603, 37.868976001000078],
+            [-122.434568, 37.869081],
+            [-122.434595, 37.869172],
+            [-122.434737999, 37.869225],
+            [-122.434944, 37.86926],
+            [-122.445472, 37.870388],
+            [-122.451754, 37.871254],
+            [-122.452603998999962, 37.871371],
+            [-122.453413000999944, 37.871666],
+            [-122.455692000999989, 37.872731],
+            [-122.455916998999953, 37.872732]
+          ]
+        ]
+      }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 80,
+        "NAME": "San Francisco-Vallejo",
+        "STATUS": " ",
+        "COUNTY_FIP": 6013,
+        "FUNC_CODE": "5A661",
+        "DESCRIPTIO": "Ferries",
+        "SHAPE_Length": 0.0072254417857984905
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [-122.409003999, 37.808563],
+            [-122.408604, 37.808726001000025],
+            [-122.407308001, 37.808554],
+            [-122.407223, 37.808841],
+            [-122.407332, 37.809329],
+            [-122.408192, 37.811292],
+            [-122.409292998999945, 37.812753999000051],
+            [-122.410272, 37.818535],
+            [-122.411217000999955, 37.823757],
+            [-122.41130900099995, 37.824266],
+            [-122.412346000999946, 37.829997],
+            [-122.413383, 37.835728],
+            [-122.41442, 37.841458],
+            [-122.415457, 37.847189],
+            [-122.416493, 37.85292],
+            [-122.417530000999989, 37.858651],
+            [-122.418567, 37.864382],
+            [-122.419604, 37.870113],
+            [-122.420861, 37.876025],
+            [-122.422183998999969, 37.881584],
+            [-122.423832, 37.887137999000061],
+            [-122.425816998999949, 37.894329],
+            [-122.427582, 37.904025],
+            [-122.430205, 37.918426001000057],
+            [-122.432252, 37.92973900100003],
+            [-122.433704998999985, 37.933866],
+            [-122.433836, 37.934239001000037],
+            [-122.433880998999939, 37.934303],
+            [-122.43419599899994, 37.935031999000046],
+            [-122.434968, 37.936821],
+            [-122.437984000999961, 37.947124],
+            [-122.440984, 37.957424],
+            [-122.441473, 37.960622],
+            [-122.441509, 37.96652],
+            [-122.441521, 37.968011],
+            [-122.441537, 37.969159],
+            [-122.441560000999971, 37.970831001000079],
+            [-122.441584, 37.973923],
+            [-122.438394000999949, 37.977426],
+            [-122.430468, 37.986201],
+            [-122.422461000999988, 37.994902],
+            [-122.421031998999979, 37.996483],
+            [-122.417885, 37.999872999000047],
+            [-122.413642, 38.004484001000037],
+            [-122.407461, 38.011201],
+            [-122.401298, 38.01789799900007],
+            [-122.392829, 38.027036],
+            [-122.387809, 38.028515001000073],
+            [-122.380823, 38.030234],
+            [-122.374364, 38.031628],
+            [-122.367905998999959, 38.033022],
+            [-122.361448, 38.034415],
+            [-122.35499, 38.035808],
+            [-122.348342, 38.037498],
+            [-122.339549, 38.038922],
+            [-122.332614, 38.04095]
+          ]
+        ]
+      }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 161,
+        "NAME": "San Francisco-Vallejo",
+        "STATUS": " ",
+        "COUNTY_FIP": 6095,
+        "FUNC_CODE": "5A661",
+        "DESCRIPTIO": "Ferries",
+        "SHAPE_Length": 0.017551709771322754
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [-122.262640998999984, 38.100142],
+            [-122.264467, 38.098718],
+            [-122.262744998999949, 38.096639],
+            [-122.260018, 38.094201999000063],
+            [-122.256819, 38.090204],
+            [-122.250922, 38.083707],
+            [-122.246533, 38.078129],
+            [-122.246367, 38.077943],
+            [-122.244956001, 38.076007],
+            [-122.24474, 38.075467],
+            [-122.244636, 38.074834],
+            [-122.245483000999968, 38.063923],
+            [-122.257780000999958, 38.061445],
+            [-122.264722, 38.060048001000041],
+            [-122.264828998999974, 38.060025],
+            [-122.265348, 38.059919],
+            [-122.276114, 38.05627],
+            [-122.278459, 38.055686999000045],
+            [-122.28509, 38.053844001000073],
+            [-122.291879, 38.052002],
+            [-122.298669, 38.050160001000052],
+            [-122.305458, 38.048318],
+            [-122.312247, 38.046476],
+            [-122.319036, 38.044633999000041],
+            [-122.325824998999963, 38.042792],
+            [-122.332614, 38.04095]
           ]
         ]
       }

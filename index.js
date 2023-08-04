@@ -52,7 +52,7 @@ d3.json("./maps/sf_neighborhoods.geojson")
         .attr("id", "street")
         .attr("stroke-width", 1);
     });
-    d3.json("./maps/sf_oakland_ferry.geojson").then(function (ferryRoute) {
+    d3.json("./maps/Ferry_Routes.geojson").then(function (ferryRoute) {
       svg
         .append("g")
         .attr("id", "ferryRoutes")
