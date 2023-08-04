@@ -2,23 +2,37 @@ let projection = d3.geoMercator();
 let geoGenerator = d3.geoPath().projection(projection);
 let svg = d3.select("svg");
 svg.attr("display", "none");
-
+// let game = new Game();
 // state = PLAYING, REVIEWING, OVER, LOADING
-let gameTimer;
 let allNeighborhoodNames = [];
 let nameToIdMap = new Map();
+
+class Game {
+  // variables
+
+  resetGame = () => {};
+  guessNeighborhood = () => {
+    console.log("guessing neighborhood in class!!!");
+  };
+}
+
+let game = new Game();
+//filtered map for multiple game modes
 let selectedMap = [];
 
+let handleNeighborhoodClicked = () => {
+  console.log("clicked neighborhooed");
+};
 let resetBoard = (allPiecesNames, selectedPiecesNames) => {
   allPiecesNames.forEach((piece) => {
     let pieceElement = document.getElementById(nameToIdMap.get(piece));
     pieceElement.setAttribute("class", "unplayable");
-    removeSelectorToSelectableGamePiece(piece, () => console.log("heloooooo"));
+    removeSelectorToSelectableGamePiece(piece, game.guessNeighborhood);
   });
   selectedPiecesNames.forEach((piece) => {
     let pieceElement = document.getElementById(nameToIdMap.get(piece));
     pieceElement.setAttribute("class", "playable");
-    addSelectorToSelectableSingleGamePiece(piece, () => console.log("heloooo"));
+    addSelectorToSelectableSingleGamePiece(piece, game.guessNeighborhood);
   });
 };
 
@@ -64,6 +78,7 @@ d3.json("./maps/sf_neighborhoods.geojson")
           nameToIdMap.set(neighborhood.getAttribute("name"), neighborhood.id);
         });
         resetBoard(allNeighborhoodNames, allNeighborhoodNames);
+
         // playGame([...allNeighborhoodNames]);
         // playGame(allNeighborhoodNames.slice(0, 20));
       });
@@ -109,7 +124,7 @@ d3.json("./maps/sf_neighborhoods.geojson")
         .attr("stroke-width", 1);
     });
   });
-
+console.log("called after function");
 let filterMap = (e) => {
   let value = e.target.value;
   let [centerX, centerY] = getCenterOfNeighborhood("Eureka Valley");
@@ -167,18 +182,13 @@ mapSelection.addEventListener("change", (event) => {
 let removeSelectorToSelectableGamePiece = (neighborhoodName, method) => {
   let nbhID = nameToIdMap.get(neighborhoodName);
   let selectedNeighborhoodElement = document.getElementById(nbhID);
-
-  selectedNeighborhoodElement.removeEventListener("click", function (event) {
-    method(event, selectedNeighborhoodElement, nbhID);
-  });
+  selectedNeighborhoodElement.removeEventListener("click", method);
 };
 
 let addSelectorToSelectableSingleGamePiece = (neighborhoodName, method) => {
   let nbhID = nameToIdMap.get(neighborhoodName);
   let selectedNeighborhoodElement = document.getElementById(nbhID);
-  selectedNeighborhoodElement.addEventListener("click", function (event) {
-    method(event, selectedNeighborhoodElement, nbhID);
-  });
+  selectedNeighborhoodElement.addEventListener("click", method);
 };
 
 // let addSelectorToSelectableGamePieces = (
@@ -314,14 +324,6 @@ document.getElementById("ferryToggle").addEventListener("change", (e) => {
   let display = document.getElementById("ferries");
   display.style.display = display.style.display == "inline" ? "none" : "inline";
 });
-
-class Game {
-  constructor(gamePieces) {
-    this.gamePieces = gamePieces;
-  }
-
-  resetGame = () => {};
-}
 
 //TODO: animate boat on Ferry paths
 // let createBoat = () => {
