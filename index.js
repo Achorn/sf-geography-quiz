@@ -55,7 +55,7 @@ d3.json("./maps/sf_neighborhoods.geojson")
     d3.json("./maps/Ferry_Routes.geojson").then(function (ferryRoute) {
       svg
         .append("g")
-        .attr("id", "ferryRoutes")
+        .attr("id", "ferries")
         .selectAll("path")
         .data(ferryRoute.features)
         .join("path")
@@ -66,7 +66,7 @@ d3.json("./maps/sf_neighborhoods.geojson")
         .attr("id", (d) => {
           return d.properties["NAME"].replace(/ /g, "");
         })
-        .attr("class", "ferryRoute")
+        .attr("class", "ferry")
         .attr("stroke-width", 1);
     });
 
@@ -93,6 +93,10 @@ document.getElementById("freewayToggle").addEventListener("change", (e) => {
   display.style.display = display.style.display == "inline" ? "none" : "inline";
 });
 
+document.getElementById("ferryToggle").addEventListener("change", (e) => {
+  let display = document.getElementById("ferries");
+  display.style.display = display.style.display == "inline" ? "none" : "inline";
+});
 // GAME
 let playGame = () => {
   // const result = document.querySelector(".result");

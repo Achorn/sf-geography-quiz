@@ -129,11 +129,11 @@ body {
   stroke-opacity: 1;
   stroke-dasharray: none;
 }
-#ferryRoutes {
-  /* display: none; */
+#ferries {
+  display: none;
 }
 
-.ferryRoute {
+.ferry {
   /* pointer-events: none; */
   /* stroke: var(--map_bg_color); */
   /* stroke: orange; */
