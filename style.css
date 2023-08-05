@@ -37,6 +37,7 @@ body {
   align-items: center;
 }
 #mapSelectContainer {
+  padding: 10px;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -44,8 +45,8 @@ body {
 }
 
 #mapSelectContainer * {
-  margin: 5px;
-  padding: 10px;
+  margin: 10px;
+  padding: 15px;
   /* display: flex;
   justify-content: center;
   flex-direction: row;
