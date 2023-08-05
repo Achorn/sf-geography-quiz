@@ -2,6 +2,130 @@ let projection = d3.geoMercator();
 let geoGenerator = d3.geoPath().projection(projection);
 let svg = d3.select("svg");
 svg.attr("display", "none");
+let allNeighborhoodNames = [];
+let nameToIdMap = new Map();
+let selectedMap = [];
+
+class Game {
+  allNeighborhoods = [];
+  neighborhoodsInPlay = [];
+  correctAnswers = [];
+  maybeAnswers = [];
+  wrongAnswers = [];
+  tries = 3;
+  answer = "";
+  dataDisplay = document.getElementById("dataDisplay");
+
+  resetGame = () => {
+    this.correctAnswers = [];
+    this.maybeAnswers = [];
+    this.wrongAnswers = [];
+  };
+
+  set neighborhoods(newNeighborhoods) {
+    this.allNeighborhoods = newNeighborhoods;
+    this.neighborhoodsInPlay = newNeighborhoods;
+  }
+
+  updateDataDisplay = () => {
+    this.dataDisplay.innerHTML = `${
+      this.allNeighborhoods.length - this.neighborhoodsInPlay.length
+    }/${this.allNeighborhoods.length} | Click on ${this.answer}`;
+  };
+  startGame = () => {
+    this.answer = this.getNewAnswer();
+    console.log("starting game!");
+    this.updateDataDisplay();
+    //start timer
+  };
+  getNewAnswer = () => {
+    return this.neighborhoodsInPlay[
+      Math.floor(Math.random() * this.neighborhoodsInPlay.length)
+    ];
+  };
+  removeAnswerFromGuesses = (name) => {
+    this.neighborhoodsInPlay = this.neighborhoodsInPlay.filter(
+      (e) => e !== name
+    );
+  };
+  getGamePercentage = () => {
+    let percentage = 0;
+    percentage += this.correctAnswers.length;
+    if (this.maybeAnswers.length != 0)
+      percentage += this.maybeAnswers.length / 2;
+
+    if (percentage != 0) {
+      percentage = percentage / this.allNeighborhoods.length;
+      percentage = percentage * 100;
+    }
+    percentage = Math.floor(percentage);
+    return percentage;
+  };
+
+  guessNeighborhood(event, neighborhood) {
+    let guess = neighborhood.getAttribute("name");
+    if (guess === this.answer) {
+      let answerElement = document.getElementById(nameToIdMap.get(this.answer));
+      if (this.tries == 3) {
+        this.correctAnswers.push(this.answer);
+        answerElement.setAttribute("class", "correctGuess");
+      } else if (this.tries <= 0) {
+        this.wrongAnswers.push(this.answer);
+        answerElement.setAttribute("class", "wrongGuess");
+        document.getElementById(nameToIdMap.get(this.answer));
+        // answerPath.classList.remove("map-question_blink");
+      } else {
+        this.maybeAnswers.push(this.answer);
+        answerElement.setAttribute("class", "almostGuess");
+      }
+      this.removeAnswerFromGuesses(this.answer);
+
+      //gameOver
+      if (this.neighborhoodsInPlay.length == 0) {
+        //TODO: fix game score
+        let gameScore = this.getGamePercentage();
+        console.log(`You got ${gameScore}%`);
+        alert(`You got ${gameScore}%`);
+        return;
+      }
+
+      this.answer = this.getNewAnswer();
+      this.updateDataDisplay();
+      this.tries = 3;
+    } else {
+      //wrong answer
+      this.tries -= 1;
+      showSelectedNeighborhoodName(event, neighborhood);
+      if (this.tries == 0) {
+        let answerPath = document.getElementById(nameToIdMap.get(this.answer));
+        answerPath.classList.add("map-question_blink");
+      }
+    }
+    this.printGameStats();
+  }
+  printGameStats = () => {
+    console.log(`
+    all neighborhoods: ${this.allNeighborhoods.length};
+    neighborhoods left ${this.neighborhoodsInPlay.length};
+
+    correct answers: ${this.correctAnswers.length}
+    close answers: ${this.maybeAnswers.length}
+    wrong answers: ${this.wrongAnswers.length}
+    `);
+  };
+}
+let game = new Game();
+
+let resetBoard = (allPiecesNames, selectedPiecesNames) => {
+  allPiecesNames.forEach((piece) => {
+    let pieceElement = document.getElementById(nameToIdMap.get(piece));
+    pieceElement.setAttribute("class", "unplayable");
+  });
+  selectedPiecesNames.forEach((piece) => {
+    let pieceElement = document.getElementById(nameToIdMap.get(piece));
+    pieceElement.setAttribute("class", "playable");
+  });
+};
 
 d3.json("./maps/sf_neighborhoods.geojson")
   .then(function (neighborhoods) {
@@ -38,7 +162,20 @@ d3.json("./maps/sf_neighborhoods.geojson")
       .then(() => {
         svg.attr("display", "inline");
 
-        playGame();
+        Array.from(
+          document.getElementById("neighborhoods").getElementsByTagName("path")
+        ).forEach((neighborhood) => {
+          allNeighborhoodNames.push(neighborhood.getAttribute("name"));
+          nameToIdMap.set(neighborhood.getAttribute("name"), neighborhood.id);
+          neighborhood.addEventListener("click", (e) =>
+            game.guessNeighborhood(e, neighborhood)
+          );
+        });
+        resetBoard(allNeighborhoodNames, allNeighborhoodNames);
+        game.neighborhoods = allNeighborhoodNames;
+        game.startGame();
+        // playGame([...allNeighborhoodNames]);
+        // playGame(allNeighborhoodNames.slice(0, 20));
       });
 
     d3.json("./maps/streets_of_sf.geojson").then(function (streets) {
@@ -82,7 +219,94 @@ d3.json("./maps/sf_neighborhoods.geojson")
         .attr("stroke-width", 1);
     });
   });
+let filterMap = (e) => {
+  let value = e.target.value;
+  let [centerX, centerY] = getCenterOfNeighborhood("Eureka Valley");
+  let newMap = [];
 
+  if (value == "all") newMap = [...allNeighborhoodNames];
+  if (value == "top-left") {
+    newMap = allNeighborhoodNames.filter((neighborhood) => {
+      let [x, y] = getCenterOfNeighborhood(neighborhood);
+      if (x < centerX && y < centerY) return true;
+      else return false;
+    });
+  }
+  if (value == "bottom-right") {
+    newMap = allNeighborhoodNames.filter((neighborhood) => {
+      let [x, y] = getCenterOfNeighborhood(neighborhood);
+      if (x >= centerX && y >= centerY) return true;
+      else return false;
+    });
+  }
+  if (value == "bottom-left") {
+    newMap = allNeighborhoodNames.filter((neighborhood) => {
+      let [x, y] = getCenterOfNeighborhood(neighborhood);
+      if (x < centerX && y >= centerY) return true;
+      else return false;
+    });
+  }
+  if (value == "top-right") {
+    newMap = allNeighborhoodNames.filter((neighborhood) => {
+      let [x, y] = getCenterOfNeighborhood(neighborhood);
+      if (x >= centerX && y < centerY) return true;
+      else return false;
+    });
+  }
+
+  selectedMap = [...newMap];
+};
+
+let getCenterOfNeighborhood = (nName) => {
+  let element = document.getElementById(nameToIdMap.get(nName));
+  let { x, y, width, height } = element.getBoundingClientRect();
+  let cx = width / 2 + x;
+  let cy = height / 2 + y;
+  return [cx, cy];
+};
+
+///map selection dropdown menu
+var mapSelection = document.getElementById("mapSelect");
+mapSelection.addEventListener("change", (event) => {
+  filterMap(event);
+  resetBoard(allNeighborhoodNames, selectedMap);
+  //reset game?
+  game.neighborhoods = selectedMap;
+  game.resetGame();
+  game.startGame();
+});
+
+let removeSelectorToSelectableGamePiece = (neighborhoodName, method) => {
+  let nbhID = nameToIdMap.get(neighborhoodName);
+  let selectedNeighborhoodElement = document.getElementById(nbhID);
+  selectedNeighborhoodElement.removeEventListener("click", method);
+};
+
+let addSelectorToSelectableSingleGamePiece = (neighborhoodName, method) => {
+  let nbhID = nameToIdMap.get(neighborhoodName);
+  let selectedNeighborhoodElement = document.getElementById(nbhID);
+  selectedNeighborhoodElement.addEventListener("click", method);
+};
+
+let showSelectedNeighborhoodName = (event, neighborhood) => {
+  var duplicate = document.getElementById(
+    "answer-" + neighborhood.getAttribute("name")
+  );
+  if (duplicate) duplicate.remove();
+  const answerBox = document.createElement("div");
+  answerBox.id = "answer-" + neighborhood.getAttribute("name");
+  answerBox.className = "answerTooltip";
+  document.body.appendChild(answerBox);
+  answerBox.innerHTML = neighborhood.getAttribute("name");
+  answerBox.style.left = event.pageX - 40 + "px";
+  answerBox.style.top = event.pageY + -30 + "px";
+
+  setTimeout(() => {
+    answerBox.remove();
+  }, "1200");
+};
+
+// SVG MAP FEATURES TOGGLE
 document.getElementById("streetToggle").addEventListener("change", (e) => {
   let display = document.getElementById("streets");
   display.style.display = display.style.display == "inline" ? "none" : "inline";
@@ -97,90 +321,6 @@ document.getElementById("ferryToggle").addEventListener("change", (e) => {
   let display = document.getElementById("ferries");
   display.style.display = display.style.display == "inline" ? "none" : "inline";
 });
-// GAME
-
-let playGame = () => {
-  // const result = document.querySelector(".result");
-  const dataDisplay = document.getElementById("dataDisplay");
-  let answerPath;
-  let neighborhoodNames = [];
-  let nameToIdMap = new Map();
-  let neighborhoods = document
-    .getElementById("neighborhoods")
-    .getElementsByTagName("path");
-  Array.from(neighborhoods).forEach((neighborhood) => {
-    neighborhoodNames.push(neighborhood.getAttribute("name"));
-    nameToIdMap.set(neighborhood.getAttribute("name"), neighborhood.id);
-    neighborhood.addEventListener("click", function (event) {
-      guessNeighborhood(event, neighborhood, neighborhood.id);
-    });
-  });
-
-  function guessNeighborhood(event, neighborhood) {
-    let guess = neighborhood.getAttribute("name");
-    if (guess === answer) {
-      let color;
-      if (tries == 3) color = "var(--answer_correct)";
-      else if (tries <= 0) {
-        color = "var(--answer_wrong)";
-        document.getElementById(nameToIdMap.get(answer));
-        answerPath.classList.remove("map-question_blink");
-      } else color = "var(--answer_almost)";
-
-      neighborhood.style.fill = color;
-      removeAnswerFromGuesses(answer);
-      answer = getNewAnswer();
-      updateDataDisplay();
-      tries = 3;
-    } else {
-      //wrong answer
-      tries -= 1;
-      showSelectedNeighborhoodName(event, neighborhood);
-      if (tries == 0) {
-        answerPath = document.getElementById(nameToIdMap.get(answer));
-        answerPath.classList.add("map-question_blink");
-      }
-    }
-  }
-  let showSelectedNeighborhoodName = (event, neighborhood) => {
-    var duplicate = document.getElementById(
-      "answer-" + neighborhood.getAttribute("name")
-    );
-    if (duplicate) duplicate.remove();
-    const answerBox = document.createElement("div");
-    answerBox.id = "answer-" + neighborhood.getAttribute("name");
-    answerBox.className = "answerTooltip";
-    document.body.appendChild(answerBox);
-    answerBox.innerHTML = neighborhood.getAttribute("name");
-    answerBox.style.left = event.pageX - 40 + "px";
-    answerBox.style.top = event.pageY + -30 + "px";
-
-    setTimeout(() => {
-      answerBox.remove();
-    }, "1200");
-  };
-
-  let removeAnswerFromGuesses = (name) => {
-    allNeighborhoods = allNeighborhoods.filter((e) => e !== name);
-  };
-  let getNewAnswer = () => {
-    return allNeighborhoods[
-      Math.floor(Math.random() * allNeighborhoods.length)
-    ];
-  };
-
-  let allNeighborhoods = [...neighborhoodNames];
-  let guessedNeighborhoods = [];
-  let answer = getNewAnswer();
-  dataDisplay.innerHTML = `0/${allNeighborhoods.length} | Click on ${answer}`;
-  let tries = 3;
-
-  let updateDataDisplay = () => {
-    dataDisplay.innerHTML = `${
-      neighborhoodNames.length - allNeighborhoods.length
-    }/${neighborhoodNames.length} | Click on ${answer}`;
-  };
-};
 
 //TODO: animate boat on Ferry paths
 // let createBoat = () => {
