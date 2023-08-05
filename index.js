@@ -17,6 +17,7 @@ class Game {
   wrongAnswers = [];
   tries = 3;
   answer = "";
+  dataDisplay = document.getElementById("dataDisplay");
 
   resetGame = () => {
     this.correctAnswers = [];
@@ -29,13 +30,15 @@ class Game {
     this.neighborhoodsInPlay = newNeighborhoods;
   }
 
+  updateDataDisplay = () => {
+    this.dataDisplay.innerHTML = `${
+      this.allNeighborhoods.length - this.neighborhoodsInPlay.length
+    }/${this.allNeighborhoods.length} | Click on ${this.answer}`;
+  };
   startGame = () => {
     this.answer = this.getNewAnswer();
     console.log("starting game!");
-
-    const dataDisplay = document.getElementById("dataDisplay");
-    this.answer = this.getNewAnswer();
-    dataDisplay.innerHTML = `0/${this.allNeighborhoodNames.length} | Click on ${this.answer}`;
+    this.updateDataDisplay();
     //get first answer
     //start timer
   };
@@ -44,54 +47,73 @@ class Game {
       Math.floor(Math.random() * this.neighborhoodsInPlay.length)
     ];
   };
+  removeAnswerFromGuesses = (name) => {
+    this.neighborhoodsInPlay = this.neighborhoodsInPlay.filter(
+      (e) => e !== name
+    );
+  };
+  getGamePercentage = () => {
+    let percentage = 0;
+    percentage += this.correctAnswers.length;
+    if (this.maybeAnswers.length != 0)
+      percentage += this.maybeAnswers.length / 2;
+
+    if (percentage != 0) {
+      percentage = percentage / this.allNeighborhoodNames.length;
+      percentage = percentage * 100;
+    }
+    percentage = Math.floor(percentage);
+    return percentage + "%";
+  };
 
   guessNeighborhood(event, neighborhood) {
     let guess = neighborhood.getAttribute("name");
     if (guess === this.answer) {
       let answerElement = document.getElementById(nameToIdMap.get(this.answer));
-      console.log("yesss");
-      return;
+      if (this.tries == 3) {
+        this.correctAnswers.push(this.answer);
+        answerElement.setAttribute("class", "correctGuess");
+      } else if (this.tries <= 0) {
+        this.wrongAnswers.push(this.answer);
+        answerElement.setAttribute("class", "wrongGuess");
+        document.getElementById(nameToIdMap.get(this.answer));
+        // answerPath.classList.remove("map-question_blink");
+      } else {
+        this.maybeAnswers.push(this.answer);
+        answerElement.setAttribute("class", "almostGuess");
+      }
+      this.removeAnswerFromGuesses(this.answer);
+
+      //gameOver
+      if (this.neighborhoodsInPlay.length == 0) {
+        //TODO: fix game score
+        let gameScore = this.getGamePercentage();
+        console.log(`You got ${gameScore}%`);
+        alert(`You got ${gameScore}%`);
+        return;
+      }
+
+      this.answer = this.getNewAnswer();
+      this.updateDataDisplay();
+      this.tries = 3;
     } else {
-      console.log("nooooo");
-      return;
+      //wrong answer
+      this.tries -= 1;
+      showSelectedNeighborhoodName(event, neighborhood);
+      if (this.tries == 0) {
+        let answerPath = document.getElementById(nameToIdMap.get(this.answer));
+        answerPath.classList.add("map-question_blink");
+      }
     }
-    return;
-    //   // let color;
-    //   if (tries == 3) {
-    //     correctAnswers.push(answer);
-    //     answerElement.setAttribute("class", "correctGuess");
-    //   } else if (tries <= 0) {
-    //     wrongAnswers.push(answer);
-    //     answerElement.setAttribute("class", "wrongGuess");
-    //     document.getElementById(nameToIdMap.get(answer));
-    //     answerPath.classList.remove("map-question_blink");
-    //   } else {
-    //     maybeAnswers.push(answer);
-    //     answerElement.setAttribute("class", "almostGuess");
-    //   }
-    //   allPlayablePieces = removeAnswerFromGuesses(answer, allPlayablePieces);
-
-    //   //gameOver
-    //   if (allPlayablePieces.length == 0) {
-    //     let gameScore = getGamePercentage();
-    //     console.log(`You got ${gameScore}%`);
-
-    //     return;
-    //   }
-
-    //   answer = getNewAnswer(allPlayablePieces);
-    //   updateDataDisplay();
-    //   tries = 3;
-    // } else {
-    //   //wrong answer
-    //   tries -= 1;
-    //   showSelectedNeighborhoodName(event, neighborhood);
-    //   if (tries == 0) {
-    //     answerPath = document.getElementById(nameToIdMap.get(answer));
-    //     answerPath.classList.add("map-question_blink");
-    //   }
-    // }
+    this.printGameStats();
   }
+  printGameStats = () => {
+    console.log(`
+    correct answers: ${this.correctAnswers.length}
+    close answers: ${this.maybeAnswers.length}
+    wrong answers: ${this.wrongAnswers.length}
+    `);
+  };
 }
 let game = new Game();
 
