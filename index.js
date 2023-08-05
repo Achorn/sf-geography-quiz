@@ -2,37 +2,107 @@ let projection = d3.geoMercator();
 let geoGenerator = d3.geoPath().projection(projection);
 let svg = d3.select("svg");
 svg.attr("display", "none");
-// let game = new Game();
-// state = PLAYING, REVIEWING, OVER, LOADING
 let allNeighborhoodNames = [];
 let nameToIdMap = new Map();
+let selectedMap = [];
 
 class Game {
   // variables
 
-  resetGame = () => {};
-  guessNeighborhood = () => {
-    console.log("guessing neighborhood in class!!!");
+  allNeighborhoodNames = [];
+  neighborhoodsInPlay = [];
+
+  correctAnswers = [];
+  maybeAnswers = [];
+  wrongAnswers = [];
+  tries = 3;
+  answer = "";
+
+  resetGame = () => {
+    this.correctAnswers = [];
+    this.maybeAnswers = [];
+    this.wrongAnswers = [];
   };
+
+  set neighborhoods(newNeighborhoods) {
+    this.allNeighborhoods = newNeighborhoods;
+    this.neighborhoodsInPlay = newNeighborhoods;
+  }
+
+  startGame = () => {
+    this.answer = this.getNewAnswer();
+    console.log("starting game!");
+
+    const dataDisplay = document.getElementById("dataDisplay");
+    this.answer = this.getNewAnswer();
+    dataDisplay.innerHTML = `0/${this.allNeighborhoodNames.length} | Click on ${this.answer}`;
+    //get first answer
+    //start timer
+  };
+  getNewAnswer = () => {
+    return this.neighborhoodsInPlay[
+      Math.floor(Math.random() * this.neighborhoodsInPlay.length)
+    ];
+  };
+
+  guessNeighborhood(event, neighborhood) {
+    let guess = neighborhood.getAttribute("name");
+    if (guess === this.answer) {
+      let answerElement = document.getElementById(nameToIdMap.get(this.answer));
+      console.log("yesss");
+      return;
+    } else {
+      console.log("nooooo");
+      return;
+    }
+    return;
+    //   // let color;
+    //   if (tries == 3) {
+    //     correctAnswers.push(answer);
+    //     answerElement.setAttribute("class", "correctGuess");
+    //   } else if (tries <= 0) {
+    //     wrongAnswers.push(answer);
+    //     answerElement.setAttribute("class", "wrongGuess");
+    //     document.getElementById(nameToIdMap.get(answer));
+    //     answerPath.classList.remove("map-question_blink");
+    //   } else {
+    //     maybeAnswers.push(answer);
+    //     answerElement.setAttribute("class", "almostGuess");
+    //   }
+    //   allPlayablePieces = removeAnswerFromGuesses(answer, allPlayablePieces);
+
+    //   //gameOver
+    //   if (allPlayablePieces.length == 0) {
+    //     let gameScore = getGamePercentage();
+    //     console.log(`You got ${gameScore}%`);
+
+    //     return;
+    //   }
+
+    //   answer = getNewAnswer(allPlayablePieces);
+    //   updateDataDisplay();
+    //   tries = 3;
+    // } else {
+    //   //wrong answer
+    //   tries -= 1;
+    //   showSelectedNeighborhoodName(event, neighborhood);
+    //   if (tries == 0) {
+    //     answerPath = document.getElementById(nameToIdMap.get(answer));
+    //     answerPath.classList.add("map-question_blink");
+    //   }
+    // }
+  }
 }
-
 let game = new Game();
-//filtered map for multiple game modes
-let selectedMap = [];
 
-let handleNeighborhoodClicked = () => {
-  console.log("clicked neighborhooed");
-};
 let resetBoard = (allPiecesNames, selectedPiecesNames) => {
   allPiecesNames.forEach((piece) => {
     let pieceElement = document.getElementById(nameToIdMap.get(piece));
     pieceElement.setAttribute("class", "unplayable");
-    removeSelectorToSelectableGamePiece(piece, game.guessNeighborhood);
   });
   selectedPiecesNames.forEach((piece) => {
     let pieceElement = document.getElementById(nameToIdMap.get(piece));
     pieceElement.setAttribute("class", "playable");
-    addSelectorToSelectableSingleGamePiece(piece, game.guessNeighborhood);
   });
 };
 
@@ -76,9 +146,13 @@ d3.json("./maps/sf_neighborhoods.geojson")
         ).forEach((neighborhood) => {
           allNeighborhoodNames.push(neighborhood.getAttribute("name"));
           nameToIdMap.set(neighborhood.getAttribute("name"), neighborhood.id);
+          neighborhood.addEventListener("click", (e) =>
+            game.guessNeighborhood(e, neighborhood)
+          );
         });
         resetBoard(allNeighborhoodNames, allNeighborhoodNames);
-
+        game.neighborhoods = allNeighborhoodNames;
+        game.startGame();
         // playGame([...allNeighborhoodNames]);
         // playGame(allNeighborhoodNames.slice(0, 20));
       });
@@ -124,7 +198,6 @@ d3.json("./maps/sf_neighborhoods.geojson")
         .attr("stroke-width", 1);
     });
   });
-console.log("called after function");
 let filterMap = (e) => {
   let value = e.target.value;
   let [centerX, centerY] = getCenterOfNeighborhood("Eureka Valley");
@@ -177,6 +250,9 @@ mapSelection.addEventListener("change", (event) => {
   filterMap(event);
   resetBoard(allNeighborhoodNames, selectedMap);
   //reset game?
+  game.neighborhoods = selectedMap;
+  game.resetGame();
+  game.startGame();
 });
 
 let removeSelectorToSelectableGamePiece = (neighborhoodName, method) => {
