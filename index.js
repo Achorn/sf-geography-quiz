@@ -18,8 +18,11 @@ class Game {
 
   resetGame = () => {
     this.correctAnswers = [];
+    this.neighborhoodsInPlay = this.allNeighborhoods;
     this.maybeAnswers = [];
     this.wrongAnswers = [];
+    this.tries = 3;
+    this.answer = this.getNewAnswer();
   };
 
   set neighborhoods(newNeighborhoods) {
@@ -63,6 +66,7 @@ class Game {
   };
 
   guessNeighborhood(event, neighborhood) {
+    //show name of neighborhood regardless...
     let guess = neighborhood.getAttribute("name");
     if (guess === this.answer) {
       let answerElement = document.getElementById(nameToIdMap.get(this.answer));
