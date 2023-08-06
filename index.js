@@ -49,17 +49,7 @@ class Game {
       pieceElement.setAttribute("class", "unplayable");
     });
     this.filteredSelectedNeighborhoods = this.mapSelectionNeighborhoods;
-    this.filteredSelectedNeighborhoods.forEach((piece) => {
-      let pieceElement = document.getElementById(nameToIdMap.get(piece));
-      pieceElement.setAttribute("class", "playable");
-    });
-    this.neighborhoodsLeftToSelect = this.filteredSelectedNeighborhoods;
-    this.correctAnswers = [];
-    this.maybeAnswers = [];
-    this.wrongAnswers = [];
-    this.tries = 3;
-    this.answer = this.getNewAnswer();
-    this.startGame();
+    this.clearBoard();
   };
 
   playAgain = () => {
@@ -67,17 +57,7 @@ class Game {
       let pieceElement = document.getElementById(nameToIdMap.get(piece));
       pieceElement.setAttribute("class", "unplayable");
     });
-    this.filteredSelectedNeighborhoods.forEach((piece) => {
-      let pieceElement = document.getElementById(nameToIdMap.get(piece));
-      pieceElement.setAttribute("class", "playable");
-    });
-    this.neighborhoodsLeftToSelect = this.filteredSelectedNeighborhoods;
-    this.correctAnswers = [];
-    this.maybeAnswers = [];
-    this.wrongAnswers = [];
-    this.tries = 3;
-    this.answer = this.getNewAnswer();
-    this.startGame();
+    this.clearBoard();
   };
   reviewWrongAnswers = () => {
     this.allNeighborhoods.forEach((piece) => {
@@ -88,6 +68,10 @@ class Game {
       ...this.maybeAnswers,
       ...this.wrongAnswers,
     ];
+    this.clearBoard();
+  };
+
+  clearBoard() {
     this.filteredSelectedNeighborhoods.forEach((piece) => {
       let pieceElement = document.getElementById(nameToIdMap.get(piece));
       pieceElement.setAttribute("class", "playable");
@@ -99,7 +83,7 @@ class Game {
     this.tries = 3;
     this.answer = this.getNewAnswer();
     this.startGame();
-  };
+  }
 
   set allNeighborhoods(newNeighborhoods) {
     console.log("setting all neighborhoods");
