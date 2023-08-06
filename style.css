@@ -282,6 +282,7 @@ input:checked + .slider:before {
   .mapsContainer {
     width: 100vw;
     height: auto;
+    max-width: none;
     /* max-height: 600px; */
     aspect-ratio: 400/380;
   }
