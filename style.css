@@ -274,7 +274,6 @@ input:checked + .slider:before {
 
 @media only screen and (orientation: portrait) {
   body {
-    background-color: lightblue;
     margin: 0;
   }
   /* #title {
