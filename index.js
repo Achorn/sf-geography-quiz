@@ -6,6 +6,26 @@ let allNeighborhoodNames = [];
 let nameToIdMap = new Map();
 let selectedMap = [];
 
+var modalPlayAgainBtn = document.getElementById("playAgainButton");
+var span = document.getElementsByClassName("close")[0];
+var modal = document.getElementById("myModal");
+
+let showGameOverModal = (text) => {
+  modal.style.display = "block";
+  modalText.innerHTML = text;
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+};
+modalPlayAgainBtn.onclick = function () {
+  modal.style.display = "none";
+};
+span.onclick = function () {
+  modal.style.display = "none";
+};
 class Game {
   allNeighborhoods = []; //all neighborhoods on the board
   playableNeighborhoods = []; //selected map of filtered neighborhoods
@@ -84,6 +104,7 @@ class Game {
   };
 
   guessNeighborhood(event, neighborhood) {
+    if (this.neighborhoodsLeftToSelect.length === 0) return;
     //show name of neighborhood regardless...
     let guess = neighborhood.getAttribute("name");
     if (guess === this.answer) {
@@ -107,7 +128,7 @@ class Game {
         //TODO: fix game score
         let gameScore = this.getGamePercentage();
         console.log(`You got ${gameScore}%`);
-        alert(`You got ${gameScore}%`);
+        showGameOverModal(`You got ${gameScore}%`);
         return;
       }
 
@@ -137,6 +158,7 @@ class Game {
   };
 }
 let game = new Game();
+modalPlayAgainBtn.addEventListener("click", game.resetGame);
 let resetGameButton = document.getElementById("resetGameButton");
 resetGameButton.addEventListener("click", () => {
   game.resetGame(), game.startGame();
@@ -247,6 +269,10 @@ let filterMap = (e) => {
       if (x < centerX && y < centerY) return true;
       else return false;
     });
+  }
+
+  if (value == "tester") {
+    newMap = ["Eureka Valley", "Corona Heights"];
   }
   if (value == "bottom-right") {
     newMap = allNeighborhoodNames.filter((neighborhood) => {
