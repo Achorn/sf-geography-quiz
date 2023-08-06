@@ -56,9 +56,9 @@ body {
   position: relative;
   background-color: var(--map_bg_color);
   aspect-ratio: 400/380;
-  max-width: 650px;
+  max-width: 750px;
   height: auto;
-  width: 90vw;
+  width: 100vw;
 }
 #dataDisplay {
   pointer-events: none;
@@ -272,14 +272,14 @@ input:checked + .slider:before {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 1300px) {
   body {
     /* background-color: lightblue; */
     margin: 0;
   }
-  #title {
+  /* #title {
     display: none;
-  }
+  } */
   .mapsContainer {
     width: 100vw;
     height: auto;
