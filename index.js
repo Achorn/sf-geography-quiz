@@ -138,7 +138,9 @@ class Game {
 }
 let game = new Game();
 let resetGameButton = document.getElementById("resetGameButton");
-resetGameButton.addEventListener("click", game.resetGame);
+resetGameButton.addEventListener("click", () => {
+  game.resetGame(), game.startGame();
+});
 
 d3.json("./maps/sf_neighborhoods.geojson")
   .then(function (neighborhoods) {
