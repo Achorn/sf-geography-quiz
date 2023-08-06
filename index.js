@@ -39,31 +39,18 @@ class Game {
   updateBoardWithPlayableNeighborhoods(newNeighborhoods) {
     console.log("updating playableNeighborhoods");
     this.mapSelectionNeighborhoods = newNeighborhoods;
-    this.filteredSelectedNeighborhoods = newNeighborhoods;
     this.resetGame();
   }
 
   resetGame = () => {
-    this.allNeighborhoods.forEach((piece) => {
-      let pieceElement = document.getElementById(nameToIdMap.get(piece));
-      pieceElement.setAttribute("class", "unplayable");
-    });
     this.filteredSelectedNeighborhoods = this.mapSelectionNeighborhoods;
     this.clearBoard();
   };
 
-  playAgain = () => {
-    this.allNeighborhoods.forEach((piece) => {
-      let pieceElement = document.getElementById(nameToIdMap.get(piece));
-      pieceElement.setAttribute("class", "unplayable");
-    });
+  replayGame = () => {
     this.clearBoard();
   };
-  reviewWrongAnswers = () => {
-    this.allNeighborhoods.forEach((piece) => {
-      let pieceElement = document.getElementById(nameToIdMap.get(piece));
-      pieceElement.setAttribute("class", "unplayable");
-    });
+  reviewGame = () => {
     this.filteredSelectedNeighborhoods = [
       ...this.maybeAnswers,
       ...this.wrongAnswers,
@@ -72,6 +59,10 @@ class Game {
   };
 
   clearBoard() {
+    this.allNeighborhoods.forEach((piece) => {
+      let pieceElement = document.getElementById(nameToIdMap.get(piece));
+      pieceElement.setAttribute("class", "unplayable");
+    });
     this.filteredSelectedNeighborhoods.forEach((piece) => {
       let pieceElement = document.getElementById(nameToIdMap.get(piece));
       pieceElement.setAttribute("class", "playable");
@@ -200,10 +191,10 @@ let showGameOverModal = (text) => {
     }
   };
 };
-modalPlayAgainBtn.addEventListener("click", game.playAgain);
+modalPlayAgainBtn.addEventListener("click", game.replayGame);
 let resetGameButton = document.getElementById("resetGameButton");
 resetGameButton.addEventListener("click", game.resetGame);
-modalReviewBtn.addEventListener("click", game.reviewWrongAnswers);
+modalReviewBtn.addEventListener("click", game.reviewGame);
 
 d3.json("./maps/sf_neighborhoods.geojson")
   .then(function (neighborhoods) {
