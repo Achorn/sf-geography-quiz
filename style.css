@@ -140,7 +140,7 @@ body {
   stroke: var(--map_bg_color);
   opacity: 0.4;
   fill: none;
-  stroke-width: 0.31999999;
+  stroke-width: 0.41999999;
   stroke-linecap: butt;
   stroke-linejoin: miter;
   stroke-miterlimit: 4;
