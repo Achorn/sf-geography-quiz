@@ -22,14 +22,12 @@ span.onclick = function () {
 };
 class Game {
   allNeighborhoods = []; //all neighborhoods on the board
-
-  mapSelectionNeighborhoods = [];
-
-  filteredSelectedNeighborhoods = []; //selected map of filtered neighborhoods
+  mapSelectionNeighborhoods = []; //game mode selection(section of map)
+  filteredSelectedNeighborhoods = []; //selected map of filtered neighborhoods for replaying or reviewing
   neighborhoodsLeftToSelect = []; //neighborhoods left to select during game
 
   correctAnswers = [];
-  maybeAnswers = [];
+  almostAnswers = [];
   wrongAnswers = [];
 
   tries = 3;
@@ -37,7 +35,6 @@ class Game {
   dataDisplay = document.getElementById("dataDisplay");
 
   updateBoardWithPlayableNeighborhoods(newNeighborhoods) {
-    console.log("updating playableNeighborhoods");
     this.mapSelectionNeighborhoods = newNeighborhoods;
     this.resetGame();
   }
@@ -46,13 +43,12 @@ class Game {
     this.filteredSelectedNeighborhoods = this.mapSelectionNeighborhoods;
     this.clearBoard();
   };
-
   replayGame = () => {
     this.clearBoard();
   };
   reviewGame = () => {
     this.filteredSelectedNeighborhoods = [
-      ...this.maybeAnswers,
+      ...this.almostAnswers,
       ...this.wrongAnswers,
     ];
     this.clearBoard();
@@ -69,7 +65,7 @@ class Game {
     });
     this.neighborhoodsLeftToSelect = this.filteredSelectedNeighborhoods;
     this.correctAnswers = [];
-    this.maybeAnswers = [];
+    this.almostAnswers = [];
     this.wrongAnswers = [];
     this.tries = 3;
     this.answer = this.getNewAnswer();
@@ -106,8 +102,8 @@ class Game {
   getGamePercentage = () => {
     let percentage = 0;
     percentage += this.correctAnswers.length;
-    if (this.maybeAnswers.length != 0)
-      percentage += this.maybeAnswers.length / 2;
+    if (this.almostAnswers.length != 0)
+      percentage += this.almostAnswers.length / 2;
 
     if (percentage != 0) {
       percentage = percentage / this.filteredSelectedNeighborhoods.length;
@@ -132,7 +128,7 @@ class Game {
         document.getElementById(nameToIdMap.get(this.answer));
         // answerPath.classList.remove("map-question_blink");
       } else {
-        this.maybeAnswers.push(this.answer);
+        this.almostAnswers.push(this.answer);
         answerElement.setAttribute("class", "almostGuess");
       }
       this.removeAnswerFromGuesses(this.answer);
@@ -164,13 +160,12 @@ class Game {
     console.log(`
     allNeighborhoods: ${this.allNeighborhoods.length};
 
-    mapSelectionNeighborhoods: ${this.mapSelectionNeighborhoods.length};
-    filteredSelectedNeighborhoods: ${this.filteredSelectedNeighborhoods.length};
+    mapSelectedNeighborhoods: ${this.mapSelectionNeighborhoods.length};
     filtered neighborhoods: ${this.filteredSelectedNeighborhoods.length};
     neighborhoods left ${this.neighborhoodsLeftToSelect.length};
 
     correct answers: ${this.correctAnswers.length}
-    close answers: ${this.maybeAnswers.length}
+    close answers: ${this.almostAnswers.length}
     wrong answers: ${this.wrongAnswers.length}
     `);
   };
