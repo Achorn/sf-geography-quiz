@@ -14,12 +14,18 @@ var modal = document.getElementById("myModal");
 modalPlayAgainBtn.onclick = function () {
   modal.style.display = "none";
 };
+modalReviewBtn.onclick = function () {
+  modal.style.display = "none";
+};
 span.onclick = function () {
   modal.style.display = "none";
 };
 class Game {
   allNeighborhoods = []; //all neighborhoods on the board
-  playableNeighborhoods = []; //selected map of filtered neighborhoods
+
+  mapSelectionNeighborhoods = [];
+
+  filteredSelectedNeighborhoods = []; //selected map of filtered neighborhoods
   neighborhoodsLeftToSelect = []; //neighborhoods left to select during game
 
   correctAnswers = [];
@@ -32,7 +38,8 @@ class Game {
 
   updateBoardWithPlayableNeighborhoods(newNeighborhoods) {
     console.log("updating playableNeighborhoods");
-    this.playableNeighborhoods = newNeighborhoods;
+    this.mapSelectionNeighborhoods = newNeighborhoods;
+    this.filteredSelectedNeighborhoods = newNeighborhoods;
     this.resetGame();
   }
 
@@ -42,11 +49,53 @@ class Game {
       let pieceElement = document.getElementById(nameToIdMap.get(piece));
       pieceElement.setAttribute("class", "unplayable");
     });
-    this.playableNeighborhoods.forEach((piece) => {
+    this.filteredSelectedNeighborhoods = this.mapSelectionNeighborhoods;
+    this.filteredSelectedNeighborhoods.forEach((piece) => {
       let pieceElement = document.getElementById(nameToIdMap.get(piece));
       pieceElement.setAttribute("class", "playable");
     });
-    this.neighborhoodsLeftToSelect = this.playableNeighborhoods;
+    this.neighborhoodsLeftToSelect = this.filteredSelectedNeighborhoods;
+    this.correctAnswers = [];
+    this.maybeAnswers = [];
+    this.wrongAnswers = [];
+    this.tries = 3;
+    this.answer = this.getNewAnswer();
+    this.startGame();
+  };
+
+  playAgain = () => {
+    console.log("playing again ");
+    this.allNeighborhoods.forEach((piece) => {
+      let pieceElement = document.getElementById(nameToIdMap.get(piece));
+      pieceElement.setAttribute("class", "unplayable");
+    });
+    this.filteredSelectedNeighborhoods.forEach((piece) => {
+      let pieceElement = document.getElementById(nameToIdMap.get(piece));
+      pieceElement.setAttribute("class", "playable");
+    });
+    this.neighborhoodsLeftToSelect = this.filteredSelectedNeighborhoods;
+    this.correctAnswers = [];
+    this.maybeAnswers = [];
+    this.wrongAnswers = [];
+    this.tries = 3;
+    this.answer = this.getNewAnswer();
+    this.startGame();
+  };
+  reviewWrongAnswers = () => {
+    console.log("playing again ");
+    this.allNeighborhoods.forEach((piece) => {
+      let pieceElement = document.getElementById(nameToIdMap.get(piece));
+      pieceElement.setAttribute("class", "unplayable");
+    });
+    this.filteredSelectedNeighborhoods = [
+      ...this.maybeAnswers,
+      ...this.wrongAnswers,
+    ];
+    this.filteredSelectedNeighborhoods.forEach((piece) => {
+      let pieceElement = document.getElementById(nameToIdMap.get(piece));
+      pieceElement.setAttribute("class", "playable");
+    });
+    this.neighborhoodsLeftToSelect = this.filteredSelectedNeighborhoods;
     this.correctAnswers = [];
     this.maybeAnswers = [];
     this.wrongAnswers = [];
@@ -62,8 +111,9 @@ class Game {
 
   updateDataDisplay = () => {
     this.dataDisplay.innerHTML = `${
-      this.playableNeighborhoods.length - this.neighborhoodsLeftToSelect.length
-    }/${this.playableNeighborhoods.length} | Click on ${this.answer}`;
+      this.filteredSelectedNeighborhoods.length -
+      this.neighborhoodsLeftToSelect.length
+    }/${this.filteredSelectedNeighborhoods.length} | Click on ${this.answer}`;
   };
   startGame = () => {
     this.answer = this.getNewAnswer();
@@ -88,7 +138,7 @@ class Game {
       percentage += this.maybeAnswers.length / 2;
 
     if (percentage != 0) {
-      percentage = percentage / this.playableNeighborhoods.length;
+      percentage = percentage / this.filteredSelectedNeighborhoods.length;
       percentage = percentage * 100;
     }
     percentage = Math.floor(percentage);
@@ -140,7 +190,11 @@ class Game {
   }
   printGameStats = () => {
     console.log(`
-    all neighborhoods: ${this.playableNeighborhoods.length};
+    allNeighborhoods: ${this.allNeighborhoods.length};
+
+    mapSelectionNeighborhoods: ${this.mapSelectionNeighborhoods.length};
+    filteredSelectedNeighborhoods: ${this.filteredSelectedNeighborhoods.length};
+    filtered neighborhoods: ${this.filteredSelectedNeighborhoods.length};
     neighborhoods left ${this.neighborhoodsLeftToSelect.length};
 
     correct answers: ${this.correctAnswers.length}
@@ -154,7 +208,7 @@ let game = new Game();
 let showGameOverModal = (text) => {
   modal.style.display = "block";
   modalText.innerHTML = text;
-  if (game.playableNeighborhoods.length == game.correctAnswers.length) {
+  if (game.filteredSelectedNeighborhoods.length == game.correctAnswers.length) {
     modalReviewBtn.style.display = "none";
   } else modalReviewBtn.style.display = "inline";
 
@@ -165,9 +219,10 @@ let showGameOverModal = (text) => {
     }
   };
 };
-modalPlayAgainBtn.addEventListener("click", game.resetGame);
+modalPlayAgainBtn.addEventListener("click", game.playAgain);
 let resetGameButton = document.getElementById("resetGameButton");
 resetGameButton.addEventListener("click", game.resetGame);
+modalReviewBtn.addEventListener("click", game.reviewWrongAnswers);
 
 d3.json("./maps/sf_neighborhoods.geojson")
   .then(function (neighborhoods) {
@@ -276,7 +331,7 @@ let filterMap = (e) => {
   }
 
   if (value == "tester") {
-    newMap = ["Eureka Valley", "Corona Heights"];
+    newMap = ["Eureka Valley", "Corona Heights", "Lake Street"];
   }
   if (value == "bottom-right") {
     newMap = allNeighborhoodNames.filter((neighborhood) => {
