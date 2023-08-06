@@ -7,33 +7,51 @@ let nameToIdMap = new Map();
 let selectedMap = [];
 
 class Game {
-  allNeighborhoods = [];
-  neighborhoodsInPlay = [];
+  allNeighborhoods = []; //all neighborhoods on the board
+  playableNeighborhoods = []; //selected map of filtered neighborhoods
+  neighborhoodsLeftToSelect = []; //neighborhoods left to select during game
+
   correctAnswers = [];
   maybeAnswers = [];
   wrongAnswers = [];
+
   tries = 3;
   answer = "";
   dataDisplay = document.getElementById("dataDisplay");
 
+  updateBoardWithPlayableNeighborhoods(newNeighborhoods) {
+    console.log("updating playableNeighborhoods");
+    this.playableNeighborhoods = newNeighborhoods;
+    this.resetGame();
+  }
+
   resetGame = () => {
+    console.log("resetting game");
+    this.allNeighborhoods.forEach((piece) => {
+      let pieceElement = document.getElementById(nameToIdMap.get(piece));
+      pieceElement.setAttribute("class", "unplayable");
+    });
+    this.playableNeighborhoods.forEach((piece) => {
+      let pieceElement = document.getElementById(nameToIdMap.get(piece));
+      pieceElement.setAttribute("class", "playable");
+    });
+    this.neighborhoodsLeftToSelect = this.playableNeighborhoods;
     this.correctAnswers = [];
-    this.neighborhoodsInPlay = this.allNeighborhoods;
     this.maybeAnswers = [];
     this.wrongAnswers = [];
     this.tries = 3;
     this.answer = this.getNewAnswer();
   };
 
-  set neighborhoods(newNeighborhoods) {
+  set allNeighborhoods(newNeighborhoods) {
+    console.log("setting all neighborhoods");
     this.allNeighborhoods = newNeighborhoods;
-    this.neighborhoodsInPlay = newNeighborhoods;
   }
 
   updateDataDisplay = () => {
     this.dataDisplay.innerHTML = `${
-      this.allNeighborhoods.length - this.neighborhoodsInPlay.length
-    }/${this.allNeighborhoods.length} | Click on ${this.answer}`;
+      this.playableNeighborhoods.length - this.neighborhoodsLeftToSelect.length
+    }/${this.playableNeighborhoods.length} | Click on ${this.answer}`;
   };
   startGame = () => {
     this.answer = this.getNewAnswer();
@@ -42,12 +60,12 @@ class Game {
     //start timer
   };
   getNewAnswer = () => {
-    return this.neighborhoodsInPlay[
-      Math.floor(Math.random() * this.neighborhoodsInPlay.length)
+    return this.neighborhoodsLeftToSelect[
+      Math.floor(Math.random() * this.neighborhoodsLeftToSelect.length)
     ];
   };
   removeAnswerFromGuesses = (name) => {
-    this.neighborhoodsInPlay = this.neighborhoodsInPlay.filter(
+    this.neighborhoodsLeftToSelect = this.neighborhoodsLeftToSelect.filter(
       (e) => e !== name
     );
   };
@@ -58,7 +76,7 @@ class Game {
       percentage += this.maybeAnswers.length / 2;
 
     if (percentage != 0) {
-      percentage = percentage / this.allNeighborhoods.length;
+      percentage = percentage / this.playableNeighborhoods.length;
       percentage = percentage * 100;
     }
     percentage = Math.floor(percentage);
@@ -85,7 +103,7 @@ class Game {
       this.removeAnswerFromGuesses(this.answer);
 
       //gameOver
-      if (this.neighborhoodsInPlay.length == 0) {
+      if (this.neighborhoodsLeftToSelect.length == 0) {
         //TODO: fix game score
         let gameScore = this.getGamePercentage();
         console.log(`You got ${gameScore}%`);
@@ -109,8 +127,8 @@ class Game {
   }
   printGameStats = () => {
     console.log(`
-    all neighborhoods: ${this.allNeighborhoods.length};
-    neighborhoods left ${this.neighborhoodsInPlay.length};
+    all neighborhoods: ${this.playableNeighborhoods.length};
+    neighborhoods left ${this.neighborhoodsLeftToSelect.length};
 
     correct answers: ${this.correctAnswers.length}
     close answers: ${this.maybeAnswers.length}
@@ -119,17 +137,8 @@ class Game {
   };
 }
 let game = new Game();
-
-let resetBoard = (allPiecesNames, selectedPiecesNames) => {
-  allPiecesNames.forEach((piece) => {
-    let pieceElement = document.getElementById(nameToIdMap.get(piece));
-    pieceElement.setAttribute("class", "unplayable");
-  });
-  selectedPiecesNames.forEach((piece) => {
-    let pieceElement = document.getElementById(nameToIdMap.get(piece));
-    pieceElement.setAttribute("class", "playable");
-  });
-};
+let resetGameButton = document.getElementById("resetGameButton");
+resetGameButton.addEventListener("click", game.resetGame);
 
 d3.json("./maps/sf_neighborhoods.geojson")
   .then(function (neighborhoods) {
@@ -175,8 +184,9 @@ d3.json("./maps/sf_neighborhoods.geojson")
             game.guessNeighborhood(e, neighborhood)
           );
         });
-        resetBoard(allNeighborhoodNames, allNeighborhoodNames);
-        game.neighborhoods = allNeighborhoodNames;
+
+        game.allNeighborhoods = allNeighborhoodNames;
+        game.updateBoardWithPlayableNeighborhoods(allNeighborhoodNames);
         game.startGame();
         // playGame([...allNeighborhoodNames]);
         // playGame(allNeighborhoodNames.slice(0, 20));
@@ -273,10 +283,11 @@ let getCenterOfNeighborhood = (nName) => {
 var mapSelection = document.getElementById("mapSelect");
 mapSelection.addEventListener("change", (event) => {
   filterMap(event);
-  resetBoard(allNeighborhoodNames, selectedMap);
+  // resetBoard(allNeighborhoodNames, selectedMap);
   //reset game?
-  game.neighborhoods = selectedMap;
-  game.resetGame();
+  // game.neighborhoods = selectedMap;
+  game.updateBoardWithPlayableNeighborhoods(selectedMap);
+  // game.resetGame();
   game.startGame();
 });
 
@@ -316,15 +327,15 @@ document.getElementById("streetToggle").addEventListener("change", (e) => {
   display.style.display = display.style.display == "inline" ? "none" : "inline";
 });
 
-document.getElementById("freewayToggle").addEventListener("change", (e) => {
-  let display = document.getElementById("freeways");
-  display.style.display = display.style.display == "inline" ? "none" : "inline";
-});
+// document.getElementById("freewayToggle").addEventListener("change", (e) => {
+//   let display = document.getElementById("freeways");
+//   display.style.display = display.style.display == "inline" ? "none" : "inline";
+// });
 
-document.getElementById("ferryToggle").addEventListener("change", (e) => {
-  let display = document.getElementById("ferries");
-  display.style.display = display.style.display == "inline" ? "none" : "inline";
-});
+// document.getElementById("ferryToggle").addEventListener("change", (e) => {
+//   let display = document.getElementById("ferries");
+//   display.style.display = display.style.display == "inline" ? "none" : "inline";
+// });
 
 //TODO: animate boat on Ferry paths
 // let createBoat = () => {

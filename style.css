@@ -46,7 +46,7 @@ body {
 
 #mapSelectContainer * {
   margin: 10px;
-  padding: 15px;
+  padding: 5px;
   /* display: flex;
   justify-content: center;
   flex-direction: row;
@@ -67,10 +67,14 @@ body {
 
   padding: 10px;
   z-index: 160;
-  /* font-size: 1.3em; */
+  font-size: 1.3em;
   position: absolute;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
+}
+#resetGameButton {
+  margin: 10px;
+  padding: 5px;
 }
 #neighborhoods path {
   stroke-width: 0.8;
@@ -78,7 +82,7 @@ body {
 }
 .neighborhood {
   stroke-width: 0.8;
-  /* fill: var(--land_fill_color); */
+  fill: var(--land_fill_color);
   stroke-linejoin: round;
   stroke: var(--map_bg_color);
   transition: fill 0.2s ease;
