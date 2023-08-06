@@ -154,7 +154,7 @@ class Game {
         answerPath.classList.add("map-question_blink");
       }
     }
-    this.printGameStats();
+    // this.printGameStats();
   }
   printGameStats = () => {
     console.log(`
