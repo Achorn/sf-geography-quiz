@@ -272,9 +272,9 @@ input:checked + .slider:before {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (orientation: portrait) {
   body {
-    /* background-color: lightblue; */
+    background-color: lightblue;
     margin: 0;
   }
   /* #title {
