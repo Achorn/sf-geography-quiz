@@ -46,7 +46,7 @@ body {
 
 #mapSelectContainer * {
   margin: 10px;
-  padding: 15px;
+  padding: 5px;
   /* display: flex;
   justify-content: center;
   flex-direction: row;
@@ -55,8 +55,8 @@ body {
 .mapsContainer {
   position: relative;
   background-color: var(--map_bg_color);
-  aspect-ratio: 334/334;
-  max-width: 700px;
+  aspect-ratio: 400/380;
+  max-width: 650px;
   height: auto;
   width: 90vw;
 }
@@ -67,18 +67,22 @@ body {
 
   padding: 10px;
   z-index: 160;
-  /* font-size: 1.3em; */
+  font-size: 1.3em;
   position: absolute;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
 }
+#resetGameButton {
+  margin: 10px;
+  padding: 5px;
+}
 #neighborhoods path {
-  stroke-width: 0.75;
+  stroke-width: 0.8;
   stroke-linejoin: round;
 }
 .neighborhood {
   stroke-width: 0.8;
-  /* fill: var(--land_fill_color); */
+  fill: var(--land_fill_color);
   stroke-linejoin: round;
   stroke: var(--map_bg_color);
   transition: fill 0.2s ease;
@@ -134,9 +138,9 @@ body {
   pointer-events: none;
 
   stroke: var(--map_bg_color);
-  opacity: 0.4;
+  /* opacity: 0.4; */
   fill: none;
-  stroke-width: 0.41999999;
+  stroke-width: 0.11999999;
   stroke-linecap: butt;
   stroke-linejoin: miter;
   stroke-miterlimit: 4;
@@ -266,4 +270,20 @@ input:checked + .slider:before {
   height: auto;
   line-height: 30px;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 650px) {
+  body {
+    /* background-color: lightblue; */
+    margin: 0;
+  }
+  #title {
+    display: none;
+  }
+  .mapsContainer {
+    width: 100vw;
+    height: auto;
+    /* max-height: 600px; */
+    aspect-ratio: 400/380;
+  }
 }

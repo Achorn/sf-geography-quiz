@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <h1>SF Neighborhood Guesser</h1>
+    <h1 id="title">SF Neighborhood Guesser</h1>
     <div id="mapSelectContainer">
       <select name="" id="mapSelect">
         <option value="all">Entire Map</option>
@@ -27,7 +27,7 @@
 
       <svg id="mapSVG" viewBox="0 0 325 334" width="100%" height="100%"></svg>
     </div>
-
+    <button id="resetGameButton">Reset</button>
     <div>
       <div class="switchWithTitle">
         <p>Streets</p>
@@ -36,7 +36,7 @@
           <span class="slider round"> </span>
         </label>
       </div>
-      <div class="switchWithTitle">
+      <!-- <div class="switchWithTitle">
         <p>Freeways</p>
         <label class="switch" id="freewayToggle">
           <input type="checkbox" />
@@ -49,7 +49,7 @@
           <input type="checkbox" />
           <span class="slider round"> </span>
         </label>
-      </div>
+      </div> -->
     </div>
     <script type="module" src="index.js"></script>
   </body>
