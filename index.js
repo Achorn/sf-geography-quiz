@@ -7,19 +7,10 @@ let nameToIdMap = new Map();
 let selectedMap = [];
 
 var modalPlayAgainBtn = document.getElementById("playAgainButton");
+var modalReviewBtn = document.getElementById("reviewButton");
 var span = document.getElementsByClassName("close")[0];
 var modal = document.getElementById("myModal");
 
-let showGameOverModal = (text) => {
-  modal.style.display = "block";
-  modalText.innerHTML = text;
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-};
 modalPlayAgainBtn.onclick = function () {
   modal.style.display = "none";
 };
@@ -61,6 +52,7 @@ class Game {
     this.wrongAnswers = [];
     this.tries = 3;
     this.answer = this.getNewAnswer();
+    this.startGame();
   };
 
   set allNeighborhoods(newNeighborhoods) {
@@ -158,11 +150,24 @@ class Game {
   };
 }
 let game = new Game();
+
+let showGameOverModal = (text) => {
+  modal.style.display = "block";
+  modalText.innerHTML = text;
+  if (game.playableNeighborhoods.length == game.correctAnswers.length) {
+    modalReviewBtn.style.display = "none";
+  } else modalReviewBtn.style.display = "inline";
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+};
 modalPlayAgainBtn.addEventListener("click", game.resetGame);
 let resetGameButton = document.getElementById("resetGameButton");
-resetGameButton.addEventListener("click", () => {
-  game.resetGame(), game.startGame();
-});
+resetGameButton.addEventListener("click", game.resetGame);
 
 d3.json("./maps/sf_neighborhoods.geojson")
   .then(function (neighborhoods) {
@@ -211,7 +216,6 @@ d3.json("./maps/sf_neighborhoods.geojson")
 
         game.allNeighborhoods = allNeighborhoodNames;
         game.updateBoardWithPlayableNeighborhoods(allNeighborhoodNames);
-        game.startGame();
         // playGame([...allNeighborhoodNames]);
         // playGame(allNeighborhoodNames.slice(0, 20));
       });
@@ -316,7 +320,6 @@ mapSelection.addEventListener("change", (event) => {
   // game.neighborhoods = selectedMap;
   game.updateBoardWithPlayableNeighborhoods(selectedMap);
   // game.resetGame();
-  game.startGame();
 });
 
 let removeSelectorToSelectableGamePiece = (neighborhoodName, method) => {
