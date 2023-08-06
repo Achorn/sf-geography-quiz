@@ -44,7 +44,6 @@ class Game {
   }
 
   resetGame = () => {
-    console.log("resetting game");
     this.allNeighborhoods.forEach((piece) => {
       let pieceElement = document.getElementById(nameToIdMap.get(piece));
       pieceElement.setAttribute("class", "unplayable");
@@ -64,7 +63,6 @@ class Game {
   };
 
   playAgain = () => {
-    console.log("playing again ");
     this.allNeighborhoods.forEach((piece) => {
       let pieceElement = document.getElementById(nameToIdMap.get(piece));
       pieceElement.setAttribute("class", "unplayable");
@@ -82,7 +80,6 @@ class Game {
     this.startGame();
   };
   reviewWrongAnswers = () => {
-    console.log("playing again ");
     this.allNeighborhoods.forEach((piece) => {
       let pieceElement = document.getElementById(nameToIdMap.get(piece));
       pieceElement.setAttribute("class", "unplayable");
@@ -330,9 +327,9 @@ let filterMap = (e) => {
     });
   }
 
-  if (value == "tester") {
-    newMap = ["Eureka Valley", "Corona Heights", "Lake Street"];
-  }
+  // if (value == "tester") {
+  //   newMap = ["Eureka Valley", "Corona Heights", "Lake Street"];
+  // }
   if (value == "bottom-right") {
     newMap = allNeighborhoodNames.filter((neighborhood) => {
       let [x, y] = getCenterOfNeighborhood(neighborhood);
