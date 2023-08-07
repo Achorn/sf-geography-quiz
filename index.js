@@ -170,7 +170,7 @@ class Game {
       if (this.neighborhoodsLeftToSelect.length == 0) {
         console.log("gameover?");
         this.gameState = "FINISHED";
-
+        clearTimeout(this.interval);
         let gameScore = this.getGamePercentage();
         this.endTime = Date.now();
         let time = this.getTimeElapsedInMinutesSeconds(
@@ -200,8 +200,8 @@ class Game {
     let difference = end - start;
     let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((difference % (1000 * 60)) / 1000);
-    var fixedDisplaySeconds = ("0" + seconds).substring(-2);
-    var fixedDisplayMinutes = ("0" + minutes).substring(-2);
+    var fixedDisplaySeconds = ("0" + seconds).slice(-2);
+    var fixedDisplayMinutes = ("0" + minutes).slice(-2);
     var fixedStrDisplayTime = fixedDisplayMinutes + ":" + fixedDisplaySeconds;
     return fixedStrDisplayTime;
   }
