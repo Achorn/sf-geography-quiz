@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <h1 id="title">SF Neighborhood Guesser</h1>
+    <h2 id="title">SF Neighborhood Guesser</h2>
     <div id="mapSelectContainer">
       <select name="" id="mapSelect">
         <option value="all">Entire Map</option>
@@ -22,9 +22,14 @@
         <option value="bottom-right">Bottom Right</option>
       </select>
     </div>
-
     <div class="mapsContainer">
-      <div id="dataDisplay">loading...</div>
+      <div id="dataDisplay">
+        <span id="scoreDisplay"> --/-- </span>
+        |
+        <span id="timerDisplay"> --:-- </span>
+        |
+        <span id="answerDisplay">loading..</span>
+      </div>
 
       <svg id="mapSVG" viewBox="0 0 325 334" width="100%" height="100%"></svg>
     </div>
@@ -57,7 +62,9 @@
       <div class="modal-content">
         <span class="close">&times;</span>
 
-        <h3 id="modalText"></h3>
+        <h3 id="modalScore"></h3>
+        <h4 id="modalTime"></h4>
+
         <div class="'modal-buttons">
           <button id="playAgainButton">Play Again</button>
           <button id="reviewButton">Review</button>
