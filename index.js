@@ -11,6 +11,10 @@ var modalReviewBtn = document.getElementById("reviewButton");
 var span = document.getElementsByClassName("close")[0];
 var modal = document.getElementById("myModal");
 
+var scoreDisplayElement = document.getElementById("scoreDisplay");
+var timerDisplayElement = document.getElementById("timerDisplay");
+var hintDisplayElement = document.getElementById("answerDisplay");
+
 modalPlayAgainBtn.onclick = function () {
   modal.style.display = "none";
 };
@@ -39,25 +43,7 @@ class Game {
   startTimer(elaspedTimeFunction) {
     console.log("time????");
     let time = elaspedTimeFunction(this.startTime, Date.now());
-    document.getElementById("timeChecker").innerHTML = time;
-    // tens++;
-    // if (tens <= 9) {
-    //   appendTens.innerHTML = "0" + tens;
-    // }
-    // if (tens > 9) {
-    //   appendTens.innerHTML = tens;
-    // }
-    // if (tens > 99) {
-    //   console.log("seconds");
-    //   seconds++;
-    //   appendSeconds.innerHTML = "0" + seconds;
-    //   tens = 0;
-    //   appendTens.innerHTML = "0" + 0;
-    // }
-
-    // if (seconds > 9) {
-    //   appendSeconds.innerHTML = seconds;
-    // }
+    timerDisplayElement.innerHTML = time;
   }
 
   updateBoardWithPlayableNeighborhoods(newNeighborhoods) {
@@ -105,16 +91,20 @@ class Game {
   }
 
   updateDataDisplay = () => {
-    this.dataDisplay.innerHTML = `${
+    let score = `${
       this.filteredSelectedNeighborhoods.length -
       this.neighborhoodsLeftToSelect.length
-    }/${this.filteredSelectedNeighborhoods.length} | Click on ${this.answer}`;
+    }/${this.filteredSelectedNeighborhoods.length}`;
+    let hint = `Click on ${this.answer}`;
+    scoreDisplayElement.innerHTML = score;
+    hintDisplayElement.innerHTML = hint;
   };
   startGame = () => {
     this.answer = this.getNewAnswer();
     console.log("starting game!");
     this.updateDataDisplay();
     this.startTime = Date.now();
+    timerDisplayElement.innerHTML = "00:00";
 
     clearInterval(this.interval);
     this.interval = setInterval(
