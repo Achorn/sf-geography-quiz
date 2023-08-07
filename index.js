@@ -43,7 +43,6 @@ class Game {
   dataDisplay = document.getElementById("dataDisplay");
 
   startTimer(elaspedTimeFunction) {
-    console.log("time????");
     let time = elaspedTimeFunction(this.startTime, Date.now());
     timerDisplayElement.innerHTML = time;
   }
@@ -88,7 +87,6 @@ class Game {
   }
 
   set allNeighborhoods(newNeighborhoods) {
-    console.log("setting all neighborhoods");
     this.allNeighborhoods = newNeighborhoods;
   }
 
@@ -103,7 +101,6 @@ class Game {
   };
   startGame = () => {
     this.answer = this.getNewAnswer();
-    console.log("starting game!");
     this.updateDataDisplay();
     this.startTime = Date.now();
     timerDisplayElement.innerHTML = "00:00";
@@ -160,8 +157,6 @@ class Game {
 
       //gameOver
       if (this.neighborhoodsLeftToSelect.length == 0) {
-        console.log("gameover?");
-        this.gameState = "FINISHED";
         clearTimeout(this.interval);
         let gameScore = this.getGamePercentage();
         this.endTime = Date.now();
@@ -169,7 +164,6 @@ class Game {
           this.startTime,
           this.endTime
         );
-        console.log(`You got ${gameScore}%`);
         showGameOverModal(`You got ${gameScore}%`, time);
         return;
       }
