@@ -29,10 +29,36 @@ class Game {
   correctAnswers = [];
   almostAnswers = [];
   wrongAnswers = [];
-
+  startTime;
+  endTime;
+  interval;
   tries = 3;
   answer = "";
   dataDisplay = document.getElementById("dataDisplay");
+
+  startTimer(elaspedTimeFunction) {
+    console.log("time????");
+    let time = elaspedTimeFunction(this.startTime, Date.now());
+    document.getElementById("timeChecker").innerHTML = time;
+    // tens++;
+    // if (tens <= 9) {
+    //   appendTens.innerHTML = "0" + tens;
+    // }
+    // if (tens > 9) {
+    //   appendTens.innerHTML = tens;
+    // }
+    // if (tens > 99) {
+    //   console.log("seconds");
+    //   seconds++;
+    //   appendSeconds.innerHTML = "0" + seconds;
+    //   tens = 0;
+    //   appendTens.innerHTML = "0" + 0;
+    // }
+
+    // if (seconds > 9) {
+    //   appendSeconds.innerHTML = seconds;
+    // }
+  }
 
   updateBoardWithPlayableNeighborhoods(newNeighborhoods) {
     this.mapSelectionNeighborhoods = newNeighborhoods;
@@ -69,6 +95,7 @@ class Game {
     this.wrongAnswers = [];
     this.tries = 3;
     this.answer = this.getNewAnswer();
+    clearInterval(this.interval);
     this.startGame();
   }
 
@@ -87,7 +114,13 @@ class Game {
     this.answer = this.getNewAnswer();
     console.log("starting game!");
     this.updateDataDisplay();
-    //start timer
+    this.startTime = Date.now();
+
+    clearInterval(this.interval);
+    this.interval = setInterval(
+      () => this.startTimer(this.getTimeElapsedInMinutesSeconds),
+      1000
+    );
   };
   getNewAnswer = () => {
     return this.neighborhoodsLeftToSelect[
@@ -135,10 +168,17 @@ class Game {
 
       //gameOver
       if (this.neighborhoodsLeftToSelect.length == 0) {
-        //TODO: fix game score
+        console.log("gameover?");
+        this.gameState = "FINISHED";
+
         let gameScore = this.getGamePercentage();
+        this.endTime = Date.now();
+        let time = this.getTimeElapsedInMinutesSeconds(
+          this.startTime,
+          this.endTime
+        );
         console.log(`You got ${gameScore}%`);
-        showGameOverModal(`You got ${gameScore}%`);
+        showGameOverModal(`You got ${gameScore}%`, time);
         return;
       }
 
@@ -156,6 +196,15 @@ class Game {
     }
     // this.printGameStats();
   }
+  getTimeElapsedInMinutesSeconds(start, end) {
+    let difference = end - start;
+    let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    var fixedDisplaySeconds = ("0" + seconds).substring(-2);
+    var fixedDisplayMinutes = ("0" + minutes).substring(-2);
+    var fixedStrDisplayTime = fixedDisplayMinutes + ":" + fixedDisplaySeconds;
+    return fixedStrDisplayTime;
+  }
   printGameStats = () => {
     console.log(`
     allNeighborhoods: ${this.allNeighborhoods.length};
@@ -172,9 +221,9 @@ class Game {
 }
 let game = new Game();
 
-let showGameOverModal = (text) => {
+let showGameOverModal = (text, time) => {
   modal.style.display = "block";
-  modalText.innerHTML = text;
+  modalText.innerHTML = `${text}\nTime: ${time}`;
   if (game.filteredSelectedNeighborhoods.length == game.correctAnswers.length) {
     modalReviewBtn.style.display = "none";
   } else modalReviewBtn.style.display = "inline";
