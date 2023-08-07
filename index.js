@@ -10,6 +10,8 @@ var modalPlayAgainBtn = document.getElementById("playAgainButton");
 var modalReviewBtn = document.getElementById("reviewButton");
 var span = document.getElementsByClassName("close")[0];
 var modal = document.getElementById("myModal");
+var modalScore = document.getElementById("modalScore");
+var modalTime = document.getElementById("modalTime");
 
 var scoreDisplayElement = document.getElementById("scoreDisplay");
 var timerDisplayElement = document.getElementById("timerDisplay");
@@ -213,7 +215,9 @@ let game = new Game();
 
 let showGameOverModal = (text, time) => {
   modal.style.display = "block";
-  modalText.innerHTML = `${text}\nTime: ${time}`;
+
+  modalScore.innerHTML = text;
+  modalTime.innerHTML = `Time: ${time}`;
   if (game.filteredSelectedNeighborhoods.length == game.correctAnswers.length) {
     modalReviewBtn.style.display = "none";
   } else modalReviewBtn.style.display = "inline";
