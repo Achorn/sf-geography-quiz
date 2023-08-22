@@ -18,6 +18,11 @@ var scoreDisplayElement = document.getElementById("scoreDisplay");
 var timerDisplayElement = document.getElementById("timerDisplay");
 var hintDisplayElement = document.getElementById("answerDisplay");
 
+window.onload = () => {
+  const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  toggleDarkMode(isDark);
+};
+
 modalPlayAgainBtn.onclick = function () {
   modal.style.display = "none";
 };
@@ -420,31 +425,29 @@ document.getElementById("streetToggle").addEventListener("change", (e) => {
 
 window
   .matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", (event) => {
-    const newColorScheme = event.matches ? "dark" : "light";
-  });
-
-window
-  .matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", (e) => {
     let isDark = e.matches;
 
     document
       .querySelector("body")
       .setAttribute("data-theme", isDark ? "dark" : "light");
-    console.log(darkModeToggle.checked);
-    document.getElementById("darkModeCheck").checked = isDark;
+    // document.getElementById("darkModeCheck").checked = isDark;
   });
 
 //DARKMODE
-
-darkModeToggle.addEventListener("change", (e) => {
-  let checked = e.target.checked;
-
+let toggleDarkMode = (isDark) => {
   document
     .querySelector("body")
-    .setAttribute("data-theme", checked ? "dark" : "light");
-});
+    .setAttribute("data-theme", isDark ? "dark" : "light");
+  // document.getElementById("darkModeCheck").checked = isDark;
+};
+
+// darkModeToggle.addEventListener("change", (e) => {
+//   let checked = e.target.checked;
+//   document
+//     .querySelector("body")
+//     .setAttribute("data-theme", checked ? "dark" : "light");
+// });
 
 // document.getElementById("freewayToggle").addEventListener("change", (e) => {
 //   let display = document.getElementById("freeways");
