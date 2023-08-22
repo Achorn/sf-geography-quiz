@@ -2,8 +2,10 @@
   --bg_color: white;
   --primary_color: rgb(34, 34, 34);
   --link_color: navy;
+  --data_display_color: rgba(255, 255, 255, 0.5);
 
   --map_bg_color: #a4d1db;
+  --land_outline_color: #a4d1db;
   --land_fill_color: #1e8346;
   --land_hightlight_color: #3b965f;
   --land_non_selectable_color: #166c38;
@@ -18,15 +20,17 @@
   --primary_color: #c5cfd8;
   --link_color: cyan;
 
-  --map_bg_color: #406975;
-  --land_fill_color: #18282c;
-  --land_hightlight_color: #3c616b;
-  --land_non_selectable_color: #101b1e;
-  --land_tan_color: #f1e9d7;
+  --data_display_color: rgba(55, 55, 55, 0.5);
 
-  --answer_correct: rgb(173, 201, 211);
-  --answer_almost: rgb(121, 98, 184);
-  --answer_wrong: rgb(67, 20, 184);
+  /* --map_bg_color: #101b1e; */
+  /* --land_fill_color: #406975; */
+  /* --land_hightlight_color: #3c616b; */
+  /* --land_non_selectable_color: #22373c; */
+  /* --land_tan_color: #f1e9d7; */
+
+  /* --answer_correct: rgb(173, 201, 211); */
+  /* --answer_almost: rgb(121, 98, 184); */
+  /* --answer_wrong: rgb(67, 20, 184); */
 }
 
 body {
@@ -72,7 +76,7 @@ body {
   font-size: 1.3em;
   position: absolute;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--data_display_color);
 }
 #resetGameButton {
   margin: 10px;
@@ -81,7 +85,9 @@ body {
 #neighborhoods path {
   stroke-width: 0.8;
   stroke-linejoin: round;
+  stroke: var(--land_outline_color);
 }
+
 .neighborhood {
   stroke-width: 0.8;
   fill: var(--land_fill_color);
@@ -130,7 +136,7 @@ body {
   pointer-events: none;
 
   fill: var(--land_non_selectable_color);
-  stroke: var(--map_bg_color);
+  stroke: var(--land_outline_color);
 }
 
 #streets {

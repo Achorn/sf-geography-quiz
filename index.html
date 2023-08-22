@@ -11,13 +11,6 @@
   </head>
 
   <body>
-    <div class="switchWithTitle">
-      <p>Streets</p>
-      <label class="switch" id="darkModeToggle">
-        <input type="checkbox" />
-        <span class="slider round"> </span>
-      </label>
-    </div>
     <h2 id="title">SF Neighborhood Guesser</h2>
     <div id="mapSelectContainer">
       <select name="" id="mapSelect">
@@ -29,6 +22,10 @@
         <option value="bottom-right">Bottom Right</option>
       </select>
     </div>
+    <label class="switch" id="darkModeToggle">
+      <input type="checkbox" id="darkModeCheck" />
+      <span class="slider round"> </span>
+    </label>
     <div class="mapsContainer">
       <div id="dataDisplay">
         <span id="scoreDisplay"> --/-- </span>

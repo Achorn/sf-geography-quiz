@@ -12,6 +12,7 @@ var span = document.getElementsByClassName("close")[0];
 var modal = document.getElementById("myModal");
 var modalScore = document.getElementById("modalScore");
 var modalTime = document.getElementById("modalTime");
+let darkModeToggle = document.getElementById("darkModeToggle");
 
 var scoreDisplayElement = document.getElementById("scoreDisplay");
 var timerDisplayElement = document.getElementById("timerDisplay");
@@ -244,20 +245,20 @@ d3.json("./maps/sf_neighborhoods.geojson")
       .attr("id", (d) => {
         return d.properties.name.replace(/ /g, "");
       })
-      .attr("class", "neighborhood")
-      .attr("stroke", "#a4d1db")
-      .attr("stroke-width", 1);
+      .attr("class", "neighborhood");
   })
   .then(() => {
     d3.json("./maps/bay_area_counties.geojson")
       .then(function (districts) {
         svg
           .append("g")
+          .attr("id", "districts")
           .selectAll("path")
           .data(districts.features)
           .join("path")
           .attr("d", geoGenerator)
           .attr("id", "district")
+          .attr("class", "district")
           .attr("stroke-width", 1);
       })
       .then(() => {
@@ -417,8 +418,26 @@ document.getElementById("streetToggle").addEventListener("change", (e) => {
   display.style.display = display.style.display == "inline" ? "none" : "inline";
 });
 
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", (event) => {
+    const newColorScheme = event.matches ? "dark" : "light";
+  });
+
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", (e) => {
+    let isDark = e.matches;
+
+    document
+      .querySelector("body")
+      .setAttribute("data-theme", isDark ? "dark" : "light");
+    console.log(darkModeToggle.checked);
+    document.getElementById("darkModeCheck").checked = isDark;
+  });
+
 //DARKMODE
-let darkModeToggle = document.getElementById("darkModeToggle");
+
 darkModeToggle.addEventListener("change", (e) => {
   let checked = e.target.checked;
 
