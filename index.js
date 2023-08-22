@@ -12,10 +12,16 @@ var span = document.getElementsByClassName("close")[0];
 var modal = document.getElementById("myModal");
 var modalScore = document.getElementById("modalScore");
 var modalTime = document.getElementById("modalTime");
+let darkModeToggle = document.getElementById("darkModeToggle");
 
 var scoreDisplayElement = document.getElementById("scoreDisplay");
 var timerDisplayElement = document.getElementById("timerDisplay");
 var hintDisplayElement = document.getElementById("answerDisplay");
+
+window.onload = () => {
+  const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  toggleDarkMode(isDark);
+};
 
 modalPlayAgainBtn.onclick = function () {
   modal.style.display = "none";
@@ -244,20 +250,20 @@ d3.json("./maps/sf_neighborhoods.geojson")
       .attr("id", (d) => {
         return d.properties.name.replace(/ /g, "");
       })
-      .attr("class", "neighborhood")
-      .attr("stroke", "#a4d1db")
-      .attr("stroke-width", 1);
+      .attr("class", "neighborhood");
   })
   .then(() => {
     d3.json("./maps/bay_area_counties.geojson")
       .then(function (districts) {
         svg
           .append("g")
+          .attr("id", "districts")
           .selectAll("path")
           .data(districts.features)
           .join("path")
           .attr("d", geoGenerator)
           .attr("id", "district")
+          .attr("class", "district")
           .attr("stroke-width", 1);
       })
       .then(() => {
@@ -416,6 +422,32 @@ document.getElementById("streetToggle").addEventListener("change", (e) => {
   let display = document.getElementById("streets");
   display.style.display = display.style.display == "inline" ? "none" : "inline";
 });
+
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", (e) => {
+    let isDark = e.matches;
+
+    document
+      .querySelector("body")
+      .setAttribute("data-theme", isDark ? "dark" : "light");
+    // document.getElementById("darkModeCheck").checked = isDark;
+  });
+
+//DARKMODE
+let toggleDarkMode = (isDark) => {
+  document
+    .querySelector("body")
+    .setAttribute("data-theme", isDark ? "dark" : "light");
+  // document.getElementById("darkModeCheck").checked = isDark;
+};
+
+// darkModeToggle.addEventListener("change", (e) => {
+//   let checked = e.target.checked;
+//   document
+//     .querySelector("body")
+//     .setAttribute("data-theme", checked ? "dark" : "light");
+// });
 
 // document.getElementById("freewayToggle").addEventListener("change", (e) => {
 //   let display = document.getElementById("freeways");
