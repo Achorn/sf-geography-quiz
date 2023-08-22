@@ -417,6 +417,16 @@ document.getElementById("streetToggle").addEventListener("change", (e) => {
   display.style.display = display.style.display == "inline" ? "none" : "inline";
 });
 
+//DARKMODE
+let darkModeToggle = document.getElementById("darkModeToggle");
+darkModeToggle.addEventListener("change", (e) => {
+  let checked = e.target.checked;
+
+  document
+    .querySelector("body")
+    .setAttribute("data-theme", checked ? "dark" : "light");
+});
+
 // document.getElementById("freewayToggle").addEventListener("change", (e) => {
 //   let display = document.getElementById("freeways");
 //   display.style.display = display.style.display == "inline" ? "none" : "inline";
