@@ -68,6 +68,7 @@ body {
 .mapsContainer {
   position: relative;
   background-color: var(--map_bg_color);
+  border-radius: 20px;
   aspect-ratio: 400/380;
   max-width: 750px;
   height: auto;
@@ -77,6 +78,8 @@ body {
   pointer-events: none;
   box-sizing: border-box;
   font-size: 1.5em;
+  /* border-top-left-radius: 20px; */
+  border-top-right-radius: 20px;
 
   padding: 10px;
   /* z-index: 160; */
