@@ -13,7 +13,10 @@ var modal = document.getElementById("myModal");
 var modalScore = document.getElementById("modalScore");
 var modalTime = document.getElementById("modalTime");
 let darkModeToggle = document.getElementById("darkModeToggle");
+var OpenSidebarButton = document.getElementById("OpenSidebarButton");
+var closeSidebarButton = document.getElementById("closeSidebarButton");
 
+var sidebar = document.getElementById("sidebar");
 var scoreDisplayElement = document.getElementById("scoreDisplay");
 var timerDisplayElement = document.getElementById("timerDisplay");
 var hintDisplayElement = document.getElementById("answerDisplay");
@@ -431,7 +434,7 @@ window
     document
       .querySelector("body")
       .setAttribute("data-theme", isDark ? "dark" : "light");
-    // document.getElementById("darkModeCheck").checked = isDark;
+    document.getElementById("darkModeCheck").checked = isDark;
   });
 
 //DARKMODE
@@ -439,25 +442,25 @@ let toggleDarkMode = (isDark) => {
   document
     .querySelector("body")
     .setAttribute("data-theme", isDark ? "dark" : "light");
-  // document.getElementById("darkModeCheck").checked = isDark;
+  document.getElementById("darkModeCheck").checked = isDark;
 };
 
-// darkModeToggle.addEventListener("change", (e) => {
-//   let checked = e.target.checked;
-//   document
-//     .querySelector("body")
-//     .setAttribute("data-theme", checked ? "dark" : "light");
-// });
+darkModeToggle.addEventListener("change", (e) => {
+  let checked = e.target.checked;
+  document
+    .querySelector("body")
+    .setAttribute("data-theme", checked ? "dark" : "light");
+});
 
 // document.getElementById("freewayToggle").addEventListener("change", (e) => {
 //   let display = document.getElementById("freeways");
 //   display.style.display = display.style.display == "inline" ? "none" : "inline";
 // });
 
-// document.getElementById("ferryToggle").addEventListener("change", (e) => {
-//   let display = document.getElementById("ferries");
-//   display.style.display = display.style.display == "inline" ? "none" : "inline";
-// });
+document.getElementById("ferryToggle").addEventListener("change", (e) => {
+  let display = document.getElementById("ferries");
+  display.style.display = display.style.display == "inline" ? "none" : "inline";
+});
 
 //TODO: animate boat on Ferry paths
 // let createBoat = () => {
@@ -490,3 +493,13 @@ let toggleDarkMode = (isDark) => {
 //     },
 //   });
 // };
+
+//SIDEBAR METHODS
+OpenSidebarButton.addEventListener("click", (event) => {
+  console.log("button clicked");
+  sidebar.style.display = "block";
+});
+closeSidebarButton.addEventListener("click", (e) => {
+  console.log("clicked");
+  sidebar.style.display = "none";
+});

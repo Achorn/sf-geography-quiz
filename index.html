@@ -5,40 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>SF Neighborhood Quiz</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="https://d3js.org/d3.v5.min.js"></script>
   </head>
 
   <body>
-    <h2 id="title">SF Neighborhood Guesser</h2>
-    <div id="mapSelectContainer">
-      <select name="" id="mapSelect">
-        <option value="all">Entire Map</option>
-        <!-- <option value="tester">Tester</option> -->
-        <option value="top-left">Top left</option>
-        <option value="top-right">Top Right</option>
-        <option value="bottom-left">Bottom Left</option>
-        <option value="bottom-right">Bottom Right</option>
-      </select>
-    </div>
-    <!-- <label class="switch" id="darkModeToggle">
-      <input type="checkbox" id="darkModeCheck" />
-      <span class="slider round"> </span>
-    </label> -->
-    <div class="mapsContainer">
-      <div id="dataDisplay">
-        <span id="scoreDisplay"> --/-- </span>
-        |
-        <span id="timerDisplay"> --:-- </span>
-        |
-        <span id="answerDisplay">loading..</span>
-      </div>
+    <div id="sidebar">
+      <span
+        id="closeSidebarButton"
+        class="material-symbols-rounded google-font"
+      >
+        close
+      </span>
+      <h3 class="sidebarTitle">SF Neighborhood Quiz</h3>
+      <hr class="sidebarBreak" />
 
-      <svg id="mapSVG" viewBox="0 0 325 334" width="100%" height="100%"></svg>
-    </div>
-    <button id="resetGameButton">Reset</button>
-    <div>
+      <h4 class="sidebarTitle">Map Selector</h4>
+      <div id="mapSelectContainer">
+        <select name="" id="mapSelect">
+          <option value="all">Entire Map</option>
+          <!-- <option value="tester">Tester</option> -->
+          <option value="top-left">Top left</option>
+          <option value="top-right">Top Right</option>
+          <option value="bottom-left">Bottom Left</option>
+          <option value="bottom-right">Bottom Right</option>
+        </select>
+      </div>
+      <hr class="sidebarBreak" />
+
+      <h4 class="sidebarTitle">Display Options</h4>
       <div class="switchWithTitle">
         <p>Streets</p>
         <label class="switch" id="streetToggle">
@@ -51,16 +54,37 @@
         <label class="switch" id="freewayToggle">
           <input type="checkbox" />
           <span class="slider round"> </span>
-        </label>
-      </div>
+        </label> -->
+      <!-- </div> -->
       <div class="switchWithTitle">
         <p>Ferries</p>
         <label class="switch" id="ferryToggle">
           <input type="checkbox" />
           <span class="slider round"> </span>
         </label>
-      </div> -->
+      </div>
+      <div class="switchWithTitle">
+        <p>DarkMode</p>
+        <label class="switch" id="darkModeToggle">
+          <input type="checkbox" id="darkModeCheck" />
+          <span class="slider round"> </span>
+        </label>
+      </div>
     </div>
+
+    <div class="mapsContainer">
+      <div id="dataDisplay">
+        <span id="scoreDisplay"> --/-- </span>
+        |
+        <span id="timerDisplay"> --:-- </span>
+        |
+        <span id="answerDisplay">loading..</span>
+      </div>
+
+      <svg id="mapSVG" viewBox="0 0 325 334" width="100%" height="100%"></svg>
+    </div>
+    <button id="resetGameButton">Reset</button>
+    <div></div>
 
     <div id="myModal" class="modal">
       <div class="modal-content">
@@ -75,6 +99,12 @@
         </div>
       </div>
     </div>
+
+    <!-- <div id="sidebarButton"> -->
+    <span id="OpenSidebarButton" class="material-symbols-rounded google-font">
+      menu
+    </span>
+    <!-- </div> -->
 
     <script type="module" src="index.js"></script>
   </body>
