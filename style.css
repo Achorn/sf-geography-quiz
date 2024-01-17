@@ -55,9 +55,9 @@ body {
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  overflow: hidden;
-  -webkit-transform: translateZ(0);
-  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+  /* overflow: hidden; */
+  /* -webkit-transform: translateZ(0); */
+  /* -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); */
 }
 
 #mapSelectContainer * {
