@@ -32,7 +32,7 @@
       <div id="mapSelectContainer">
         <select name="" id="mapSelect">
           <option value="all">Entire Map</option>
-          <!-- <option value="tester">Tester</option> -->
+          <option value="tester">Tester</option>
           <option value="top-left">Top left</option>
           <option value="top-right">Top Right</option>
           <option value="bottom-left">Bottom Left</option>
@@ -92,6 +92,18 @@
 
         <h3 id="modalScore"></h3>
         <h4 id="modalTime"></h4>
+
+        <form id="scoreSubmit">
+          <input
+            id="username"
+            name="username"
+            placeholder="username"
+            minlength="3"
+            maxlength="20"
+            required
+          />
+          <button>submit score</button>
+        </form>
 
         <div class="'modal-buttons">
           <button id="playAgainButton">Play Again</button>
