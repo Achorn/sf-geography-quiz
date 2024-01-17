@@ -21,6 +21,15 @@ var scoreDisplayElement = document.getElementById("scoreDisplay");
 var timerDisplayElement = document.getElementById("timerDisplay");
 var hintDisplayElement = document.getElementById("answerDisplay");
 
+let wakeUpServer = () => {
+  fetch("https://sf-neighborhood-scores-api.onrender.com/")
+    .then((res) => res.json())
+    .then((res) => console.log(res))
+
+    .catch((err) => console.log(err));
+};
+wakeUpServer();
+
 window.onload = () => {
   const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   toggleDarkMode(isDark);
@@ -223,7 +232,7 @@ let game = new Game();
 
 let showGameOverModal = (text, time) => {
   modal.style.display = "block";
-
+  document.getElementById("submit-score-btn").disabled = false;
   modalScore.innerHTML = text;
   modalTime.innerHTML = `Time: ${time}`;
   if (game.filteredSelectedNeighborhoods.length == game.correctAnswers.length) {
@@ -520,12 +529,13 @@ scoreForm.addEventListener("submit", (e) => {
 
   let time = game.getTimeElapsedInSeconds();
   let score = game.getGamePercentage() / 100;
-
+  let map = document.getElementById("mapSelect").value;
   const formData = new FormData(scoreForm);
   localStorage.setItem("username", formData.get("username"));
 
   formData.append("score", score);
   formData.append("time", time);
+  formData.append("map", map);
 
   const plainFormData = Object.fromEntries(formData.entries());
   const formDataJsonString = JSON.stringify(plainFormData);
