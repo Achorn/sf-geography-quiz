@@ -357,9 +357,9 @@ let filterMap = (e) => {
     });
   }
 
-  if (value == "tester") {
-    newMap = ["Eureka Valley", "Corona Heights", "Lake Street"];
-  }
+  // if (value == "tester") {
+  //   newMap = ["Eureka Valley", "Corona Heights", "Lake Street"];
+  // }
   if (value == "bottom-right") {
     newMap = allNeighborhoodNames.filter((neighborhood) => {
       let [x, y] = getCenterOfNeighborhood(neighborhood);
