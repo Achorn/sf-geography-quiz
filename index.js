@@ -508,6 +508,9 @@ closeSidebarButton.addEventListener("click", (e) => {
 });
 
 //SCOREBOARD METHODS
+let localState = localStorage.getItem("toad-state");
+document.getElementById("score-username").value =
+  localStorage.getItem("username") || "";
 
 let scoreForm = document.getElementById("scoreSubmit");
 let scoreBtn = document.getElementById("submit-score-btn");
@@ -519,6 +522,8 @@ scoreForm.addEventListener("submit", (e) => {
   let score = game.getGamePercentage() / 100;
 
   const formData = new FormData(scoreForm);
+  localStorage.setItem("username", formData.get("username"));
+
   formData.append("score", score);
   formData.append("time", time);
 
