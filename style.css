@@ -55,6 +55,9 @@ body {
   justify-content: center;
   flex-direction: row;
   align-items: center;
+  /* overflow: hidden; */
+  /* -webkit-transform: translateZ(0); */
+  /* -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); */
 }
 
 #mapSelectContainer * {
@@ -373,8 +376,7 @@ input:checked + .slider:before {
   box-shadow: 0 10px 20px #0000007c;
   padding: 10px;
   display: none;
-  position: absolute;
-
+  position: fixed;
   z-index: 1;
   background-color: var(--bg_color);
   height: 100vh;
@@ -402,4 +404,18 @@ hr {
 .google-font:hover {
   transition: 0.2s ease;
   color: grey;
+}
+
+#score-display {
+  text-align: center;
+}
+
+#scoreSubmit {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#score-status {
+  text-align: center;
 }

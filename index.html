@@ -92,8 +92,21 @@
 
         <h3 id="modalScore"></h3>
         <h4 id="modalTime"></h4>
+        <div id="score-display">
+          <form id="scoreSubmit">
+            <input
+              id="score-username"
+              name="username"
+              placeholder="username"
+              maxlength="10"
+              required="true"
+            />
+            <button id="submit-score-btn">submit score</button>
+          </form>
+          <p id="score-status"></p>
+        </div>
 
-        <div class="'modal-buttons">
+        <div class="modal-buttons">
           <button id="playAgainButton">Play Again</button>
           <button id="reviewButton">Review</button>
         </div>

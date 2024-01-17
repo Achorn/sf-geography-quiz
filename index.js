@@ -21,6 +21,15 @@ var scoreDisplayElement = document.getElementById("scoreDisplay");
 var timerDisplayElement = document.getElementById("timerDisplay");
 var hintDisplayElement = document.getElementById("answerDisplay");
 
+let wakeUpServer = () => {
+  fetch("https://sf-neighborhood-scores-api.onrender.com/")
+    .then((res) => res.json())
+    .then((res) => console.log(res))
+
+    .catch((err) => console.log(err));
+};
+wakeUpServer();
+
 window.onload = () => {
   const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   toggleDarkMode(isDark);
@@ -191,6 +200,11 @@ class Game {
     }
     // this.printGameStats();
   }
+  getTimeElapsedInSeconds = () => {
+    let time = this.endTime - this.startTime;
+    time /= 1000;
+    return time;
+  };
   getTimeElapsedInMinutesSeconds(start, end) {
     let difference = end - start;
     let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
@@ -218,7 +232,7 @@ let game = new Game();
 
 let showGameOverModal = (text, time) => {
   modal.style.display = "block";
-
+  document.getElementById("submit-score-btn").disabled = false;
   modalScore.innerHTML = text;
   modalTime.innerHTML = `Time: ${time}`;
   if (game.filteredSelectedNeighborhoods.length == game.correctAnswers.length) {
@@ -496,10 +510,60 @@ document.getElementById("ferryToggle").addEventListener("change", (e) => {
 
 //SIDEBAR METHODS
 OpenSidebarButton.addEventListener("click", (event) => {
-  console.log("button clicked");
   sidebar.style.display = "block";
 });
 closeSidebarButton.addEventListener("click", (e) => {
-  console.log("clicked");
   sidebar.style.display = "none";
+});
+
+//SCOREBOARD METHODS
+let localState = localStorage.getItem("toad-state");
+document.getElementById("score-username").value =
+  localStorage.getItem("username") || "";
+
+let scoreForm = document.getElementById("scoreSubmit");
+let scoreBtn = document.getElementById("submit-score-btn");
+let scoreState = document.getElementById("score-status");
+scoreForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let time = game.getTimeElapsedInSeconds();
+  let score = game.getGamePercentage() / 100;
+  let map = document.getElementById("mapSelect").value;
+  const formData = new FormData(scoreForm);
+  localStorage.setItem("username", formData.get("username"));
+
+  formData.append("score", score);
+  formData.append("time", time);
+  formData.append("map", map);
+
+  const plainFormData = Object.fromEntries(formData.entries());
+  const formDataJsonString = JSON.stringify(plainFormData);
+
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: formDataJsonString,
+  };
+
+  let uri = "https://sf-neighborhood-scores-api.onrender.com/api/score";
+  scoreBtn.disabled = true;
+  scoreState.innerHTML = "Submitting...";
+  fetch(uri, fetchOptions)
+    .then((res) => res.json())
+    .then((res) => {
+      console.log("response");
+      if (res.err) console.log("err: ", res.err.message);
+      else console.log("res :", res);
+      scoreState.innerHTML = "submitted!";
+    })
+    .catch((err) => {
+      console.log("error");
+      console.log(err.message);
+      scoreState.innerHTML = "error saving. try again";
+      scoreBtn.disabled = false;
+    });
 });
