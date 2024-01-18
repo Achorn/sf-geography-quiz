@@ -583,27 +583,6 @@ scoreForm.addEventListener("submit", (e) => {
     });
 });
 
-// let getHighScores = () => {
-//   //get high scores elements
-
-//   //get selected map
-//   // say loading
-//   let uri = "https://sf-neighborhood-scores-api.onrender.com/api/scores";
-//   fetch(uri)
-//     .then((res) => res.json())
-//     .then((res) => {
-//       console.log(res[0]);
-//       //display scores
-//       displayHighScores(res);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };
-
-// let displayHighScores = (scores) => {};
-
-// getHighScores();
 let scoreBoard = document.getElementById("scores");
 
 let displayScores = (data) => {
@@ -637,13 +616,22 @@ let createScoreElement = (score) => {
 };
 
 let uri = "https://sf-neighborhood-scores-api.onrender.com/api/scores";
+let getHighScores = () => {
+  let limit = 10;
+  let orderByScores = "scores";
+  let orderByTimes = "time";
+  let mapFilter = docuement.getElementById();
+  let map = document.getElementById("mapSelect").value;
 
-fetch(uri)
-  .then((data) => data.json())
-  .then((data) => {
-    displayScores(data);
-  })
-  .catch((err) => {
-    scoreBoard.innerHtml = "error";
-    console.log(err);
-  });
+  fetch(uri)
+    .then((data) => data.json())
+    .then((data) => {
+      displayScores(data);
+    })
+    .catch((err) => {
+      scoreBoard.innerHtml = "error";
+      console.log(err);
+    });
+};
+
+getHighScores();
