@@ -451,6 +451,7 @@ scoreForm.addEventListener("submit", (e) => {
       if (res.err) console.log("err: ", res.err.message);
       else console.log("res :", res);
       scoreState.innerHTML = "submitted!";
+      getHighScores();
     })
     .catch((err) => {
       console.log("error");
