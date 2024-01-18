@@ -21,6 +21,15 @@ var scoreDisplayElement = document.getElementById("scoreDisplay");
 var timerDisplayElement = document.getElementById("timerDisplay");
 var hintDisplayElement = document.getElementById("answerDisplay");
 
+let localState = localStorage.getItem("toad-state");
+document.getElementById("score-username").value =
+  localStorage.getItem("username") || "";
+
+let scoreFormDisplay = document.getElementById("scoreFormDisplay");
+let scoreForm = document.getElementById("scoreSubmit");
+let scoreBtn = document.getElementById("submit-score-btn");
+let scoreState = document.getElementById("score-status");
+
 let wakeUpServer = () => {
   fetch("https://sf-neighborhood-scores-api.onrender.com/")
     .then((res) => res.json())
@@ -69,7 +78,14 @@ class Game {
     this.mapSelectionNeighborhoods = newNeighborhoods;
     this.resetGame();
   }
-
+  isReview = () => {
+    console.log(this.mapSelectionNeighborhoods.length);
+    console.log(this.filteredSelectedNeighborhoods.length);
+    return (
+      this.filteredSelectedNeighborhoods.length !=
+      this.mapSelectionNeighborhoods.length
+    );
+  };
   resetGame = () => {
     this.filteredSelectedNeighborhoods = this.mapSelectionNeighborhoods;
     this.clearBoard();
@@ -232,13 +248,18 @@ let game = new Game();
 
 let showGameOverModal = (text, time) => {
   modal.style.display = "block";
-  document.getElementById("submit-score-btn").disabled = false;
+  scoreBtn.disabled = false;
   modalScore.innerHTML = text;
   modalTime.innerHTML = `Time: ${time}`;
   if (game.filteredSelectedNeighborhoods.length == game.correctAnswers.length) {
     modalReviewBtn.style.display = "none";
-  } else modalReviewBtn.style.display = "inline";
-
+  } else {
+    modalReviewBtn.style.display = "inline";
+  }
+  console.log(game.isReview());
+  if (game.isReview()) scoreFormDisplay.style.display = "none";
+  else scoreFormDisplay.style.display = "inline";
+  scoreState.innerHTML = "";
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function (event) {
     if (event.target == modal) {
@@ -517,13 +538,7 @@ closeSidebarButton.addEventListener("click", (e) => {
 });
 
 //SCOREBOARD METHODS
-let localState = localStorage.getItem("toad-state");
-document.getElementById("score-username").value =
-  localStorage.getItem("username") || "";
 
-let scoreForm = document.getElementById("scoreSubmit");
-let scoreBtn = document.getElementById("submit-score-btn");
-let scoreState = document.getElementById("score-status");
 scoreForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
