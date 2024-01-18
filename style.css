@@ -419,3 +419,34 @@ hr {
 #score-status {
   text-align: center;
 }
+
+#score-board {
+  text-align: center;
+  width: 300px;
+  border-radius: 20px;
+  border: 2px solid brown;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+#titles {
+  padding: 0;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: large;
+  font-weight: bold;
+  gap: 0px;
+}
+#scores {
+  display: flex;
+  flex-direction: column;
+}
+#scores * {
+  padding: 2px;
+}
+.score {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

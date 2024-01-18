@@ -582,3 +582,68 @@ scoreForm.addEventListener("submit", (e) => {
       scoreBtn.disabled = false;
     });
 });
+
+// let getHighScores = () => {
+//   //get high scores elements
+
+//   //get selected map
+//   // say loading
+//   let uri = "https://sf-neighborhood-scores-api.onrender.com/api/scores";
+//   fetch(uri)
+//     .then((res) => res.json())
+//     .then((res) => {
+//       console.log(res[0]);
+//       //display scores
+//       displayHighScores(res);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
+
+// let displayHighScores = (scores) => {};
+
+// getHighScores();
+let scoreBoard = document.getElementById("scores");
+
+let displayScores = (data) => {
+  scoreBoard.innerHTML = "";
+  let scoreElements = data.map((score) => createScoreElement(score));
+  scoreElements.forEach((score) => scoreBoard.appendChild(score));
+};
+
+let createScoreElement = (score) => {
+  const newScore = document.createElement("div");
+  newScore.classList.add("score");
+
+  let name = document.createElement("div");
+  name.innerHTML = score.username;
+  newScore.appendChild(name);
+
+  let scoreNum = document.createElement("div");
+  scoreNum.innerHTML = score.score * 100 + "%";
+  newScore.appendChild(scoreNum);
+
+  const minutes = Math.floor(score.time / 60);
+  let seconds = ~~(score.time - minutes * 60);
+  console.log(seconds);
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+  let time = document.createElement("div");
+  time.innerHTML = minutes + ":" + seconds;
+  newScore.appendChild(time);
+
+  return newScore;
+};
+
+let uri = "https://sf-neighborhood-scores-api.onrender.com/api/scores";
+
+fetch(uri)
+  .then((data) => data.json())
+  .then((data) => {
+    displayScores(data);
+  })
+  .catch((err) => {
+    scoreBoard.innerHtml = "error";
+    console.log(err);
+  });
