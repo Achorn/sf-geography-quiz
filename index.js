@@ -414,6 +414,102 @@ let getCenterOfNeighborhood = (nName) => {
   return [cx, cy];
 };
 
+//SCOREBOARD METHODS
+
+scoreForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let time = game.getTimeElapsedInSeconds();
+  let score = game.getGamePercentage() / 100;
+  let map = document.getElementById("mapSelect").value;
+  const formData = new FormData(scoreForm);
+  localStorage.setItem("username", formData.get("username"));
+
+  formData.append("score", score);
+  formData.append("time", time);
+  formData.append("map", map);
+
+  const plainFormData = Object.fromEntries(formData.entries());
+  const formDataJsonString = JSON.stringify(plainFormData);
+
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: formDataJsonString,
+  };
+
+  let uri = "https://sf-neighborhood-scores-api.onrender.com/api/score";
+  scoreBtn.disabled = true;
+  scoreState.innerHTML = "Submitting...";
+  fetch(uri, fetchOptions)
+    .then((res) => res.json())
+    .then((res) => {
+      console.log("response");
+      if (res.err) console.log("err: ", res.err.message);
+      else console.log("res :", res);
+      scoreState.innerHTML = "submitted!";
+      getHighScores();
+    })
+    .catch((err) => {
+      console.log("error");
+      console.log(err.message);
+      scoreState.innerHTML = "error saving. try again";
+      scoreBtn.disabled = false;
+    });
+});
+
+let scoreBoard = document.getElementById("scores");
+
+let displayScores = (data) => {
+  scoreBoard.innerHTML = "";
+  let scoreElements = data.map((score) => createScoreElement(score));
+  scoreElements.forEach((score) => scoreBoard.appendChild(score));
+};
+
+let createScoreElement = (score) => {
+  const newScore = document.createElement("div");
+  newScore.classList.add("score");
+
+  let name = document.createElement("div");
+  name.innerHTML = score.username;
+  newScore.appendChild(name);
+
+  let scoreNum = document.createElement("div");
+  scoreNum.innerHTML = score.score * 100 + "%";
+  newScore.appendChild(scoreNum);
+
+  const minutes = Math.floor(score.time / 60);
+  let seconds = ~~(score.time - minutes * 60);
+  console.log(seconds);
+  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+  let time = document.createElement("div");
+  time.innerHTML = minutes + ":" + seconds;
+  newScore.appendChild(time);
+
+  return newScore;
+};
+
+let getHighScores = () => {
+  let uri = "https://sf-neighborhood-scores-api.onrender.com/api/scores?";
+  let selectedMap = document.getElementById("mapSelect").value;
+
+  fetch(uri + new URLSearchParams({ limit: 7, map: selectedMap }))
+    .then((data) => data.json())
+    .then((data) => {
+      displayScores(data);
+    })
+    .catch((err) => {
+      scoreBoard.innerHtml = "error";
+      console.log(err);
+    });
+};
+
+getHighScores();
+
 ///map selection dropdown menu
 var mapSelection = document.getElementById("mapSelect");
 mapSelection.addEventListener("change", (event) => {
@@ -422,6 +518,7 @@ mapSelection.addEventListener("change", (event) => {
   //reset game?
   // game.neighborhoods = selectedMap;
   game.updateBoardWithPlayableNeighborhoods(selectedMap);
+  getHighScores();
   // game.resetGame();
 });
 
@@ -535,50 +632,4 @@ OpenSidebarButton.addEventListener("click", (event) => {
 });
 closeSidebarButton.addEventListener("click", (e) => {
   sidebar.style.display = "none";
-});
-
-//SCOREBOARD METHODS
-
-scoreForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  let time = game.getTimeElapsedInSeconds();
-  let score = game.getGamePercentage() / 100;
-  let map = document.getElementById("mapSelect").value;
-  const formData = new FormData(scoreForm);
-  localStorage.setItem("username", formData.get("username"));
-
-  formData.append("score", score);
-  formData.append("time", time);
-  formData.append("map", map);
-
-  const plainFormData = Object.fromEntries(formData.entries());
-  const formDataJsonString = JSON.stringify(plainFormData);
-
-  const fetchOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: formDataJsonString,
-  };
-
-  let uri = "https://sf-neighborhood-scores-api.onrender.com/api/score";
-  scoreBtn.disabled = true;
-  scoreState.innerHTML = "Submitting...";
-  fetch(uri, fetchOptions)
-    .then((res) => res.json())
-    .then((res) => {
-      console.log("response");
-      if (res.err) console.log("err: ", res.err.message);
-      else console.log("res :", res);
-      scoreState.innerHTML = "submitted!";
-    })
-    .catch((err) => {
-      console.log("error");
-      console.log(err.message);
-      scoreState.innerHTML = "error saving. try again";
-      scoreBtn.disabled = false;
-    });
 });
