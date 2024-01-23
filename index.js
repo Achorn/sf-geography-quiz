@@ -441,7 +441,7 @@ scoreForm.addEventListener("submit", (e) => {
     body: formDataJsonString,
   };
 
-  let uri = "https://sf-neighborhood-scores-api.onrender.com/api/score";
+  let uri = "https://sf-neighborhood-scores-api.onrender.com/api/scores";
   scoreBtn.disabled = true;
   scoreState.innerHTML = "Submitting...";
   fetch(uri, fetchOptions)
