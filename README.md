@@ -2,6 +2,8 @@
 
 A fun interactive map of San Francisco where your knowledge of SF is tested. Try guessing all 117 neighborhoods in time to get on the leaderboard!
 
+<img src="https://github.com/Achorn/sf-geography-quiz/assets/28990037/c6bf9eac-8e07-486b-ab46-a82244291243)" width="500" height="500" />
+
 ## Description
 
 this app is for people who enjoy testing their knowledge of geography and San Francisco.
@@ -26,7 +28,11 @@ The quiz starts once you visit the site. The name of the current neighborhood wi
 
 you get three guesses. Once you've depleted all your guesses, the correct location will glow red and white. click on it to continue to the next location.
 
+<img src="https://github.com/Achorn/sf-geography-quiz/assets/28990037/fd9ca271-4f8f-41aa-90f0-427c0b75c56e)" width="300" height="300" />
+
 Once you complete the quiz, you will be prompted for a username to submit your scores. the percentage of correct answers plus the time it took to finish the game will be used to calculate your position on the leaderboard.
+
+<img src="https://github.com/Achorn/sf-geography-quiz/assets/28990037/c6bf9eac-8e07-486b-ab46-a82244291243)" width="500" height="500" />
 
 ## Credits
 
