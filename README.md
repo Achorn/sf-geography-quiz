@@ -1,6 +1,6 @@
 # SF Neighborhood Quiz
 
-A fun interactive map of san francisco where your knowledge of SF is challendged. Try to guess all 117 neighborhoods in time get on the leaderboard!
+A fun interactive map of San Francisco where your knowledge of SF is tested. Try guessing all 117 neighborhoods in time to get on the leaderboard!
 
 ## Description
 
